@@ -1,0 +1,143 @@
+<div class="article-list-page">
+  <div class="page-header">
+    <h1>Articles</h1>
+    <div class="actions">
+      <input type="file" #fileInput hidden accept=".json,.csv" (change)="onFileSelected($event)" />
+      <button mat-raised-button color="primary" (click)="fileInput.click()" [disabled]="uploading()">
+        <mat-icon>upload_file</mat-icon>
+        Upload CSV / JSON
+      </button>
+      <button mat-button (click)="refresh()" matTooltip="Refresh list">
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-button [matMenuTriggerFor]="moreMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #moreMenu="matMenu">
+        <button mat-menu-item (click)="triggerGeneration()">
+          <mat-icon>auto_awesome</mat-icon>
+          <span>Generate Dataset (3 articles)</span>
+        </button>
+        <button mat-menu-item (click)="resetErrors()">
+          <mat-icon>replay</mat-icon>
+          <span>Reset Error Articles</span>
+        </button>
+        <button mat-menu-item (click)="deleteAll()" class="danger-item">
+          <mat-icon>delete_forever</mat-icon>
+          <span>Delete All Articles</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <!-- Status summary cards -->
+  @if (counts(); as c) {
+    <div class="status-cards">
+      <mat-card class="stat-card">
+        <mat-card-content>
+          <div class="stat-value">{{ c.total }}</div>
+          <div class="stat-label">Total</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="stat-card status-pending-bg">
+        <mat-card-content>
+          <div class="stat-value">{{ c.by_status['PENDING'] || 0 }}</div>
+          <div class="stat-label">Pending</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="stat-card status-generating-bg">
+        <mat-card-content>
+          <div class="stat-value">{{ c.by_status['GENERATING'] || 0 }}</div>
+          <div class="stat-label">Generating</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="stat-card status-ready-bg">
+        <mat-card-content>
+          <div class="stat-value">{{ c.by_status['READY'] || 0 }}</div>
+          <div class="stat-label">Ready</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="stat-card status-error-bg">
+        <mat-card-content>
+          <div class="stat-value">{{ c.by_status['ERROR'] || 0 }}</div>
+          <div class="stat-label">Errors</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+
+  @if (uploading()) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  @if (uploadResult(); as result) {
+    <mat-card class="upload-summary">
+      <mat-card-content>
+        <strong>Upload complete:</strong>
+        {{ result.total }} total &middot;
+        {{ result.inserted }} inserted &middot;
+        {{ result.skipped }} skipped (duplicates)
+        @if (result.errors.length > 0) {
+          &middot; <span class="error-text">{{ result.errors.length }} errors</span>
+        }
+      </mat-card-content>
+    </mat-card>
+  }
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  } @else {
+    <mat-card>
+      <table mat-table [dataSource]="articles()" class="full-width">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>Title</th>
+          <td mat-cell *matCellDef="let row" class="rtl-cell" dir="rtl">{{ row.title }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="source">
+          <th mat-header-cell *matHeaderCellDef>Source</th>
+          <td mat-cell *matCellDef="let row">{{ row.source }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let row">{{ row.date }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let row">
+            <mat-chip [highlighted]="row.status === 'READY'" [class]="'status-' + row.status.toLowerCase()">
+              {{ row.status }}
+            </mat-chip>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="deleteArticle($event, row)" matTooltip="Delete article">
+              <mat-icon class="delete-icon">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="onRowClick(row)" class="clickable-row"></tr>
+      </table>
+
+      @if (articles().length === 0) {
+        <div class="empty-state">
+          <mat-icon>cloud_upload</mat-icon>
+          <p>No articles yet. Upload a CSV or JSON file to get started.</p>
+        </div>
+      }
+    </mat-card>
+  }
+</div>

@@ -1,0 +1,66 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  h1 { margin: 0; }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.bar-cell {
+  position: relative;
+  min-width: 140px;
+  height: 28px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .bar {
+    height: 100%;
+    background: #1976d2;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    opacity: 0.7;
+  }
+
+  .bar-label {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  &.overall .bar {
+    background: #4caf50;
+  }
+}
+
+.chart-card {
+  margin-top: 16px;
+
+  h3 { margin: 0 0 12px; }
+
+  .chart-container {
+    position: relative;
+    height: 350px;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: rgba(0, 0, 0, 0.54);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}

@@ -1,0 +1,166 @@
+<div class="run-list-page">
+  <div class="page-header">
+    <h1>Evaluation Runs</h1>
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="toggleForm()">
+        <mat-icon>add</mat-icon>
+        New Run
+      </button>
+      <button mat-button (click)="loadRuns()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  @if (showForm()) {
+    <mat-card class="new-run-form">
+      <mat-card-content>
+        <h3>Create New Evaluation Run</h3>
+
+        <!-- Model Selection -->
+        <div class="model-selector">
+          <div class="selector-toggle">
+            <button mat-button [class.active]="!useCustom" (click)="useCustom = false">
+              <mat-icon>list</mat-icon> Select Model
+            </button>
+            <button mat-button [class.active]="useCustom" (click)="useCustom = true">
+              <mat-icon>edit</mat-icon> Custom Model
+            </button>
+          </div>
+
+          @if (!useCustom) {
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Select Model</mat-label>
+              <mat-select [(ngModel)]="selectedModelId">
+                @for (cat of modelCategories; track cat) {
+                  <mat-optgroup [label]="cat | uppercase">
+                    @for (m of modelsInCategory(cat); track m.id) {
+                      <mat-option [value]="m.id" [disabled]="!m.has_api_key">
+                        <span class="model-option">
+                          <span>{{ m.display_name }}</span>
+                          <span class="provider-tag">{{ m.provider_name }}</span>
+                          @if (!m.has_api_key) {
+                            <mat-icon class="no-key-icon" matTooltip="No API key configured">vpn_key_off</mat-icon>
+                          }
+                        </span>
+                      </mat-option>
+                    }
+                  </mat-optgroup>
+                }
+              </mat-select>
+              <mat-hint>Models with keys configured are available. Add keys in .env file.</mat-hint>
+            </mat-form-field>
+
+            @if (selectedModelId) {
+              <button mat-stroked-button (click)="testModel(selectedModelId)"
+                      [disabled]="testing() === selectedModelId" class="test-btn">
+                @if (testing() === selectedModelId) {
+                  Testing...
+                } @else {
+                  <mat-icon>network_check</mat-icon> Test Connection
+                }
+              </button>
+            }
+          } @else {
+            <div class="form-row">
+              <mat-form-field appearance="outline">
+                <mat-label>Model Name / ID</mat-label>
+                <input matInput [(ngModel)]="customModelName" placeholder="e.g. gpt-4o-mini" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>API Key</mat-label>
+                <input matInput [(ngModel)]="apiKey" type="password" />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Base URL</mat-label>
+                <input matInput [(ngModel)]="baseUrl" placeholder="https://api.openai.com/v1" />
+              </mat-form-field>
+            </div>
+          }
+        </div>
+
+        <!-- Article limit -->
+        <div class="limit-row">
+          <mat-form-field appearance="outline" class="limit-field">
+            <mat-label>Articles to evaluate</mat-label>
+            <input matInput type="number" [(ngModel)]="articleLimit" min="1" max="100" placeholder="All">
+            <mat-hint>Leave empty for all available articles</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" (click)="createRun()"
+                  [disabled]="creating() || (!useCustom && !selectedModelId) || (useCustom && !customModelName.trim())">
+            <mat-icon>play_arrow</mat-icon>
+            Start Evaluation{{ articleLimit ? ' (' + articleLimit + ' articles)' : '' }}
+          </button>
+          <button mat-button (click)="toggleForm()">Cancel</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  @if (loading() && runs().length === 0) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  <mat-card>
+    <table mat-table [dataSource]="runs()" class="full-width">
+      <ng-container matColumnDef="model_name">
+        <th mat-header-cell *matHeaderCellDef>Model</th>
+        <td mat-cell *matCellDef="let row">{{ row.model_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let row">
+          <mat-chip [class]="'status-' + row.status.toLowerCase()">
+            {{ row.status }}
+          </mat-chip>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="progress">
+        <th mat-header-cell *matHeaderCellDef>Progress</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="progress-cell">
+            <mat-progress-bar mode="determinate" [value]="progressPercent(row)"></mat-progress-bar>
+            <span class="progress-text">{{ row.processed_count }}/{{ row.total_articles }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="started_at">
+        <th mat-header-cell *matHeaderCellDef>Started</th>
+        <td mat-cell *matCellDef="let row">{{ row.started_at | date:'short' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="completed_at">
+        <th mat-header-cell *matHeaderCellDef>Completed</th>
+        <td mat-cell *matCellDef="let row">{{ row.completed_at ? (row.completed_at | date:'short') : '—' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          @if (row.status === 'RUNNING' || row.status === 'QUEUED') {
+            <button mat-icon-button color="warn" (click)="cancelRun($event, row)" matTooltip="Cancel run">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          }
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="onRowClick(row)" class="clickable-row"></tr>
+    </table>
+
+    @if (runs().length === 0 && !loading()) {
+      <div class="empty-state">
+        <mat-icon>play_circle</mat-icon>
+        <p>No evaluation runs yet. Click "New Run" to start one.</p>
+      </div>
+    }
+  </mat-card>
+</div>

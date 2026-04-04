@@ -1,0 +1,38 @@
+<div class="executive-summary-page">
+  <div class="page-header">
+    <h1>Executive Summary</h1>
+    <div class="actions">
+      <button mat-raised-button (click)="regenerate()" [disabled]="regenerating()">
+        <mat-icon>refresh</mat-icon>
+        Regenerate
+      </button>
+      <button mat-raised-button color="primary" (click)="exportJson()" [disabled]="exporting()">
+        <mat-icon>download</mat-icon>
+        Export JSON
+      </button>
+    </div>
+  </div>
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  @if (report(); as r) {
+    <mat-card class="report-card">
+      <mat-card-content>
+        @if (r.summary || r.content || r.markdown) {
+          <div class="report-content" [innerHTML]="renderMarkdown(r.summary || r.content || r.markdown)"></div>
+        } @else {
+          <div class="report-content">
+            <pre class="report-raw">{{ r | json }}</pre>
+          </div>
+        }
+      </mat-card-content>
+    </mat-card>
+  } @else if (!loading()) {
+    <div class="empty-state">
+      <mat-icon>summarize</mat-icon>
+      <p>No report available. Generate a report from the run detail page first.</p>
+    </div>
+  }
+</div>

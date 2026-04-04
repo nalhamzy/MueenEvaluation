@@ -1,0 +1,71 @@
+<div class="manual-score-page">
+  <h1>Manual Score</h1>
+  <p class="subtitle">Paste raw LLM output and score it against any article's reference dataset.</p>
+
+  <div class="score-layout">
+    <!-- Input panel -->
+    <mat-card class="input-panel">
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select Article</mat-label>
+          <mat-select [(ngModel)]="selectedArticleId">
+            @for (art of articles(); track art.id) {
+              <mat-option [value]="art.id">{{ art.id }} — {{ art.title }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Task</mat-label>
+          <mat-select [(ngModel)]="selectedTask">
+            @for (t of tasks; track t.value) {
+              <mat-option [value]="t.value">{{ t.label }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Raw LLM Output</mat-label>
+          <textarea matInput [(ngModel)]="rawOutput" rows="12"
+                    placeholder='Paste JSON or text output here...'></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="score()"
+                [disabled]="scoring() || !selectedArticleId || !rawOutput.trim()">
+          @if (scoring()) {
+            <mat-spinner diameter="20"></mat-spinner>
+          } @else {
+            <mat-icon>grade</mat-icon>
+          }
+          Score
+        </button>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Results panel -->
+    <mat-card class="results-panel">
+      <mat-card-header>
+        <mat-card-title>Results</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        @if (result(); as r) {
+          <div class="score-display">
+            <div class="big-score" [class]="getScoreClass(r.score)">
+              {{ r.score.toFixed(1) }}
+            </div>
+            <div class="score-label">/ 10</div>
+          </div>
+          <h4>Task: {{ r.task }}</h4>
+          <pre class="details-json">{{ r.details | json }}</pre>
+        } @else if (error(); as err) {
+          <div class="error-msg">
+            <mat-icon>error</mat-icon>
+            {{ err }}
+          </div>
+        } @else {
+          <p class="muted">Score results will appear here.</p>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

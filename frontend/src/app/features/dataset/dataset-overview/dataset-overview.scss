@@ -1,0 +1,136 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  h1 { margin: 0; }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.limit-field {
+  width: 80px;
+
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  text-align: center;
+
+  .stat-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1976d2;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+.generating-bar { margin-top: 16px; }
+.generating-text {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  margin-top: 8px;
+}
+
+.items-card { margin-top: 16px; }
+
+.full-width { width: 100%; }
+
+.check-icon { color: #4caf50; }
+.miss-icon { color: #bdbdbd; }
+
+.clickable-row {
+  cursor: pointer;
+  &:hover { background: rgba(0, 0, 0, 0.04); }
+}
+
+.selected-row {
+  background: rgba(25, 118, 210, 0.08) !important;
+}
+
+.detail-panel {
+  margin-top: 16px;
+}
+
+.ner-category {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+
+  strong { min-width: 140px; }
+}
+
+.arabic-chip {
+  font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+}
+
+.arabic-body, .arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+.coref-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+
+  th, td {
+    padding: 6px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.claim-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.label-supported { --mdc-chip-elevated-container-color: #c8e6c9; }
+.label-refuted { --mdc-chip-elevated-container-color: #ffcdd2; }
+.label-not_enough_info { --mdc-chip-elevated-container-color: #fff9c4; }
+
+.muted { color: rgba(0,0,0,0.54); }
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: rgba(0, 0, 0, 0.54);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}

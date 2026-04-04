@@ -1,0 +1,32 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .logo {
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 32px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  a {
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+
+  .active-link {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+}
+
+.app-content {
+  max-width: 1400px;
+  margin: 24px auto;
+  padding: 0 24px;
+}

@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <span class="logo">Arabic LLM Benchmark</span>
+  <span class="spacer"></span>
+  @for (item of navItems; track item.path) {
+    <a mat-button [routerLink]="item.path" routerLinkActive="active-link">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+  }
+</mat-toolbar>
+
+<div class="app-content">
+  <router-outlet />
+</div>

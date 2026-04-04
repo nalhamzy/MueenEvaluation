@@ -1,0 +1,15 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+sqlalchemy>=2.0
+alembic>=1.14
+pydantic>=2.0
+pydantic-settings>=2.0
+python-dotenv>=1.0
+python-multipart>=0.0.18
+openai>=1.60
+cryptography>=44.0
+rouge-score>=0.1.2
+pytest>=8.0
+pytest-asyncio>=0.25
+httpx>=0.28
+aiofiles>=24.0

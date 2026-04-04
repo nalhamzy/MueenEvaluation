@@ -1,0 +1,33 @@
+h1 { margin-bottom: 4px; }
+.subtitle { color: rgba(0,0,0,0.54); margin-bottom: 24px; }
+
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.key-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+
+  .key-label {
+    font-weight: 500;
+  }
+
+  code {
+    font-family: monospace;
+    color: rgba(0,0,0,0.54);
+  }
+}

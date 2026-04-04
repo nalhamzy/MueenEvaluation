@@ -1,0 +1,67 @@
+.loading-center {
+  display: flex;
+  justify-content: center;
+  padding: 64px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  h1 { margin: 0; }
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arabic-title {
+  font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.arabic-body, .arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+.tab-content {
+  padding: 16px 0;
+}
+
+pre {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 13px;
+  direction: ltr;
+}
+
+.claim-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.label-supported { --mdc-chip-elevated-container-color: #c8e6c9; }
+.label-refuted { --mdc-chip-elevated-container-color: #ffcdd2; }
+.label-not_enough_info { --mdc-chip-elevated-container-color: #fff9c4; }
+
+.status-ready { --mdc-chip-elevated-container-color: #c8e6c9; }
+.status-generating { --mdc-chip-elevated-container-color: #fff9c4; }
+.status-error { --mdc-chip-elevated-container-color: #ffcdd2; }
+.status-pending { --mdc-chip-elevated-container-color: #e0e0e0; }
+
+.muted { color: rgba(0,0,0,0.54); }

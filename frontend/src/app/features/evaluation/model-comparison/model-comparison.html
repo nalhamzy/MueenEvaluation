@@ -1,0 +1,104 @@
+<div class="comparison-page">
+  <div class="page-header">
+    <h1>Model Comparison</h1>
+    <button mat-button (click)="loadComparison()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  <mat-card>
+    <table mat-table [dataSource]="comparison()" class="full-width">
+      <ng-container matColumnDef="model_name">
+        <th mat-header-cell *matHeaderCellDef>Model</th>
+        <td mat-cell *matCellDef="let row">
+          <strong>{{ row.model_name }}</strong>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ner_score">
+        <th mat-header-cell *matHeaderCellDef>NER</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell">
+            <div class="bar" [style.width.%]="barWidth(row.ner_score)"></div>
+            <span class="bar-label">{{ formatScore(row.ner_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nli_score">
+        <th mat-header-cell *matHeaderCellDef>NLI</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell">
+            <div class="bar" [style.width.%]="barWidth(row.nli_score)"></div>
+            <span class="bar-label">{{ formatScore(row.nli_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="summary_score">
+        <th mat-header-cell *matHeaderCellDef>Summary</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell">
+            <div class="bar" [style.width.%]="barWidth(row.summary_score)"></div>
+            <span class="bar-label">{{ formatScore(row.summary_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="coref_score">
+        <th mat-header-cell *matHeaderCellDef>Coref</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell">
+            <div class="bar" [style.width.%]="barWidth(row.coref_score)"></div>
+            <span class="bar-label">{{ formatScore(row.coref_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="translation_score">
+        <th mat-header-cell *matHeaderCellDef>Translation</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell">
+            <div class="bar" [style.width.%]="barWidth(row.translation_score)"></div>
+            <span class="bar-label">{{ formatScore(row.translation_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="overall_score">
+        <th mat-header-cell *matHeaderCellDef>Overall</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="bar-cell overall">
+            <div class="bar" [style.width.%]="barWidth(row.overall_score)"></div>
+            <span class="bar-label">{{ formatScore(row.overall_score) }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    @if (comparison().length === 0 && !loading()) {
+      <div class="empty-state">
+        <mat-icon>compare</mat-icon>
+        <p>No completed runs to compare. Run evaluations first.</p>
+      </div>
+    }
+  </mat-card>
+
+  @if (groupedBarConfig(); as cfg) {
+    <mat-card class="chart-card">
+      <mat-card-content>
+        <h3>Per-Task Score Comparison</h3>
+        <div class="chart-container">
+          <canvas baseChart [type]="cfg.type" [data]="cfg.data" [options]="cfg.options"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

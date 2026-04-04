@@ -1,0 +1,129 @@
+.output-detail-page {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    h1 { margin: 0 0 4px; }
+
+    .meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+}
+
+.score-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.score-card {
+  text-align: center;
+  border-top: 3px solid #1976d2;
+
+  .score-value {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .score-label {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  &.overall {
+    border-top-color: #4caf50;
+  }
+}
+
+.tab-content {
+  padding: 16px 0;
+
+  h3 { margin: 0 0 12px; }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+.claim-cell {
+  max-width: 400px;
+}
+
+// NER legend & coloring
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+
+    &.match { background: #c8e6c9; color: #2e7d32; }
+    &.predicted-only { background: #ffcdd2; color: #c62828; }
+    &.reference-only { background: #ffe0b2; color: #e65100; }
+  }
+}
+
+.row-match { background: rgba(76, 175, 80, 0.05); }
+.row-predicted-only { background: rgba(244, 67, 54, 0.05); }
+.row-reference-only { background: rgba(255, 152, 0, 0.05); }
+
+.entity-match { --mdc-chip-elevated-container-color: #c8e6c9; }
+.entity-predicted-only { --mdc-chip-elevated-container-color: #ffcdd2; }
+.entity-reference-only { --mdc-chip-elevated-container-color: #ffe0b2; }
+
+// NLI coloring
+.label-correct { --mdc-chip-elevated-container-color: #c8e6c9; }
+.label-wrong { --mdc-chip-elevated-container-color: #ffcdd2; }
+
+.icon-correct { color: #4caf50; }
+.icon-wrong { color: #f44336; }
+
+// Side-by-side panels
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .panel {
+    h4 { margin: 0 0 8px; color: rgba(0, 0, 0, 0.7); }
+  }
+}
+
+// Summary score bar
+.score-bar-card {
+  h4 { margin: 0 0 8px; }
+
+  .score-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    mat-progress-bar { flex: 1; }
+
+    .score-bar-label {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+}

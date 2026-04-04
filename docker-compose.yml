@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8111:8111"
+    volumes:
+      - ./data:/data
+      - ./.env:/app/../.env:ro
+    environment:
+      - DATABASE_URL=sqlite:////data/benchmark.db
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4222:4222"
+    depends_on:
+      - backend
+    restart: unless-stopped

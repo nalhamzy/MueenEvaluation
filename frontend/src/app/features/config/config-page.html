@@ -1,0 +1,66 @@
+<div class="config-page">
+  <h1>Configuration</h1>
+  <p class="subtitle">LLM model and API settings. API keys are masked for security.</p>
+
+  @if (config(); as cfg) {
+    <div class="config-grid">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Models</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Teacher Model</mat-label>
+            <input matInput [(ngModel)]="teacherModel">
+            <mat-hint>Used for dataset generation</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Judge Model</mat-label>
+            <input matInput [(ngModel)]="judgeModel">
+            <mat-hint>Used for summary scoring</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Student Models</mat-label>
+            <input matInput [(ngModel)]="studentModels">
+            <mat-hint>Comma-separated list of models to evaluate</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>OpenAI Base URL</mat-label>
+            <input matInput [(ngModel)]="baseUrl" placeholder="https://api.openai.com/v1">
+            <mat-hint>Override for non-OpenAI endpoints</mat-hint>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="save()">
+            <mat-icon>save</mat-icon>
+            Save Config
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>API Keys</mat-card-title>
+          <mat-card-subtitle>Keys are stored server-side. Shown masked.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="key-row">
+            <span class="key-label">Teacher API Key:</span>
+            <code>{{ cfg.teacher_api_key }}</code>
+          </div>
+          <div class="key-row">
+            <span class="key-label">Student API Key:</span>
+            <code>{{ cfg.student_api_key }}</code>
+          </div>
+          <div class="key-row">
+            <span class="key-label">Judge API Key:</span>
+            <code>{{ cfg.judge_api_key }}</code>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+</div>

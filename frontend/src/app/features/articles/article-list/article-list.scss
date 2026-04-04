@@ -1,0 +1,90 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  h1 { margin: 0; }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  text-align: center;
+  .stat-value {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(0,0,0,0.54);
+  }
+}
+
+.status-pending-bg { border-left: 4px solid #9e9e9e; }
+.status-generating-bg { border-left: 4px solid #ffc107; }
+.status-ready-bg { border-left: 4px solid #4caf50; }
+.status-error-bg { border-left: 4px solid #f44336; }
+
+.upload-summary {
+  margin-bottom: 16px;
+  .error-text { color: #f44336; }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.rtl-cell {
+  font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clickable-row {
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.status-ready { --mdc-chip-elevated-container-color: #c8e6c9; }
+.status-generating { --mdc-chip-elevated-container-color: #fff9c4; }
+.status-error { --mdc-chip-elevated-container-color: #ffcdd2; }
+.status-pending { --mdc-chip-elevated-container-color: #e0e0e0; }
+
+.delete-icon {
+  color: rgba(0,0,0,0.3);
+  &:hover { color: #f44336; }
+}
+
+.danger-item {
+  color: #f44336;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: rgba(0, 0, 0, 0.54);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}

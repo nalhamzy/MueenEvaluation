@@ -1,0 +1,135 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  h1 { margin: 0; }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.new-run-form {
+  margin-bottom: 16px;
+
+  h3 { margin: 0 0 12px; }
+
+  .model-selector {
+    margin-bottom: 16px;
+  }
+
+  .selector-toggle {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+
+    button {
+      &.active {
+        background: rgba(25, 118, 210, 0.1);
+        color: #1976d2;
+      }
+    }
+  }
+
+  .full-width { width: 100%; }
+
+  .model-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+
+    .provider-tag {
+      font-size: 11px;
+      color: rgba(0,0,0,0.45);
+      margin-left: auto;
+    }
+
+    .no-key-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      color: #f44336;
+    }
+  }
+
+  .test-btn {
+    margin-top: 8px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    mat-form-field {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  .limit-row {
+    margin-top: 8px;
+  }
+
+  .limit-field {
+    width: 200px;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+
+  mat-progress-bar {
+    flex: 1;
+  }
+
+  .progress-text {
+    font-size: 12px;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+.clickable-row {
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.status-completed { --mdc-chip-elevated-container-color: #c8e6c9; }
+.status-running { --mdc-chip-elevated-container-color: #fff9c4; }
+.status-failed { --mdc-chip-elevated-container-color: #ffcdd2; }
+.status-queued { --mdc-chip-elevated-container-color: #e0e0e0; }
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: rgba(0, 0, 0, 0.54);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}
