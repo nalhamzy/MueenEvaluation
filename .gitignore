@@ -33,3 +33,17 @@ Thumbs.db
 test_*.db
 run_id.txt
 qwen_run_id.txt
+
+# Raw training data (too large / not for repo)
+data/
+*.csv
+*.zip
+Culture/
+Finance/
+Politics/
+Sports/
+Tech/
+Medical/
+Religion/
+run_gpt.txt
+run_qwen.txt
