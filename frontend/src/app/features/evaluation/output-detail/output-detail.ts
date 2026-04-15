@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ApiService } from '../../../core/services/api.service';
-import { ModelOutput, DatasetItem, NerReference, NliClaim, CorefSpan } from '../../../core/models/interfaces';
+import { ModelOutput, DatasetItem, NerReference, NliClaim } from '../../../core/models/interfaces';
 
 interface EntityComparison {
   entity: string;
@@ -116,10 +116,6 @@ export class OutputDetail implements OnInit {
       };
     });
   });
-
-  // --- Coref ---
-  refCoref = computed((): CorefSpan[] => this.datasetItem()?.coref_reference || []);
-  predCoref = computed((): CorefSpan[] => this.output()?.coref_output || []);
 
   formatScore(value: number | null): string {
     return value !== null ? value.toFixed(2) : '—';

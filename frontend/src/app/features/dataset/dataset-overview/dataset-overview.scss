@@ -92,23 +92,6 @@
   white-space: pre-wrap;
 }
 
-.coref-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
-
-  th, td {
-    padding: 6px 12px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-  }
-
-  th {
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.7);
-  }
-}
-
 .claim-row {
   display: flex;
   align-items: center;

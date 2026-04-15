@@ -173,19 +173,6 @@
 .label-refuted { --mdc-chip-elevated-container-color: #ffcdd2; }
 .label-not_enough_info { --mdc-chip-elevated-container-color: #fff9c4; }
 
-.coref-mini-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-
-  th, td {
-    padding: 6px 8px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-  }
-  th { font-weight: 500; color: rgba(0,0,0,0.6); }
-}
-
 .rubric-section {
   margin-top: 16px;
   h4 { margin: 0 0 8px; color: #1976d2; }

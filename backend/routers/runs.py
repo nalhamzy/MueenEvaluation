@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, PlainTextResponse
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import get_db
@@ -9,6 +10,15 @@ import threading
 import json
 
 router = APIRouter()
+
+
+class ManualBriefRequest(BaseModel):
+    article_ids: list[str]
+
+
+class ManualUploadRequest(BaseModel):
+    model_name: str
+    outputs: list[dict]
 
 
 @router.post("", response_model=RunOut)
@@ -85,7 +95,6 @@ def get_run_scores(run_id: str, db: Session = Depends(get_db)):
         "avg_ner": round(sum(o.ner_score or 0 for o in outputs) / len(outputs), 2),
         "avg_nli": round(sum(o.nli_score or 0 for o in outputs) / len(outputs), 2),
         "avg_summary": round(sum(o.summary_score or 0 for o in outputs) / len(outputs), 2),
-        "avg_coref": round(sum(o.coref_score or 0 for o in outputs) / len(outputs), 2),
         "avg_translation": round(sum(o.translation_score or 0 for o in outputs) / len(outputs), 2),
         "avg_overall": round(sum(o.overall_score or 0 for o in outputs) / len(outputs), 2),
         "scores": [
@@ -94,7 +103,6 @@ def get_run_scores(run_id: str, db: Session = Depends(get_db)):
                 "ner": o.ner_score,
                 "nli": o.nli_score,
                 "summary": o.summary_score,
-                "coref": o.coref_score,
                 "translation": o.translation_score,
                 "overall": o.overall_score,
             }
@@ -113,3 +121,42 @@ def cancel_run(run_id: str, db: Session = Depends(get_db)):
         run.error_message = "Cancelled by user"
         db.commit()
     return {"message": "Run cancelled"}
+
+
+# --- Manual evaluation endpoints (no API key required) ---
+
+@router.post("/manual/brief", response_class=PlainTextResponse)
+def manual_brief(req: ManualBriefRequest, db: Session = Depends(get_db)):
+    """Generate a markdown task brief the user can paste into any browser LLM.
+
+    Returns plain text (markdown) so it can be downloaded directly.
+    """
+    from services.manual_run_service import build_brief
+
+    if not req.article_ids:
+        raise HTTPException(400, "article_ids list is empty")
+
+    try:
+        brief = build_brief(req.article_ids, db)
+    except ValueError as e:
+        raise HTTPException(404, str(e))
+
+    return brief
+
+
+@router.post("/manual/upload")
+def manual_upload(req: ManualUploadRequest, db: Session = Depends(get_db)):
+    """Upload an outputs JSON, create a run, and score it.
+
+    The payload should be the structured JSON the browser LLM produced from
+    the brief. Returns the created run_id and counts.
+    """
+    from services.manual_run_service import create_manual_run
+
+    payload = {"model_name": req.model_name, "outputs": req.outputs}
+    try:
+        result = create_manual_run(payload, db)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+    return result

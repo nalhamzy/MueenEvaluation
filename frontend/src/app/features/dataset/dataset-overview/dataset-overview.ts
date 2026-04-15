@@ -34,7 +34,7 @@ export class DatasetOverview implements OnInit, OnDestroy {
   limit = 3;
   selectedItem = signal<DatasetItem | null>(null);
 
-  displayedColumns = ['article_id', 'teacher_model', 'generated_at', 'has_ner', 'has_summary', 'has_nli', 'has_coref', 'has_translation'];
+  displayedColumns = ['article_id', 'teacher_model', 'generated_at', 'has_ner', 'has_summary', 'has_nli', 'has_translation'];
 
   private pollTimer: any = null;
 

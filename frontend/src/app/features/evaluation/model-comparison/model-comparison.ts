@@ -33,8 +33,8 @@ export class ModelComparison implements OnInit {
   groupedBarConfig = computed((): ChartConfiguration<'bar'> | null => {
     const data = this.comparison();
     if (data.length === 0) return null;
-    const tasks = ['NER', 'NLI', 'Summary', 'Coref', 'Translation'];
-    const taskKeys = ['ner_score', 'nli_score', 'summary_score', 'coref_score', 'translation_score'];
+    const tasks = ['NER', 'NLI', 'Summary', 'Translation'];
+    const taskKeys = ['ner_score', 'nli_score', 'summary_score', 'translation_score'];
     const datasets = data.map((row, i) => ({
       label: row.model_name,
       data: taskKeys.map(k => row[k] ?? 0),
@@ -59,7 +59,7 @@ export class ModelComparison implements OnInit {
     };
   });
 
-  displayedColumns = ['model_name', 'ner_score', 'nli_score', 'summary_score', 'coref_score', 'translation_score', 'overall_score'];
+  displayedColumns = ['model_name', 'ner_score', 'nli_score', 'summary_score', 'translation_score', 'overall_score'];
 
   constructor(
     private api: ApiService,

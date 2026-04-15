@@ -57,7 +57,6 @@ export class RunDetail implements OnInit, OnDestroy {
       ner: avg('ner_score'),
       nli: avg('nli_score'),
       summary: avg('summary_score'),
-      coref: avg('coref_score'),
       translation: avg('translation_score'),
       overall: avg('overall_score'),
     };
@@ -69,10 +68,10 @@ export class RunDetail implements OnInit, OnDestroy {
     return {
       type: 'radar',
       data: {
-        labels: ['NER', 'NLI', 'Summary', 'Coref', 'Translation'],
+        labels: ['NER', 'NLI', 'Summary', 'Translation'],
         datasets: [{
           label: this.run()?.model_name || 'Model',
-          data: [s.ner ?? 0, s.nli ?? 0, s.summary ?? 0, s.coref ?? 0, s.translation ?? 0],
+          data: [s.ner ?? 0, s.nli ?? 0, s.summary ?? 0, s.translation ?? 0],
           backgroundColor: 'rgba(25, 118, 210, 0.2)',
           borderColor: '#1976d2',
           pointBackgroundColor: '#1976d2',
@@ -135,7 +134,7 @@ export class RunDetail implements OnInit, OnDestroy {
     };
   });
 
-  displayedColumns = ['article_id', 'ner_score', 'nli_score', 'summary_score', 'coref_score', 'translation_score', 'overall_score', 'status', 'actions'];
+  displayedColumns = ['article_id', 'ner_score', 'nli_score', 'summary_score', 'translation_score', 'overall_score', 'status', 'actions'];
   expandedOutput = signal<ModelOutput | null>(null);
 
   toggleExpand(output: ModelOutput) {

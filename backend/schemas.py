@@ -35,8 +35,6 @@ class DatasetItemOut(BaseModel):
     summary_reference: Optional[str] = None
     nli_input: Optional[str] = None
     nli_claims: Optional[list] = None
-    coref_input: Optional[str] = None
-    coref_reference: Optional[list] = None
     translation_input: Optional[str] = None
     translation_reference: Optional[str] = None
     generated_at: Optional[datetime] = None
@@ -83,16 +81,13 @@ class ModelOutputOut(BaseModel):
     ner_output: Optional[dict] = None
     summary_output: Optional[str] = None
     nli_output: Optional[list] = None
-    coref_output: Optional[list] = None
     translation_output: Optional[str] = None
     ner_score: Optional[float] = None
     summary_score: Optional[float] = None
     nli_score: Optional[float] = None
-    coref_score: Optional[float] = None
     translation_score: Optional[float] = None
     overall_score: Optional[float] = None
     judge_summary_rubric: Optional[dict] = None
-    judge_coref_rubric: Optional[dict] = None
     judge_translation_rubric: Optional[dict] = None
     status: str
     error_message: Optional[str] = None
@@ -105,7 +100,7 @@ class ModelOutputOut(BaseModel):
 
 class ManualScoreRequest(BaseModel):
     article_id: str
-    task: str  # ner | summary | nli | coref | translation
+    task: str  # ner | summary | nli | translation
     model_output: str  # raw string or JSON string
 
 

@@ -24,8 +24,6 @@ export interface DatasetItem {
   summary_reference: string | null;
   nli_input: string | null;
   nli_claims: NliClaim[] | null;
-  coref_input: string | null;
-  coref_reference: CorefSpan[] | null;
   translation_input: string | null;
   translation_reference: string | null;
   generated_at: string | null;
@@ -43,12 +41,6 @@ export interface NerReference {
 export interface NliClaim {
   claim: string;
   label: 'SUPPORTED' | 'REFUTED' | 'NOT_ENOUGH_INFO';
-}
-
-export interface CorefSpan {
-  span: string;
-  referent: string;
-  paragraph: number;
 }
 
 export interface DatasetStats {
@@ -76,16 +68,13 @@ export interface ModelOutput {
   ner_output: NerReference | null;
   summary_output: string | null;
   nli_output: NliClaim[] | null;
-  coref_output: CorefSpan[] | null;
   translation_output: string | null;
   ner_score: number | null;
   summary_score: number | null;
   nli_score: number | null;
-  coref_score: number | null;
   translation_score: number | null;
   overall_score: number | null;
   judge_summary_rubric: any | null;
-  judge_coref_rubric: any | null;
   judge_translation_rubric: any | null;
   status: string;
   error_message: string | null;

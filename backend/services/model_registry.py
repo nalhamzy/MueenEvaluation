@@ -50,6 +50,11 @@ PROVIDERS = {
         "base_url": None,  # uses boto3 converse API
         "env_key": "AWS_ACCESS_KEY_ID",  # checks if AWS creds are configured
     },
+    "deepseek": {
+        "name": "DeepSeek",
+        "base_url": "https://api.deepseek.com/v1",
+        "env_key": "DEEPSEEK_API_KEY",
+    },
 }
 
 MODELS = [
@@ -198,9 +203,25 @@ MODELS = [
     # --- DeepSeek (via Dashscope) ---
     {
         "id": "deepseek-v3.2",
-        "display_name": "DeepSeek V3.2",
+        "display_name": "DeepSeek V3.2 (Dashscope)",
         "provider": "dashscope",
         "model_id": "deepseek-v3.2",
+        "category": "deepseek",
+    },
+
+    # --- DeepSeek (native API — requires DEEPSEEK_API_KEY) ---
+    {
+        "id": "deepseek-reasoner",
+        "display_name": "DeepSeek Reasoner",
+        "provider": "deepseek",
+        "model_id": "deepseek-reasoner",
+        "category": "deepseek",
+    },
+    {
+        "id": "deepseek-chat",
+        "display_name": "DeepSeek Chat",
+        "provider": "deepseek",
+        "model_id": "deepseek-chat",
         "category": "deepseek",
     },
 ]

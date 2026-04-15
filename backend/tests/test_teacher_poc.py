@@ -102,14 +102,11 @@ def test_generate_3_articles():
             assert "REFUTED" in labels
             print(f"    NLI: {len(item.nli_claims)} claims - {labels}")
 
-            # Verify Coreference
-            assert item.coref_reference is not None
-            assert isinstance(item.coref_reference, list)
-            for span_item in item.coref_reference:
-                assert "span" in span_item
-                assert "referent" in span_item
-                assert "paragraph" in span_item
-            print(f"    Coref: {len(item.coref_reference)} spans")
+            # Verify Translation
+            assert item.translation_reference is not None
+            assert isinstance(item.translation_reference, str)
+            assert len(item.translation_reference) > 0
+            print(f"    Translation: {len(item.translation_reference)} chars")
 
             # Verify article status
             assert article.status == ArticleStatus.READY

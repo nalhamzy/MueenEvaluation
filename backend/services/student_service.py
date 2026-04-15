@@ -8,7 +8,7 @@ from models import (
 from services.llm_client import call_llm, parse_json_response, unwrap_json_list
 from services.teacher_service import (
     NER_SYSTEM, NER_USER, SUMMARY_SYSTEM, SUMMARY_USER,
-    NLI_SYSTEM, NLI_USER, COREF_SYSTEM, COREF_USER,
+    NLI_SYSTEM, NLI_USER,
     TRANSLATION_SYSTEM,
 )
 from config import settings
@@ -90,19 +90,7 @@ def evaluate_single_item(
         except Exception:
             output.nli_output = []
 
-        # 4. Coreference Resolution
-        coref_raw = call_llm(
-            api_key=api_key, model=model, base_url=base_url,
-            system_prompt=COREF_SYSTEM,
-            user_prompt=COREF_USER.format(article_body=item.coref_input),
-            json_mode=True, db=db, task_type="student_coref",
-        )
-        try:
-            output.coref_output = unwrap_json_list(parse_json_response(coref_raw))
-        except Exception:
-            output.coref_output = []
-
-        # 5. Translation (Eng→Arabic)
+        # 4. Translation (Eng→Arabic)
         translation_system = (
             "You are an expert English-to-Arabic translator. Write only in formal "
             "Modern Standard Arabic (فصحى). No dialect. Output the translation only."
@@ -134,8 +122,18 @@ def evaluate_single_item(
         return output
 
 
-def run_evaluation_task(run_id: str, api_key: str | None = None, limit: int | None = None):
-    """Background task to run full evaluation for a run."""
+def run_evaluation_task(
+    run_id: str,
+    api_key: str | None = None,
+    limit: int | None = None,
+    article_ids: list[str] | None = None,
+):
+    """Background task to run full evaluation for a run.
+
+    If article_ids is provided, only those specific articles are evaluated.
+    Otherwise, all dataset items with generated_at NOT NULL are evaluated
+    (optionally limited by `limit`).
+    """
     from database import SessionLocal
     db = SessionLocal()
     try:
@@ -149,6 +147,8 @@ def run_evaluation_task(run_id: str, api_key: str | None = None, limit: int | No
 
         api_key = api_key or settings.get_student_api_key()
         query = db.query(DatasetItem).filter(DatasetItem.generated_at.isnot(None))
+        if article_ids:
+            query = query.filter(DatasetItem.article_id.in_(article_ids))
         if limit:
             query = query.limit(limit)
         items = query.all()

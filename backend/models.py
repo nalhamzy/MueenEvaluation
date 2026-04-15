@@ -68,9 +68,6 @@ class DatasetItem(Base):
     nli_input: Mapped[str | None] = mapped_column(Text, nullable=True)
     nli_claims: Mapped[list | None] = mapped_column(JSON, nullable=True)
 
-    coref_input: Mapped[str | None] = mapped_column(Text, nullable=True)
-    coref_reference: Mapped[list | None] = mapped_column(JSON, nullable=True)
-
     translation_input: Mapped[str | None] = mapped_column(Text, nullable=True)
     translation_reference: Mapped[str | None] = mapped_column(Text, nullable=True)
 
@@ -107,18 +104,15 @@ class ModelOutput(Base):
     ner_output: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     summary_output: Mapped[str | None] = mapped_column(Text, nullable=True)
     nli_output: Mapped[list | None] = mapped_column(JSON, nullable=True)
-    coref_output: Mapped[list | None] = mapped_column(JSON, nullable=True)
     translation_output: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     ner_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     summary_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     nli_score: Mapped[float | None] = mapped_column(Float, nullable=True)
-    coref_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     translation_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     overall_score: Mapped[float | None] = mapped_column(Float, nullable=True)
 
     judge_summary_rubric: Mapped[dict | None] = mapped_column(JSON, nullable=True)
-    judge_coref_rubric: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     judge_translation_rubric: Mapped[dict | None] = mapped_column(JSON, nullable=True)
 
     status: Mapped[OutputStatus] = mapped_column(

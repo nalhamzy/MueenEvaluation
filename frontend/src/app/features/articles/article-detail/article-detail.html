@@ -54,29 +54,6 @@
                   }
                 </div>
               </mat-tab>
-              <mat-tab label="Coreference">
-                <div class="tab-content">
-                  <h4>Entity Coreference Spans</h4>
-                  @if (ds.coref_reference) {
-                    <table class="coref-table">
-                      <thead>
-                        <tr><th>Span</th><th>Referent</th><th>Paragraph</th></tr>
-                      </thead>
-                      <tbody>
-                        @for (s of ds.coref_reference; track s.span) {
-                          <tr>
-                            <td dir="rtl" class="arabic-text">{{ s.span }}</td>
-                            <td>{{ s.referent }}</td>
-                            <td>{{ s.paragraph }}</td>
-                          </tr>
-                        }
-                      </tbody>
-                    </table>
-                  } @else {
-                    <p class="muted">(none)</p>
-                  }
-                </div>
-              </mat-tab>
               <mat-tab label="Translation">
                 <div class="tab-content">
                   <h4>English Source</h4>

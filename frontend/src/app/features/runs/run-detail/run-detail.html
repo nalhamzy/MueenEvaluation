@@ -69,12 +69,6 @@
         </mat-card>
         <mat-card class="score-card">
           <mat-card-content>
-            <div class="score-value">{{ s.coref !== null ? s.coref : '—' }}</div>
-            <div class="score-label">Coref</div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="score-card">
-          <mat-card-content>
             <div class="score-value">{{ s.translation !== null ? s.translation : '—' }}</div>
             <div class="score-label">Translation</div>
           </mat-card-content>
@@ -139,11 +133,6 @@
             <td mat-cell *matCellDef="let row">{{ formatScore(row.summary_score) }}</td>
           </ng-container>
 
-          <ng-container matColumnDef="coref_score">
-            <th mat-header-cell *matHeaderCellDef>Coref</th>
-            <td mat-cell *matCellDef="let row">{{ formatScore(row.coref_score) }}</td>
-          </ng-container>
-
           <ng-container matColumnDef="translation_score">
             <th mat-header-cell *matHeaderCellDef>Translation</th>
             <td mat-cell *matCellDef="let row">{{ formatScore(row.translation_score) }}</td>
@@ -203,25 +192,6 @@
                           <span dir="rtl" class="arabic-text">{{ claim.claim }}</span>
                         </div>
                       }
-                    } @else {
-                      <span class="muted">—</span>
-                    }
-                  </div>
-                  <div class="output-section">
-                    <h4>Coref Output</h4>
-                    @if (exp.coref_output && exp.coref_output.length > 0) {
-                      <table class="coref-mini-table">
-                        <thead><tr><th>Span</th><th>Referent</th><th>Para</th></tr></thead>
-                        <tbody>
-                          @for (s of exp.coref_output; track s.span) {
-                            <tr>
-                              <td dir="rtl" class="arabic-text">{{ s.span }}</td>
-                              <td>{{ s.referent }}</td>
-                              <td>{{ s.paragraph }}</td>
-                            </tr>
-                          }
-                        </tbody>
-                      </table>
                     } @else {
                       <span class="muted">—</span>
                     }

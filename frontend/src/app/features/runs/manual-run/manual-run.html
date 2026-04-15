@@ -1,0 +1,169 @@
+<div class="manual-run-page">
+  <div class="page-header">
+    <div>
+      <h1>Manual Evaluation</h1>
+      <p class="subtitle">
+        Test any browser-based LLM (Cursor, ChatGPT, Claude.ai, …) by copying a task brief,
+        running it through your assistant, and uploading the JSON results.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 1: pick articles -->
+  <mat-card class="step-card">
+    <mat-card-header>
+      <mat-card-title>1. Pick articles to evaluate</mat-card-title>
+      <mat-card-subtitle>
+        {{ selectedIds().size }} selected of {{ datasetItems().length }} available
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      @if (loading()) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      } @else if (datasetItems().length === 0) {
+        <p class="muted">
+          No dataset items available. Generate dataset items first from the
+          <a routerLink="/dataset">Dataset</a> page.
+        </p>
+      } @else {
+        <div class="quick-actions">
+          <button mat-button (click)="selectFirstN(3)">Select 3</button>
+          <button mat-button (click)="selectFirstN(10)">Select 10</button>
+          <button mat-button (click)="selectFirstN(20)">Select 20</button>
+          <button mat-button (click)="selectAll()">Select all</button>
+          <button mat-button (click)="clearSelection()">Clear</button>
+        </div>
+
+        <div class="article-chips">
+          @for (item of datasetItems(); track item.article_id) {
+            <mat-chip
+              [class.chip-selected]="selectedIds().has(item.article_id)"
+              (click)="toggleArticle(item.article_id)">
+              {{ item.article_id }}
+            </mat-chip>
+          }
+        </div>
+      }
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary"
+              [disabled]="busy() || selectedIds().size === 0"
+              (click)="generateBrief()">
+        <mat-icon>description</mat-icon>
+        Generate Brief
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Step 2: brief -->
+  @if (briefText()) {
+    <mat-card class="step-card">
+      <mat-card-header>
+        <mat-card-title>2. Copy the brief into your browser assistant</mat-card-title>
+        <mat-card-subtitle>
+          Paste this whole text as a single prompt. The assistant will return a JSON object you'll upload below.
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="brief-actions">
+          <button mat-stroked-button (click)="copyBrief()">
+            <mat-icon>content_copy</mat-icon>
+            Copy to clipboard
+          </button>
+          <button mat-stroked-button (click)="downloadBrief()">
+            <mat-icon>download</mat-icon>
+            Download .md
+          </button>
+        </div>
+        <mat-expansion-panel class="brief-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Preview brief ({{ briefText().length }} chars)</mat-panel-title>
+          </mat-expansion-panel-header>
+          <pre class="brief-preview">{{ briefText() }}</pre>
+        </mat-expansion-panel>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- Step 3: upload outputs -->
+  @if (briefText()) {
+    <mat-card class="step-card">
+      <mat-card-header>
+        <mat-card-title>3. Upload the assistant's JSON output</mat-card-title>
+        <mat-card-subtitle>
+          The assistant should return a single JSON object with a "model_name" and "outputs" array.
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Model name (label only)</mat-label>
+          <input matInput [(ngModel)]="modelName" placeholder="e.g. claude-opus-via-cursor">
+        </mat-form-field>
+
+        <div class="upload-row">
+          <input type="file" #fileInput hidden accept=".json,.txt" (change)="onFileUpload($event)" />
+          <button mat-stroked-button (click)="fileInput.click()">
+            <mat-icon>upload_file</mat-icon>
+            Upload JSON file
+          </button>
+          <span class="or">or</span>
+          <span class="muted">paste below</span>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Paste JSON output</mat-label>
+          <textarea matInput rows="8" #pasteArea
+                    placeholder='{"model_name": "...", "outputs": [...]}'
+                    (input)="pasteJson(pasteArea.value)"></textarea>
+        </mat-form-field>
+
+        @if (uploadError()) {
+          <p class="error-text">{{ uploadError() }}</p>
+        }
+        @if (uploadedJson) {
+          <p class="ok-text">
+            <mat-icon>check_circle</mat-icon>
+            Loaded {{ uploadedJson.outputs.length }} outputs
+            @if (uploadedJson.model_name) { (model: {{ uploadedJson.model_name }}) }
+          </p>
+        }
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary"
+                [disabled]="busy() || !uploadedJson || !modelName.trim()"
+                (click)="submitOutputs()">
+          <mat-icon>play_arrow</mat-icon>
+          Score Outputs
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+
+  <!-- Step 4: result -->
+  @if (resultRunId()) {
+    <mat-card class="step-card result-card">
+      <mat-card-header>
+        <mat-card-title>4. Results</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          <strong>{{ resultScored() }}</strong> outputs scored.
+          @if (resultMissing().length > 0) {
+            <br><span class="warn-text">{{ resultMissing().length }} article(s) not found:
+              {{ resultMissing().join(', ') }}</span>
+          }
+          @if (resultErrors().length > 0) {
+            <br><span class="error-text">{{ resultErrors().length }} error(s):
+              {{ resultErrors().join('; ') }}</span>
+          }
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goToRun()">
+          <mat-icon>open_in_new</mat-icon>
+          View Run Detail
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>

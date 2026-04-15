@@ -27,6 +27,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/runs/run-list/run-list').then(m => m.RunList),
   },
   {
+    path: 'runs/manual',
+    loadComponent: () => import('./features/runs/manual-run/manual-run').then(m => m.ManualRun),
+  },
+  {
     path: 'runs/:id',
     loadComponent: () => import('./features/runs/run-detail/run-detail').then(m => m.RunDetail),
   },

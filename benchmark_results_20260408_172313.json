@@ -1,0 +1,48 @@
+{
+  "started_at": "2026-04-08T17:23:13.560795",
+  "duration_seconds": 1900.411408,
+  "per_category": 2,
+  "seed": 42,
+  "students": [
+    "mistral-large-bedrock",
+    "deepseek-chat",
+    "qwen3.5-397b-a17b"
+  ],
+  "teacher_batch": true,
+  "judge_batch": false,
+  "results": [
+    {
+      "model": "mistral-large-bedrock",
+      "scored": 10,
+      "ner": 6.1,
+      "nli": 9.36,
+      "summary": 8.75,
+      "coref": 0.39,
+      "translation": 4.42,
+      "overall": 6.09,
+      "run_id": "35a3cc85-1cbb-4710-90f2-0653a3e9f0b9"
+    },
+    {
+      "model": "deepseek-chat",
+      "scored": 10,
+      "ner": 7.43,
+      "nli": 9.79,
+      "summary": 8.67,
+      "coref": 0.3,
+      "translation": 9.17,
+      "overall": 7.43,
+      "run_id": "f3346954-d3f9-421e-a60f-b8db57d70d67"
+    },
+    {
+      "model": "qwen3.5-397b-a17b",
+      "scored": 10,
+      "ner": 7.54,
+      "nli": 10.0,
+      "summary": 9.38,
+      "coref": 0.57,
+      "translation": 10.0,
+      "overall": 7.85,
+      "run_id": "dc17dbb0-9ac4-47d4-b7a1-c0396e3a83a6"
+    }
+  ]
+}

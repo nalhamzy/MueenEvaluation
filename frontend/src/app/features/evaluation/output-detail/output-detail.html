@@ -40,12 +40,6 @@
       </mat-card>
       <mat-card class="score-card">
         <mat-card-content>
-          <div class="score-value">{{ formatScore(o.coref_score) }}</div>
-          <div class="score-label">Coref</div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="score-card">
-        <mat-card-content>
           <div class="score-value">{{ formatScore(o.translation_score) }}</div>
           <div class="score-label">Translation</div>
         </mat-card-content>
@@ -154,57 +148,6 @@
               </mat-card-content>
             </mat-card>
           }
-        </div>
-      </mat-tab>
-
-      <!-- Coref tab -->
-      <mat-tab label="Coreference">
-        <div class="tab-content">
-          <h3>Coreference Resolution</h3>
-          <div class="side-by-side">
-            <mat-card class="panel">
-              <mat-card-content>
-                <h4>Reference Spans</h4>
-                <table mat-table [dataSource]="refCoref()" class="full-width">
-                  <ng-container matColumnDef="span">
-                    <th mat-header-cell *matHeaderCellDef>Span</th>
-                    <td mat-cell *matCellDef="let row" dir="rtl" class="arabic-text">{{ row.span }}</td>
-                  </ng-container>
-                  <ng-container matColumnDef="referent">
-                    <th mat-header-cell *matHeaderCellDef>Referent</th>
-                    <td mat-cell *matCellDef="let row" dir="rtl" class="arabic-text">{{ row.referent }}</td>
-                  </ng-container>
-                  <ng-container matColumnDef="paragraph">
-                    <th mat-header-cell *matHeaderCellDef>Para</th>
-                    <td mat-cell *matCellDef="let row">{{ row.paragraph }}</td>
-                  </ng-container>
-                  <tr mat-header-row *matHeaderRowDef="['span', 'referent', 'paragraph']"></tr>
-                  <tr mat-row *matRowDef="let row; columns: ['span', 'referent', 'paragraph'];"></tr>
-                </table>
-              </mat-card-content>
-            </mat-card>
-            <mat-card class="panel">
-              <mat-card-content>
-                <h4>Model Spans</h4>
-                <table mat-table [dataSource]="predCoref()" class="full-width">
-                  <ng-container matColumnDef="span">
-                    <th mat-header-cell *matHeaderCellDef>Span</th>
-                    <td mat-cell *matCellDef="let row" dir="rtl" class="arabic-text">{{ row.span }}</td>
-                  </ng-container>
-                  <ng-container matColumnDef="referent">
-                    <th mat-header-cell *matHeaderCellDef>Referent</th>
-                    <td mat-cell *matCellDef="let row" dir="rtl" class="arabic-text">{{ row.referent }}</td>
-                  </ng-container>
-                  <ng-container matColumnDef="paragraph">
-                    <th mat-header-cell *matHeaderCellDef>Para</th>
-                    <td mat-cell *matCellDef="let row">{{ row.paragraph }}</td>
-                  </ng-container>
-                  <tr mat-header-row *matHeaderRowDef="['span', 'referent', 'paragraph']"></tr>
-                  <tr mat-row *matRowDef="let row; columns: ['span', 'referent', 'paragraph'];"></tr>
-                </table>
-              </mat-card-content>
-            </mat-card>
-          </div>
         </div>
       </mat-tab>
 

@@ -102,15 +102,6 @@
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="has_coref">
-          <th mat-header-cell *matHeaderCellDef>Coref</th>
-          <td mat-cell *matCellDef="let row">
-            <mat-icon [class]="row.coref_reference ? 'check-icon' : 'miss-icon'">
-              {{ row.coref_reference ? 'check_circle' : 'cancel' }}
-            </mat-icon>
-          </td>
-        </ng-container>
-
         <ng-container matColumnDef="has_translation">
           <th mat-header-cell *matHeaderCellDef>Translation</th>
           <td mat-cell *matCellDef="let row">
@@ -174,30 +165,6 @@
                     <span dir="rtl" class="arabic-text">{{ claim.claim }}</span>
                   </div>
                 }
-              }
-            </mat-expansion-panel>
-
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>Coreference Resolution — Entity Spans</mat-panel-title>
-              </mat-expansion-panel-header>
-              @if (item.coref_reference) {
-                <table class="coref-table">
-                  <thead>
-                    <tr><th>Span</th><th>Referent</th><th>Paragraph</th></tr>
-                  </thead>
-                  <tbody>
-                    @for (s of item.coref_reference; track s.span) {
-                      <tr>
-                        <td dir="rtl" class="arabic-text">{{ s.span }}</td>
-                        <td>{{ s.referent }}</td>
-                        <td>{{ s.paragraph }}</td>
-                      </tr>
-                    }
-                  </tbody>
-                </table>
-              } @else {
-                <p class="muted">(none)</p>
               }
             </mat-expansion-panel>
 

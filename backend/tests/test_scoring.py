@@ -1,4 +1,4 @@
-"""Tests for deterministic scoring (NER, NLI, Coref)."""
+"""Tests for deterministic scoring (NER, NLI) and rubric-based (Summary, Translation)."""
 
 import sys
 import os
@@ -9,8 +9,6 @@ from services.scoring_service import (
     compute_ner_score,
     compute_nli_score,
     compute_summary_score_from_rubric,
-    compute_coref_score_from_rubric,
-    compute_coref_score,
     compute_overall_score,
 )
 
@@ -210,79 +208,14 @@ def test_summary_with_verbatim_penalty():
     assert score == 9.0
 
 
-# --- Coreference rubric scoring ---
-
-def test_coref_rubric_score():
-    rubric = {
-        "factual_accuracy": 3,
-        "terminology_handling": 3,
-        "coverage": 2,
-        "no_added_inference": 2,
-    }
-    score = compute_coref_score_from_rubric(rubric)
-    assert score == 10.0
-
-
-# --- Coreference deterministic scoring ---
-
-def test_coref_perfect_score():
-    """Test compute_coref_score with matching predicted and reference spans."""
-    reference = [
-        {"span": "test entity", "referent": "test entity ref", "paragraph": 1},
-        {"span": "another entity", "referent": "another entity ref", "paragraph": 2},
-    ]
-    predicted = [
-        {"span": "test entity", "referent": "test entity ref", "paragraph": 1},
-        {"span": "another entity", "referent": "another entity ref", "paragraph": 2},
-    ]
-    result = compute_coref_score(predicted, reference)
-    assert result["score"] == 10.0
-
-
-def test_coref_partial_match():
-    """Test compute_coref_score with some spans matching and some not."""
-    reference = [
-        {"span": "entity A", "referent": "entity A ref", "paragraph": 1},
-        {"span": "entity B", "referent": "entity B ref", "paragraph": 2},
-        {"span": "entity C", "referent": "entity C ref", "paragraph": 3},
-    ]
-    predicted = [
-        {"span": "entity A", "referent": "entity A ref", "paragraph": 1},
-        {"span": "entity B", "referent": "wrong ref", "paragraph": 2},
-        {"span": "entity C", "referent": "entity C ref", "paragraph": 3},
-    ]
-    result = compute_coref_score(predicted, reference)
-    # 2 out of 3 matched; score should be between 0 and 10
-    assert 0 < result["score"] < 10
-
-
-def test_coref_hallucination_penalty():
-    """Test compute_coref_score with extra predicted spans (hallucinations)."""
-    reference = [
-        {"span": "entity A", "referent": "entity A ref", "paragraph": 1},
-    ]
-    predicted = [
-        {"span": "entity A", "referent": "entity A ref", "paragraph": 1},
-        {"span": "hallucinated span", "referent": "fake ref", "paragraph": 2},
-        {"span": "another hallucination", "referent": "another fake", "paragraph": 3},
-    ]
-    result = compute_coref_score(predicted, reference)
-    # Perfect recall but extra predictions should incur penalty
-    assert result["score"] < 10.0
-
-
 # --- Overall score ---
 
 def test_overall_score_weights():
-    # Weights: ner=0.25 + nli=0.20 + summary=0.20 + coref=0.15 + translation=0.20 = 1.0
-    overall = compute_overall_score(ner=10, nli=10, summary=10, coref=10, translation=10)
-    assert overall == 10.0
+    # Weights: ner=0.30 + nli=0.20 + summary=0.25 + translation=0.25 = 1.0
+    assert compute_overall_score(10, 10, 10, 10) == 10.0
+    assert compute_overall_score(0, 0, 0, 0) == 0.0
 
-    overall = compute_overall_score(ner=0, nli=0, summary=0, coref=0, translation=0)
-    assert overall == 0.0
-
-    assert compute_overall_score(ner=10, nli=0, summary=0, coref=0, translation=0) == 2.5   # 10 * 0.25
-    assert compute_overall_score(ner=0, nli=10, summary=0, coref=0, translation=0) == 2.0   # 10 * 0.20
-    assert compute_overall_score(ner=0, nli=0, summary=10, coref=0, translation=0) == 2.0   # 10 * 0.20
-    assert compute_overall_score(ner=0, nli=0, summary=0, coref=10, translation=0) == 1.5   # 10 * 0.15
-    assert compute_overall_score(ner=0, nli=0, summary=0, coref=0, translation=10) == 2.0   # 10 * 0.20
+    assert compute_overall_score(10, 0, 0, 0) == 3.0   # ner = 0.30
+    assert compute_overall_score(0, 10, 0, 0) == 2.0   # nli = 0.20
+    assert compute_overall_score(0, 0, 10, 0) == 2.5   # summary = 0.25
+    assert compute_overall_score(0, 0, 0, 10) == 2.5   # translation = 0.25

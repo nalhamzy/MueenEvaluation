@@ -40,6 +40,7 @@ class Settings(BaseSettings):
     TOGETHER_API_KEY: str = ""
     GROQ_API_KEY: str = ""
     FIREWORKS_API_KEY: str = ""
+    DEEPSEEK_API_KEY: str = ""
 
     model_config = {
         "env_file": os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"),

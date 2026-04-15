@@ -59,12 +59,13 @@ def _call_bedrock(
     """Call AWS Bedrock via converse API. Returns (content, usage_dict)."""
     import boto3
     import os
+    from config import settings
 
     client = boto3.client(
         "bedrock-runtime",
-        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID", ""),
-        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY", ""),
-        region_name=os.environ.get("AWS_REGION", "us-east-1"),
+        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID") or settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY") or settings.AWS_SECRET_ACCESS_KEY,
+        region_name=os.environ.get("AWS_REGION") or settings.AWS_REGION,
     )
 
     messages = [{"role": "user", "content": [{"text": user_prompt}]}]

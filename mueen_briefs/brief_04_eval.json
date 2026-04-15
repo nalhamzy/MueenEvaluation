@@ -1,0 +1,490 @@
+{
+  "model_name": "Mueen AI",
+  "outputs": [
+    {
+      "article_id": "FINANCE_016",
+      "ner_output": {
+        "PERSON": [],
+        "LOCATION": [
+          "السعودية",
+          "قطر",
+          "دبي",
+          "أبوظبي",
+          "الكويت",
+          "مسقط",
+          "البحرين"
+        ],
+        "ORGANIZATION": [
+          "هيئة الأوراق المالية السعودية"
+        ],
+        "MISC": []
+      },
+      "summary_output": "شهدت أسواق الأسهم الخليجية تراجعات حادة بسبب الأوضاع السياسية غير المستقرة، مع تصدر السوق السعودي التراجعات بفقدانه 15% من قيمته. شهدت باقي أسواق المنطقة تراجعات متفاوتة، مع انتشار عمليات البيع العشوائية.",
+      "nli_output": [
+        {
+          "claim": "كان السوق السعودي الأكثر تضرراً بين أسواق الأسهم الخليجية حيث خسر نحو خمسة عشر بالمئة من قيمته",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "انخفض مؤشر بورصة قطر بنسبة تقارب تسعة بالمئة ليصل إلى ما يقرب من 7,489 نقطة",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "هبط مؤشر سوق دبي المالي بنسبة تجاوزت ستة بالمئة ليصل إلى نحو 1,352 نقطة",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "أعلنت هيئة الأوراق المالية السعودية عن تعليق التداول مؤقتاً بسبب حدة التراجعات",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "استمرت أسواق الأسهم الخليجية في التأثر بالأوضاع السياسية غير المستقرة التي تشهدها دول عربية وخليجية، وشهدت موجة تراجع جماعية حادة، كان أبرز ضحاياها السوق السعودي الذي فقد 15% من قيمته لتصل إلى 5,323.27 نقطة. انتشرت بعد ذلك عمليات البيع العشوائية في جميع أسواق المنطقة دون استثناء، حيث تراجع مؤشر بورصة قطر بنسبة 8.8% ليصل إلى 7,489 نقطة، وانخفض مؤشر سوق دبي المالي بنسبة 6.81% ليصل إلى 1,352 نقطة، بينما تراجع مؤشر سوق أبوظبي للأوراق المالية بنسبة 3.20% ليصل إلى 2,529 نقطة. كما سجل المؤشر السعري لسوق الكويت للأوراق المالية تراجعاً بنسبة 5.14% ليصل إلى 6,147 نقطة، وانخفض مؤشر سوق مسقط بنسبة 4.4% ليصل إلى 6,352 نقطة، وانخفض مؤشر سوق البحرين للأوراق المالية بنسبة 3.86% ليصل إلى 1,377 نقطة."
+    },
+    {
+      "article_id": "FINANCE_076",
+      "ner_output": {
+        "PERSON": [],
+        "LOCATION": [
+          "الإمارات",
+          "دبي",
+          "أبوظبي"
+        ],
+        "ORGANIZATION": [
+          "هيئة الأوراق المالية"
+        ],
+        "MISC": []
+      },
+      "summary_output": "حافظت الأسواق المالية على تقلباتها الهادئة، مع تراجع مؤشر دبي بنسبة 0.23% وانخفاض مؤشر أبوظبي بنسبة 0.17%. تراجعت أسهم إعمار وأرابتك ودبي المالي، بينما ارتفعت أسهم الدار وصروح. تستمر الأسواق في التحرك تحت تأثير الترقب بشأن السيولة المحلية والتطورات الاقتصادية.",
+      "nli_output": [
+        {
+          "claim": "تراجع مؤشر سوق دبي بنسبة 0.23% ليصل إلى 1659.39 نقطة مع تداولات بلغت 165.7 مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "ارتفع سهم الدار بنسبة 0.86% ليصل إلى 2.35 درهم بينما صعد سهم صروح بنسبة 0.61% ليبلغ 1.66 درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "انخفض سهم إعمار بنسبة 0.49% ليصل إلى 3.55 درهم في جلسة التداول",
+          "label": "REFUTED"
+        },
+        {
+          "claim": "أعلنت هيئة الأوراق المالية عن إجراءات جديدة لتعزيز السيولة في الأسواق المحلية خلال الفترة المقبلة",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "حافظت أسواق الأسهم المحلية على تحركاتها الهادئة، أمس، ليغلق مؤشر سوق الإمارات منخفضاً 0.09% إلى 2687.41 نقطة بخسائر 353.29 مليون درهم أوصلت القيمة السوقية إلى 390.09 مليار درهم بتداولات 276.59 مليون درهم، وذلك نتيجة لانخفاض مؤشر سوق دبي 0.23% إلى 1659.39 نقطة بتداولات 165.7 مليون درهم، ومؤشر سوق أبوظبي 0.17% إلى 2748.19 نقطة بتداولات 110.8 مليون درهم. انخفض سهم إعمار بنسبة 84% إلى 55.3 درهم، وأرابتك بنسبة 49% إلى 2.03 درهم، ودبي المالي بنسبة 65% إلى 12.52 درهم، بينما ارتفع سهم الدار بنسبة 86% إلى 35.2 درهم، وصروح بنسبة 61% إلى 16.61 درهم. وتستمر الأسواق بالتحرك على أرضية الترقب المستمر لجملة من المتغيرات الأساسية المؤثرة في التداولات في مقدمها مستويات السيولة المحلية والتطورات على صعيد حجم المخصصات المطلوبة من البنوك والتي تحدد مدى قدرتها على الاقراض، حيث لا تزال الشركات المساهمة ومجمل الوضع الاقتصادي يعاني من أزمة التمويل. وتتطلب إمكانية دخول الأسواق في مرحلة المتتابع مدى قناعة المستثمرين بتراجع نسب المخاطرة ما يجعلهم يتمسكون بأسهمهم لفترات أطول فتقل العروض وتصبح الطلبات قادرة على دفع الأسعار نحو مزيد من الانتعاش، وذلك في حال تحسنت صورة الوضع الاقتصادي العام وسادت حالة من التفاؤل لدى المستثمرين حول نتائج الشركات وأحجام التداول خلال الفترات المقبلة. وتسهم قدرة الأسواق على استقطاب السيولة من الداخل والخارج في تحسين فرص تعزيز المكاسب المتراكمة للأسهم بعد أن اجتازت مرحلة انحسار التداولات وباتت الطلبات قادرة على استيعاب العروض لتحد من احتمالات الهبوط السريع وتبقي انخفاض الأسعار عند حدوثه في نطاق طبيعي مقبول. وتزداد صعوبة اتخاذ القرار الاستثماري السليم في ظل التقلبات السعرية المستمرة التي ترفع من درجة المخاطرة لكنها تؤمن في الوقت ذاته إمكانية تحقيق عائد استثماري مجزٍ في حال تم التحرك مع الأسعار في جولات الصعود بكفاءة، الأمر الذي يجعل نسبة مهمة من المستثمرين تقبل المخاطرة للحصول على العائد لكن جزءاً أساسياً منهم قد يتكبدون في المحصلة خسائر سريعة."
+    },
+    {
+      "article_id": "FINANCE_055",
+      "ner_output": {
+        "PERSON": [
+          "هيتس تليكوم",
+          "مصرف السلام - السودان",
+          "السلام القابضة",
+          "داماك العقارية دبي",
+          "دريك آند سكل إنترناشيونال",
+          "دار التكافل",
+          "بنك المشرق",
+          "الإمارات دبى الوطني",
+          "أميرك للتمويل",
+          "بيت التمويل الخليجي",
+          "إعمار العقارية"
+        ],
+        "LOCATION": [
+          "دبي"
+        ],
+        "ORGANIZATION": [
+          "سوق دبي المالي",
+          "هيتس تليكوم",
+          "مصرف السلام - السودان",
+          "السلام القابضة",
+          "داماك العقارية دبي",
+          "دريك آند سكل إنترناشيونال",
+          "دار التكافل",
+          "بنك المشرق",
+          "الإمارات دبى الوطني",
+          "أميرك للتمويل",
+          "بيت التمويل الخليجي",
+          "إعمار العقارية"
+        ],
+        "MISC": []
+      },
+      "summary_output": "شهد سوق دبي المالي تداولات بقيمة 631.470 مليون درهم، وأغلق المؤشر على مستوى 4,055,820 نقطة متراجعاً بمقدار 13,100 نقطة. تصدرت أملاك للتمويل قائمة الشركات الأكثر نشاطاً من حيث قيمة التداول، بينما احتلت إعمار العقارية المرتبة الأولى من حيث حجم التداول.",
+      "nli_output": [
+        {
+          "claim": "أغلق مؤشر سوق دبي المالي على مستوى 4,055,820 نقطة متراجعاً بمقدار 13,100 نقطة مقارنة بالإغلاق السابق",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تصدرت أملاك للتمويل قائمة الشركات الأكثر نشاطاً من حيث قيمة التداول في سوق دبي المالي",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "احتلت إعمار العقارية المرتبة الأولى من حيث حجم التداول بعدد أسهم بلغ 169 مليون سهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "شهد سوق دبي المالي في ذلك اليوم تداولات من قبل مستثمرين أجانب تجاوزت نسبتهم 40% من إجمالي التداولات",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "شهد سوق دبي المالي تداولات بقيمة 631.470 مليون درهم بتنفيذ 6,281 صفقة توزعت على 440.220 مليون سهم. وأغلق المؤشر على 4,055,820 نقطة بانخفاض قدره 13,100 نقطة عن إغلاقه السابق. من أكثر الشركات ارتفاعاً من حيث التغير في أسعارها: هيتس تليكوم بإغلاق 0.360 درهم بنسبة تغير بلغت 3.710%، مصرف السلام - السودان بإغلاق 1.800 درهم بنسبة 2.860%، السلام القابضة بإغلاق 0.6 درهم بنسبة 2.760%، داماك العقارية دبي بإغلاق 3.150 درهم بنسبة 1.61%. وكانت أكثر الشركات انخفاضاً في أسعارها: دريك آند سكل إنترناشيونال بإغلاق 0.840 درهم بنسبة 4.55%، دار التكافل بإغلاق 0.590 درهم بنسبة 2.8%، بنك المشرق بإغلاق 115 درهماً بنسبة تغير بلغت 2.5%، الإمارات دبى الوطني بإغلاق 9.6 درهم بنسبة تغير بلغت 2.040%. وفيما يتعلق بالشركات الأكثر نشاطاً من حيث قيمة التداول فقد حققت أملاك للتمويل تداولات بقيمة 189.578.855.630 درهم، ثم جاءت بيت التمويل الخليجي تداولات بقيمة 123.836.383.130 درهم، ثم جاءت إعمار العقارية تداولات بقيمة 50.590.603.580 درهم. أما بالنسبة للشركات الأكثر نشاطاً حسب حجم التداول فقد تم تداول: 169.319.995 سهماً من بيت التمويل الخليجي، 73.839.306 سهماً من أملاك، 44.876.662 سهماً من دريك آند سكل إنترناشيونال."
+    },
+    {
+      "article_id": "FINANCE_067",
+      "ner_output": {
+        "PERSON": [
+          "أجليتي",
+          "دار التكافل",
+          "الاتحاد العقارية",
+          "مصرف السلام - السودان",
+          "الشركة الوطنية للتأمينات العامة",
+          "مصرف عجمان",
+          "اكتتاب القابضة",
+          "بنك المشرق",
+          "شركة سوق دبي المالى",
+          "بيت التمويل الخليجي",
+          "الخليج للملاحة القابضة",
+          "دريك آند سكل انترناشيونال",
+          "بنك دبي الإسلامي"
+        ],
+        "LOCATION": [
+          "سوق دبي المالي",
+          "سوق أبوظبي للأوراق المالية"
+        ],
+        "ORGANIZATION": [
+          "شركة إعمار العقارية",
+          "شركة ديار للتطوير",
+          "الاتحاد العقارية",
+          "دريك آند سكل انترناشيونال",
+          "بنك دبي الإسلامي",
+          "بيت التمويل الخليجي",
+          "الخليج للملاحة القابضة",
+          "شركة سوق دبي المالى",
+          "مصرف السلام - السودان",
+          "الشركة الوطنية للتأمينات العامة",
+          "مصرف عجمان",
+          "اكتتاب القابضة",
+          "بنك المشرق",
+          "دار التكافل"
+        ],
+        "MISC": [
+          "النقطة",
+          "الدرهم",
+          "المليون",
+          "المليار",
+          "النسبة",
+          "السهم",
+          "الحجم",
+          "القيمة",
+          "الحجم التداول",
+          "القيمة التداول",
+          "القطاع",
+          "المؤشر"
+        ]
+      },
+      "summary_output": "شهد سوق دبي المالي تداولات بقيمة 1.240 مليار درهم، مع ارتفاع 23 شركة وهبوط 7 شركات. حققت شركة إعمار العقارية أعلى قيمة تداول في السوق، بينما كانت شركة ديار للتطوير الأنشط حجم التداول.",
+      "nli_output": [
+        {
+          "claim": "حققت شركة إعمار العقارية أعلى قيمة تداول في سوق دبي المالي بما يقارب 215.7 مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "ارتفعت أسعار أسهم ثلاث وعشرين شركة في سوق دبي المالي بينما تراجعت أسعار سبع شركات",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "جاءت شركة ديار للتطوير في المرتبة الأولى من حيث حجم التداول بأكثر من 200 مليون سهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "شهد سوق أبوظبي للأوراق المالية في نفس الجلسة ارتفاعاً مماثلاً لسوق دبي المالي",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "شهد سوق دبي المالي تداولات بقيمة 1.240 مليار درهم عبر 9150 صفقة توزعت على 933.150 مليون سهم، وأغلق المؤشر عند 3100.330 نقطة بارتفاع قدره 44.380 نقطة عن إغلاقه السابق، حيث ارتفعت أسهم 23 شركة وهبطت أسهم 7 شركات وثابتت أسعار شركة واحدة. حققت شركة إعمار العقارية أعلى قيمة تداول في السوق بقيمة تقارب 215.7 مليون درهم، بينما كانت شركة ديار للتطوير الأنشط حجم التداول بحجم تداول يقارب 196.3 مليون سهم."
+    },
+    {
+      "article_id": "FINANCE_007",
+      "ner_output": {
+        "PERSON": [
+          "موراي سمز",
+          "بيتر بالتوسن"
+        ],
+        "LOCATION": [],
+        "ORGANIZATION": [
+          "بنك دبي التجاري",
+          "مجموعة HSBC",
+          "ستاندرد تشارترد",
+          "بنك رأس الخيمة الوطني",
+          "بنك عمان الدولي",
+          "البنك السعودي الهولندي",
+          "Commercial Bank of Dubai",
+          "Saudi Hollandi Bank",
+          "National Bank of Ras Al Khaimah",
+          "Oman International Bank",
+          "Standard Chartered"
+        ],
+        "MISC": []
+      },
+      "summary_output": "أعلن بنك دبي التجاري عن تعيين موراي سمز مديراً عاماً جديداً للأعمال المصرفية للأفراد، حيث سيشرف على جميع أعمال وخدمات البنك في هذا المجال. كما أشاد الرئيس التنفيذي للبنك بخبرة سمز الطويلة ومؤهلاته المتميزة، واعتبرها إضافة مهمة لفريق العمل لتحقيق الأهداف الاستراتيجية للبنك.",
+      "nli_output": [
+        {
+          "claim": "تم تعيين موراي سمز في منصب المدير العام للخدمات المصرفية للأفراد في بنك دبي التجاري",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "يمتلك موراي سمز خبرة تمتد لنحو ثلاثين عاماً في مواقع قيادية بمؤسسات مصرفية دولية وإقليمية",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "عمل موراي سمز سابقاً في البنك السعودي البريطاني ضمن تجربته المصرفية في منطقة الشرق الأوسط",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "حصل موراي سمز على درجة الماجستير في إدارة الأعمال من إحدى الجامعات البريطانية",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "أعلن بنك دبي التجاري عن تعيين موراي سمز مديراً عاماً جديداً للأعمال المصرفية للأفراد، حيث سيشرف على جميع أعمال وخدمات البنك في هذا المجال. كما أشاد الرئيس التنفيذي للبنك بخبرة سمز الطويلة ومؤهلاته المتميزة، واعتبرها إضافة مهمة لفريق العمل لتحقيق الأهداف الاستراتيجية للبنك."
+    },
+    {
+      "article_id": "FINANCE_045",
+      "ner_output": {
+        "PERSON": [
+          "مهند داغر"
+        ],
+        "LOCATION": [
+          "أبوظبي",
+          "دبي",
+          "رأس الخيمة"
+        ],
+        "ORGANIZATION": [
+          "هيئة الأوراق المالية والسلع",
+          "أبوظبي الأول",
+          "الإمارات دبي الوطني",
+          "دبي الإسلامي",
+          "أرابتك",
+          "داماك",
+          "إعمار",
+          "الدار العقارية",
+          "دريك آند سيكل",
+          "الاتحاد العقارية",
+          "إشراق",
+          "dana gas",
+          "طاقة",
+          "اتصالات",
+          "العربية للطيران",
+          "aramex"
+        ],
+        "MISC": [
+          "الإفصاحات",
+          "الشائعات"
+        ]
+      },
+      "summary_output": "شهدت أسواق المال المحلية تبايناً في الأداء خلال جلسات يونيو/حزيران، مع ارتفاع مؤشر سوق دبي المالي بنسبة 0.38%، بينما هبط مؤشر سوق أبوظبي بنسبة 0.55%. كما شهدت التداولات تبايناً في الأداء بين الشركات، مع تصدر سهم أبوظبي الأول قائمة التداولات في سوق العاصمة.",
+      "nli_output": [
+        {
+          "claim": "ارتفع مؤشر سوق دبي المالي بنسبة 0.38% ليصل إلى 3392 نقطة محققاً مكاسب بلغت نحو 13 نقطة",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تصدر سهم أبوظبي الأول قائمة التداولات في سوق العاصمة بقيمة تجاوزت 36 مليون درهم وأغلق منخفضاً عند 10.5 درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تراجع سهم جي إف إتش بنسبة 8.5% ليغلق عند 1.81 درهم وكان الأكثر خسارة في سوق دبي",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "أعلنت هيئة الأوراق المالية والسلع عن فرض غرامات مالية على الشركات التي تتأخر في الإفصاح عن بياناتها المالية",
+          "label": "SUPPORTED"
+        }
+      ],
+      "translation_output": "Abu Dhabi: Mahmoud Dagher saw renewed volatility in the performance of local financial markets in the last sessions of June, amid weak performance due to liquidity shortages, following the Eid al-Fitr holiday, and in line with some traders entering the summer vacation season. Pressures increased yesterday on stocks that had captured a significant share of trading in previous sessions, such as GFH, the Real Estate Union, Ishraq, and Drik and Cycle, while the stock of Arabtec managed to rebound and lead the gains in Dubai's market. The total liquidity of the markets reached 336.24 million dirhams, of which 217 million dirhams were in Dubai, and 119.2 million dirhams in Abu Dhabi, and the number of shares traded was 241.6 million shares, of which 144.8 million shares were in Dubai, and 96.8 million shares in Abu Dhabi. Stocks of 58 companies were traded, with the prices of 23 companies rising, while the prices of 29 other companies fell, and this was through 3930 transactions. Dubai's financial market resumed an upward trend by 0.38% to a level of 3392 points, gaining 12.99 points, with renewed activity in the stocks of real estate, banking, and transportation companies. The real estate sector rose by 0.67%, supported by gains in Arabtec's stock by 4.36% and Damac's stock by 3.27%, while the stock of Emaar reduced the gains of the sector by a decline of 0.13%. The banking sector rose by 0.53% after the rise in the stock of the Dubai Islamic Bank by 2.26%, while the stock of Dubai Islamic Bank closed stable without change. The transportation sector rebounded by 1.26% supported by the stock of Arabian Airlines by 0.99% and Aramex by 1.57%. On the other hand, the investment sector declined by 0.6% with continued pressure on the stock of Dubai Financial Market by 2.63% and Shuaa Capital by 2.7%. In turn, the Abu Dhabi stock index fell by 0.55% to 4425.40 points, losing 24.28 points, under pressure on the banking, real estate, energy, and commodities sectors. The banking sector declined by 1.13% due to the decline in the stock of Abu Dhabi First by 1.41%, while the real estate sector declined by 0.73% with increased pressure on the stock of Ishraq by 8.51% despite the rise in the stock of Dar by 0.44%. The energy sector declined by 2.86%, affected by the decline in the stock of Dana Gas by 3.03% and Energy by 2%. In contrast, the telecommunications sector rose by 0.58% with the rise in the stock of Etisalat by the same percentage. Regarding the trading, the stock of GFH remained the leader in Dubai with a value of 44.7 million dirhams, falling by 9.5% to 1.81 dirhams, and came second the stock of Emaar with trading of 41.3 million dirhams, falling also by 0.13% to 7.78 dirhams, then the stock of Arabtec which witnessed trading reaching 32.6 million dirhams, rising by 4.36% to 2.87 dirhams. In the capital market, the stock of Abu Dhabi First topped the trading with 36.5 million dirhams, falling by 1.41% and closing at 10.5 dirhams, and came second the stock of Ishraq with trading of 18.72 million dirhams, falling by 8.51% to 0.86 dirhams, then the stock of Dana Gas which witnessed trading of 16.34 million dirhams, falling by 3.03% and closing at 0.64 dirhams. Regarding the stocks that rose the most in Dubai, the stock of Arabtec came first and rose by 4.36% to 2.87 dirhams, while the largest losers were the stock of GFH, which fell by 9.5% and closed at 1.81 dirhams. The stock of the first stock of Sharjah Cement recorded the largest rise in Abu Dhabi, rising by 6.47% to 2.47 dirhams, while the stock of Ishraq recorded the largest decline by 8.51% and closed at 0.86 dirhams. Regarding the trading according to nationalities, foreign and Arab investors turned to buying, with a net investment of 39.4 million dirhams, of which 30 million dirhams were net purchases by foreigners, and 9.35 million dirhams were net purchases by Arabs, while the Gulf investors and citizens turned to selling, with a net investment of 39.4 million dirhams, of which 9.3 million dirhams were net sales by Gulf investors, and 30 million dirhams were net sales by citizens. Foreign non-Arab investors focused their purchases on the stocks of Arabtec, Drik and Cycle, Dar Real Estate, and GFH Finance, while their sales focused on the stocks of Dana Gas, Investment Bank, Real Estate Union, and Real Estate Properties. In turn, investment portfolios turned to selling, with a net investment of 20 million dirhams, of which 10.7 million dirhams were net sales in Abu Dhabi, and 9.3 million dirhams were net sales in Dubai. In contrast, individual investors turned to selling, with a net investment of 20 million dirhams, of which 10.7 million dirhams were net sales in Abu Dhabi, and 9.3 million dirhams were net sales in Dubai. Disclosures eliminate rumors, the Securities and Commodities Authority said that immediate disclosure by companies (about key decisions and periodic financial data and final accounts) cuts the way for rumors, and provides transparency for financial markets, which are a matter of high sensitivity and accuracy."
+    },
+    {
+      "article_id": "FINANCE_001",
+      "ner_output": {
+        "PERSON": [],
+        "LOCATION": [
+          "دبي",
+          "الخليج"
+        ],
+        "ORGANIZATION": [
+          "سوق دبي المالي",
+          "شركة أمانات القابضة",
+          "مجموعة إعمار مولز",
+          "مصرف السلام - البحرين",
+          "الإمارات دبي الوطني",
+          "شركة داماك العقارية دبي",
+          "الشركة الوطنية للتأمينات العامة",
+          "الشركة الخليجية للاستثمارات العامة",
+          "شركة أرابتك القابضة",
+          "إعمار العقارية",
+          "بيت التمويل الخليجي"
+        ],
+        "MISC": []
+      },
+      "summary_output": "شهد سوق دبي المالي تداولات بقيمة 730 مليون درهم، وأغلق المؤشر على ارتفاع بـ48 نقطة. حققت إعمار العقارية أعلى قيمة تداول بين الشركات المدرجة في السوق.",
+      "nli_output": [
+        {
+          "claim": "أغلق مؤشر سوق دبي المالي على ارتفاع بلغ نحو 48 نقطة مقارنة بإغلاقه السابق",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "كانت شركة داماك العقارية دبي من أكثر الشركات تراجعاً في أسعارها خلال جلسة التداول",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "حققت إعمار العقارية أعلى قيمة تداول بين الشركات المدرجة في سوق دبي المالي خلال تلك الجلسة",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "شهد سوق دبي المالي دخول مستثمرين أجانب بنسبة تجاوزت ثلاثين بالمئة من إجمالي التداولات",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "Dubai Gulf: witnessed Dubai Financial Market trading worth 730 million dirhams with the execution of 685.6 deals distributed over 426.69 million shares. The index closed at 390.941.3 points with an increase of 030.48 points compared to its previous close. Among the companies with the highest price changes: Al Amanat Holding closed at 890.0 dirhams with a change of 330.5%, Emaar Malls closed at 990.2 dirhams with a change of 550.4%, Bank Al Salam - Bahrain closed at 370.1 dirhams with a change of 010.3%, and Dubai National closed at 200.9 dirhams with a change of 220.2%. The companies with the lowest prices were Dubai Real Estate, Al Nadeem Insurance Company closed at 310.3 dirhams with a change of 060.8%, and the Gulf Investment Company closed at 860.0 dirhams with a change of 040.3%. Regarding the most active companies in terms of trading value, Al Arabtak Holding achieved trading worth 840.934.606.209 dirhams, Emaar Real Estate achieved trading worth 180.925.772.114 dirhams, and Emaar Malls achieved trading worth 360.182.119.99 dirhams. As for the most active companies in terms of trading volume, 409.827.119 shares of the Gulf Finance were traded, and 603.031.65 shares of Al Arabtak Holding were traded. The banking sector index reached 720.686.2 points with the trading of 479.567.143 shares worth 170.638.943.104 dirhams, and the real estate and engineering construction sector index reached 711.497.8 points with the trading of 394.740.173 shares worth 080.005.545.493 dirhams."
+    },
+    {
+      "article_id": "FINANCE_097",
+      "ner_output": {
+        "PERSON": [
+          "نادر الحمادي"
+        ],
+        "LOCATION": [
+          "أبوظبي",
+          "فندق هيلتون الكورنيش أبوظبي"
+        ],
+        "ORGANIZATION": [
+          "شركة طيران أبوظبي",
+          "شركة رويال غيت",
+          "شركة ماكسيمس للطيران",
+          "سوق أبوظبي للأوراق المالية"
+        ],
+        "MISC": [
+          "الكورنيش"
+        ]
+      },
+      "summary_output": "أقرت الجمعية العمومية لشركة طيران أبوظبي توزيع أرباح نقدية بنسبة 12% على المساهمين لعام 2014، وتعمل الشركة على توسيع قدراتها التشغيلية لزيادة الطاقة الاستيعابية.",
+      "nli_output": [
+        {
+          "claim": "بلغ صافي أرباح مجموعة طيران أبوظبي نحو 244.7 مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "يضم أسطول شركة رويال غيت حالياً إحدى عشرة طائرة تجارية",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "قررت الجمعية العمومية لشركة طيران أبوظبي توزيع أرباح نقدية بنسبة عشرة بالمئة على المساهمين عن عام 2014",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تخطط شركة طيران أبوظبي لإدراج أسهمها في سوق أبوظبي للأوراق المالية خلال العام المقبل",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "أقرت الجمعية العمومية لشركة طيران أبوظبي توزيع أرباح نقدية بنسبة 12% على المساهمين لعام 2014. وصرح نادر الحمادي رئيس مجلس إدارة شركة طيران أبوظبي بأن مجموعة طيران أبوظبي، والتي تتكون من الشركة الأم وشركة رويال غيت وشركة ماكسيمس للطيران، حققت إيرادات تبلغ 1.6 مليار درهم وصافي أرباح بلغ 244.7 مليون درهم، وتشمل أسطول الطائرات مختلف أنواع الطائرات، بما في ذلك الطائرات العمودية والطائرات ذات الجناح الثابت والطائرات التجارية والطائرات الخاصة بالشحن الجوي. كما أشار الحمادي إلى أن شركة طيران أبوظبي أصبحت أكبر مشغل تجاري للطائرات العمودية في الشرق الأوسط، وتعمل حالياً على توسيع حظائر الطائرات لزيادة الطاقة الاستيعابية."
+    },
+    {
+      "article_id": "FINANCE_018",
+      "ner_output": {
+        "PERSON": [
+          "الشيخ فيصل بن خالد بن سلطان القاسمي",
+          "نادر توفيق القدومي"
+        ],
+        "LOCATION": [
+          "منطقة الخان",
+          "برج النهدة",
+          "الخان",
+          "المنطقة",
+          "الكويت",
+          "الإمارات"
+        ],
+        "ORGANIZATION": [
+          "شركة البحيرة الوطنية للتأمين",
+          "البحيرة الوطنية للتأمين",
+          "الشركة",
+          "سوق التأمين في الدولة"
+        ],
+        "MISC": [
+          "المبنى",
+          "البناء",
+          "العمليات الإنشائية",
+          "التأجير",
+          "الخطة الزمنية",
+          "النتائج الإيجابية",
+          "السياسات الاكتتابية",
+          "الظروف الاقتصادية"
+        ]
+      },
+      "summary_output": "أوصى مجلس إدارة شركة البحيرة الوطنية للتأمين بتوزيع أرباح نقدية على المساهمين بنسبة 30% بعد مناقشة أرقام الميزانية لعام 2009. كما تم الإعلان عن اكتمال بناء مبنى في منطقة الخان بتكلفة تزيد على 100 مليون درهم، بينما تسير أعمال بناء برج النهدة بتكلفة تصل إلى 450 مليون درهم وفقًا للجدول الزمني المحدد.",
+      "nli_output": [
+        {
+          "claim": "أوصى مجلس إدارة شركة البحيرة الوطنية للتأمين بتوزيع أرباح نقدية على المساهمين بنسبة ثلاثين بالمئة",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تبلغ التكلفة الإجمالية للأعمال الإنشائية في برج النهدة نحو أربعمئة وخمسين مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "المبنى الكائن في منطقة الخان تم تشييده بتكلفة إجمالية تتجاوز مئتي مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "حققت شركة البحيرة الوطنية للتأمين نمواً في عدد العملاء بنسبة عشرين بالمئة خلال عام 2009",
+          "label": "NOT_ENOUGH_INFO"
+        }
+      ],
+      "translation_output": "أوصى مجلس إدارة شركة البحيرة الوطنية للتأمين بتوزيع أرباح نقدية على المساهمين بنسبة 30% وذلك بعد مناقشة أرقام الميزانية لعام 2009 في جلسته المنعقدة بتاريخ 22/2/2010. وأشار الشيخ فيصل بن خالد بن سلطان القاسمي رئيس مجلس إدارة الشركة إلى أن السياسة الاكتتابية المتوازنة وما افرزته من نتائج ايجابية مكّنت الشركة من تحقيق هذه النتائج الجيدة على الرغم من الظروف الاقتصادية الحالية التي ألقت بظلالها على كافة الدول حول العالم. كما أعلن القاسمي عن انتهاء العمل بالمبنى الواقع في منطقة الخان بتكلفة اجمالية تزيد على 100 مليون درهم وتم تأجيره بالكامل في حين تسير الأعمال الانشائية في برج النهدة بتكلفة تصل الى 450 مليون درهم وذلك وفقاً للجدول الزمني المحدد، حيث من المتوقع أن يصبح جاهزاً للتأجير في الربع الأخير من عام 2010. وأكد نادر توفيق القدومي المدير العام أن الشركة مستمرة في القيام بدورها في سوق التأمين في الدولة وستبقى محافظة على أدائها المتميز في خدمة المجتمع الإماراتي بكافة أطيافه."
+    },
+    {
+      "article_id": "FINANCE_031",
+      "ner_output": {
+        "PERSON": [],
+        "LOCATION": [
+          "أبوظبي"
+        ],
+        "ORGANIZATION": [
+          "سوق أبوظبي للأوراق المالية",
+          "شركة صناعات أسمنت أم القيوين",
+          "شركة الهلال الأخضر للتأمين",
+          "شركة جلفار للأدوية",
+          "بنك الاتحاد الوطني",
+          "شركة دانة غاز",
+          "شركة أسمنت رأس الخيمة",
+          "شركة ميثاق للتأمين",
+          "مصرف الشارقة الإسلامي",
+          "البنك التجاري الدولي",
+          "شركة اتصالات",
+          "شركة صروح العقارية"
+        ],
+        "MISC": []
+      },
+      "summary_output": "شهد سوق أبوظبي للأوراق المالية تراجعًا في المؤشر العام بنسبة 0.6%، مع تصدر شركة الدار العقارية قائمة الشركات الأكثر تداولاً من حيث القيمة. كما شهد السوق ارتفاعًا في أحجام التداول مقارنة بالأسبوع السابق.",
+      "nli_output": [
+        {
+          "claim": "أغلق المؤشر العام لسوق أبوظبي للأوراق المالية عند مستوى 2344 نقطة بعد انخفاض بنسبة 0.6%",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تصدرت شركة الدار العقارية قائمة الشركات الأكثر تداولاً من حيث القيمة بنحو 15 مليون درهم",
+          "label": "SUPPORTED"
+        },
+        {
+          "claim": "تراجع سعر سهم شركة أسمنت رأس الخيمة بنسبة 5.7% خلال جلسة التداول",
+          "label": "REFUTED"
+        },
+        {
+          "claim": "شهد سوق أبوظبي للأوراق المالية ارتفاعاً ملحوظاً في أحجام التداول مقارنة بالأسبوع السابق",
+          "label": "SUPPORTED"
+        }
+      ],
+      "translation_output": "شهد سوق أبوظبي للأوراق المالية تراجعًا في المؤشر العام بنسبة 0.6%، حيث بلغ حجم التداولات في جلسة بداية الأسبوع نحو 53 مليون درهم، توزعت على 952 صفقة، شملت نحو 62 مليون سهم من أسهم 23 شركة مدرجة. وتصدرت شركة الدار العقارية قائمة الشركات الأكثر تداولاً من حيث القيمة بقيمة 15 مليون درهم، تلاها شركة اتصالات بقيمة 2.12 مليون درهم، ودانة غاز بقيمة 2.8 مليون درهم، وشركة صروح العقارية بقيمة 1.4 مليون درهم، وبنك الاتحاد الوطني بقيمة 8.3 مليون درهم."
+    }
+  ]
+}

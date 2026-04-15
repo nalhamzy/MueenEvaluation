@@ -34,7 +34,6 @@ export class ManualScore implements OnInit {
     { value: 'ner', label: 'NER (Named Entity Recognition)' },
     { value: 'summary', label: 'Abstractive Summary' },
     { value: 'nli', label: 'NLI (Fact Verification)' },
-    { value: 'coref', label: 'Entity Coreference Resolution' },
     { value: 'translation', label: 'Translation (Eng→Arabic)' },
   ];
 

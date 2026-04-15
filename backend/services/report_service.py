@@ -25,7 +25,6 @@ Aggregate scores:
   NER:            {avg_ner:.2f} / 10
   NLI:            {avg_nli:.2f} / 10
   Summarization:  {avg_summary:.2f} / 10
-  Coreference:    {avg_coref:.2f} / 10
   Translation:    {avg_translation:.2f} / 10
   Overall:        {avg_overall:.2f} / 10
 
@@ -63,7 +62,6 @@ def _get_run_stats(run_id: str, db: Session) -> dict:
     avg_ner = sum(o.ner_score or 0 for o in scored) / len(scored)
     avg_nli = sum(o.nli_score or 0 for o in scored) / len(scored)
     avg_summary = sum(o.summary_score or 0 for o in scored) / len(scored)
-    avg_coref = sum(o.coref_score or 0 for o in scored) / len(scored)
     avg_translation = sum(o.translation_score or 0 for o in scored) / len(scored)
     avg_overall = sum(o.overall_score or 0 for o in scored) / len(scored)
 
@@ -76,8 +74,6 @@ def _get_run_stats(run_id: str, db: Session) -> dict:
     for o in scored:
         if o.judge_summary_rubric and "reasoning" in o.judge_summary_rubric:
             themes.append(o.judge_summary_rubric["reasoning"])
-        if o.judge_coref_rubric and "reasoning" in o.judge_coref_rubric:
-            themes.append(o.judge_coref_rubric["reasoning"])
         if o.judge_translation_rubric and "reasoning" in o.judge_translation_rubric:
             themes.append(o.judge_translation_rubric["reasoning"])
 
@@ -86,7 +82,7 @@ def _get_run_stats(run_id: str, db: Session) -> dict:
     worst_text = "\n".join(
         f"  - {o.article_id}: overall={o.overall_score:.1f} "
         f"(NER={o.ner_score:.1f}, NLI={o.nli_score:.1f}, "
-        f"Summary={o.summary_score:.1f}, Coref={o.coref_score:.1f}, "
+        f"Summary={o.summary_score:.1f}, "
         f"Translation={o.translation_score:.1f})"
         for o in worst
     )
@@ -98,7 +94,6 @@ def _get_run_stats(run_id: str, db: Session) -> dict:
         "avg_ner": avg_ner,
         "avg_nli": avg_nli,
         "avg_summary": avg_summary,
-        "avg_coref": avg_coref,
         "avg_translation": avg_translation,
         "avg_overall": avg_overall,
         "high_count": high_count,
@@ -166,7 +161,6 @@ def get_comparison_stats(db: Session) -> dict:
                 func.avg(ModelOutput.ner_score),
                 func.avg(ModelOutput.nli_score),
                 func.avg(ModelOutput.summary_score),
-                func.avg(ModelOutput.coref_score),
                 func.avg(ModelOutput.translation_score),
                 func.avg(ModelOutput.overall_score),
                 func.count(ModelOutput.id),
@@ -177,13 +171,12 @@ def get_comparison_stats(db: Session) -> dict:
         comparison.append({
             "run_id": run.id,
             "model_name": run.model_name,
-            "scored_count": avg_scores[6] or 0,
+            "scored_count": avg_scores[5] or 0,
             "avg_ner": round(avg_scores[0] or 0, 2),
             "avg_nli": round(avg_scores[1] or 0, 2),
             "avg_summary": round(avg_scores[2] or 0, 2),
-            "avg_coref": round(avg_scores[3] or 0, 2),
-            "avg_translation": round(avg_scores[4] or 0, 2),
-            "avg_overall": round(avg_scores[5] or 0, 2),
+            "avg_translation": round(avg_scores[3] or 0, 2),
+            "avg_overall": round(avg_scores[4] or 0, 2),
             "completed_at": run.completed_at.isoformat() if run.completed_at else None,
         })
 
@@ -221,12 +214,10 @@ def export_run_report(run_id: str, db: Session) -> dict:
                 "ner_score": o.ner_score,
                 "nli_score": o.nli_score,
                 "summary_score": o.summary_score,
-                "coref_score": o.coref_score,
                 "translation_score": o.translation_score,
                 "overall_score": o.overall_score,
                 "status": o.status.value if hasattr(o.status, "value") else o.status,
                 "judge_summary_rubric": o.judge_summary_rubric,
-                "judge_coref_rubric": o.judge_coref_rubric,
                 "judge_translation_rubric": o.judge_translation_rubric,
             }
             for o in outputs

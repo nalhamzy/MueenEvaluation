@@ -49,10 +49,9 @@ def test_full_pipeline():
             assert item.ner_reference is not None, f"{item.article_id}: missing NER"
             assert item.summary_reference is not None, f"{item.article_id}: missing summary"
             assert item.nli_claims is not None, f"{item.article_id}: missing NLI"
-            assert item.coref_reference is not None, f"{item.article_id}: missing coref"
-            coref_count = len(item.coref_reference) if isinstance(item.coref_reference, list) else 0
+            assert item.translation_reference is not None, f"{item.article_id}: missing translation"
             print(f"    {item.article_id}: NER OK, Summary OK, "
-                  f"NLI={len(item.nli_claims)} claims, Coref={coref_count} spans")
+                  f"NLI={len(item.nli_claims)} claims")
 
         # --- Step 2: Create evaluation run ---
         print(f"\n  Step 2: Creating evaluation run with gpt-4o-mini")
@@ -78,16 +77,15 @@ def test_full_pipeline():
         assert run.processed_count == len(items)
 
         # --- Step 4: Verify deterministic scores ---
-        print(f"\n  Step 4: Checking deterministic scores (NER, NLI, Coref)")
+        print(f"\n  Step 4: Checking deterministic scores (NER, NLI)")
         outputs = db.query(ModelOutput).filter(ModelOutput.run_id == run_id).all()
         assert len(outputs) == len(items)
 
         for out in outputs:
             assert out.ner_score is not None, f"{out.article_id}: missing NER score"
             assert out.nli_score is not None, f"{out.article_id}: missing NLI score"
-            assert out.coref_score is not None, f"{out.article_id}: missing coref score"
             print(f"    {out.article_id}: NER={out.ner_score:.1f}, "
-                  f"NLI={out.nli_score:.1f}, Coref={out.coref_score:.1f}, "
+                  f"NLI={out.nli_score:.1f}, "
                   f"Summary={out.summary_score:.1f} (pre-judge)")
 
         # --- Step 5: Run LLM judge (Summary) ---
@@ -125,18 +123,18 @@ def test_full_pipeline():
         avg_ner = sum(o.ner_score for o in outputs) / len(outputs)
         avg_nli = sum(o.nli_score for o in outputs) / len(outputs)
         avg_summary = sum(o.summary_score for o in outputs) / len(outputs)
-        avg_coref = sum(o.coref_score for o in outputs) / len(outputs)
+        avg_translation = sum((o.translation_score or 0) for o in outputs) / len(outputs)
         avg_overall = sum(o.overall_score for o in outputs) / len(outputs)
 
         print(f"\n  === PIPELINE COMPLETE ===")
         print(f"  Model: gpt-4o-mini")
         print(f"  Articles evaluated: {len(outputs)}")
         print(f"  Average scores:")
-        print(f"    NER:     {avg_ner:.2f} / 10")
-        print(f"    NLI:     {avg_nli:.2f} / 10")
-        print(f"    Summary: {avg_summary:.2f} / 10")
-        print(f"    Coref:   {avg_coref:.2f} / 10")
-        print(f"    Overall: {avg_overall:.2f} / 10")
+        print(f"    NER:         {avg_ner:.2f} / 10")
+        print(f"    NLI:         {avg_nli:.2f} / 10")
+        print(f"    Summary:     {avg_summary:.2f} / 10")
+        print(f"    Translation: {avg_translation:.2f} / 10")
+        print(f"    Overall:     {avg_overall:.2f} / 10")
         print(f"  Executive summary: Generated ({len(summary.content)} chars)")
         print(f"  ========================\n")
 

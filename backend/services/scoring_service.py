@@ -1,4 +1,4 @@
-"""Scoring service - deterministic (NER, NLI, coref) and LLM judge (summary)."""
+"""Scoring service - deterministic (NER, NLI) and LLM judge (summary, translation)."""
 
 import re
 import json
@@ -154,95 +154,6 @@ def compute_summary_score_from_rubric(rubric: dict) -> float:
     return max(0, min(10, round(score, 2)))
 
 
-# --- Coreference Scoring (Deterministic) ---
-
-def compute_coref_score_from_rubric(rubric: dict) -> float:
-    """Compute coreference score from judge rubric."""
-    factual = rubric.get("factual_accuracy", 0)
-    terminology = rubric.get("terminology_handling", 0)
-    coverage = rubric.get("coverage", 0)
-    no_inference = rubric.get("no_added_inference", 0)
-
-    score = (
-        factual / 3 * 4.0
-        + terminology / 3 * 3.0
-        + coverage / 2 * 2.0
-        + no_inference / 2 * 1.0
-    )
-    return max(0, min(10, round(score, 2)))
-
-
-def compute_coref_score(predicted: list[dict], reference: list[dict]) -> dict:
-    """Compute coreference resolution score. Each item has span, referent, paragraph."""
-    if not reference:
-        return {"score": 0, "details": {"error": "No reference spans"}}
-
-    matched = 0
-    per_span = []
-
-    for ref_item in reference:
-        ref_span = normalize_arabic(ref_item.get("span", ""))
-        ref_referent = ref_item.get("referent", "").lower().strip()
-
-        best_match = False
-        matched_pred = None
-        for pred_item in predicted:
-            pred_span = normalize_arabic(pred_item.get("span", ""))
-            pred_referent = pred_item.get("referent", "").lower().strip()
-
-            # Span match: exact or substring
-            span_match = (pred_span == ref_span or
-                         ref_span in pred_span or
-                         pred_span in ref_span)
-            # Referent match: check key terms (Omani/Yemeni side)
-            referent_match = False
-            for key in ["omani", "yemeni", "oman", "yemen"]:
-                if key in ref_referent and key in pred_referent:
-                    referent_match = True
-                    break
-            if not referent_match:
-                referent_match = ref_referent == pred_referent
-
-            if span_match and referent_match:
-                best_match = True
-                matched_pred = pred_item
-                break
-
-        if best_match:
-            matched += 1
-
-        per_span.append({
-            "reference_span": ref_item.get("span", ""),
-            "reference_referent": ref_item.get("referent", ""),
-            "matched": best_match,
-            "matched_prediction": matched_pred,
-        })
-
-    # Precision and recall
-    precision = matched / len(predicted) if predicted else 1.0
-    recall = matched / len(reference) if reference else 1.0
-    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
-
-    score = f1 * 10
-
-    # Penalty for extra hallucinated spans
-    extra = max(0, len(predicted) - len(reference))
-    penalty = min(extra * 0.5, 2.0)
-    score = max(0, score - penalty)
-
-    return {
-        "score": round(score, 2),
-        "f1": round(f1, 4),
-        "precision": round(precision, 4),
-        "recall": round(recall, 4),
-        "matched": matched,
-        "total_reference": len(reference),
-        "total_predicted": len(predicted),
-        "penalty": penalty,
-        "per_span": per_span,
-    }
-
-
 # --- Translation Scoring (LLM Judge) ---
 
 def compute_translation_score_from_rubric(rubric: dict) -> float:
@@ -263,8 +174,8 @@ def compute_translation_score_from_rubric(rubric: dict) -> float:
 
 # --- Overall Score ---
 
-def compute_overall_score(ner: float, nli: float, summary: float, coref: float, translation: float = 0) -> float:
-    return round(ner * 0.25 + nli * 0.20 + summary * 0.20 + coref * 0.15 + translation * 0.20, 2)
+def compute_overall_score(ner: float, nli: float, summary: float, translation: float = 0) -> float:
+    return round(ner * 0.30 + nli * 0.20 + summary * 0.25 + translation * 0.25, 2)
 
 
 # --- High-level functions ---
@@ -289,13 +200,6 @@ def score_output(output: ModelOutput, db: Session) -> ScoreBreakdown:
     )
     output.nli_score = nli_result["score"]
 
-    # Coref (deterministic)
-    coref_result = compute_coref_score(
-        output.coref_output or [],
-        item.coref_reference or [],
-    )
-    output.coref_score = coref_result["score"]
-
     # Summary score requires LLM judge - set to 0 if not judged yet
     if output.summary_score is None:
         output.summary_score = 0
@@ -306,7 +210,7 @@ def score_output(output: ModelOutput, db: Session) -> ScoreBreakdown:
 
     output.overall_score = compute_overall_score(
         output.ner_score, output.nli_score, output.summary_score,
-        output.coref_score, output.translation_score,
+        output.translation_score,
     )
     output.status = OutputStatus.SCORED
     db.commit()
@@ -317,7 +221,6 @@ def score_output(output: ModelOutput, db: Session) -> ScoreBreakdown:
         details={
             "ner": ner_result,
             "nli": nli_result,
-            "coref": coref_result,
             "summary_score": output.summary_score,
         },
     )
@@ -342,11 +245,6 @@ def score_manual(item: DatasetItem, task: str, raw_output: str, db: Session) -> 
 
     elif task == "translation":
         return ScoreBreakdown(task="translation", score=0, details={"message": "Requires LLM judge"})
-
-    elif task == "coref":
-        predicted = json.loads(raw_output) if isinstance(raw_output, str) else raw_output
-        result = compute_coref_score(predicted, item.coref_reference or [])
-        return ScoreBreakdown(task="coref", score=result["score"], details=result)
 
     else:
         raise ValueError(f"Unknown task: {task}")

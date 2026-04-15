@@ -90,6 +90,21 @@ export class ApiService {
     return this.http.get<any>(`${this.baseUrl}/runs/${runId}/scores`);
   }
 
+  // --- Manual evaluation (no API key) ---
+  manualBrief(articleIds: string[]): Observable<string> {
+    return this.http.post(`${this.baseUrl}/runs/manual/brief`,
+      { article_ids: articleIds },
+      { responseType: 'text' as 'json' }
+    ) as unknown as Observable<string>;
+  }
+
+  manualUpload(modelName: string, outputs: any[]): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/runs/manual/upload`, {
+      model_name: modelName,
+      outputs,
+    });
+  }
+
   // --- Outputs ---
   getOutputs(runId: string): Observable<ModelOutput[]> {
     return this.http.get<ModelOutput[]>(`${this.baseUrl}/outputs/${runId}`);

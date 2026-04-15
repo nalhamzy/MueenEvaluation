@@ -23,6 +23,7 @@ export class App {
     { path: '/scoring', label: 'Manual Score', icon: 'score' },
     { path: '/config', label: 'Config', icon: 'settings' },
     { path: '/runs', label: 'Runs', icon: 'play_circle' },
+    { path: '/runs/manual', label: 'Manual Run', icon: 'edit_note' },
     { path: '/comparison', label: 'Comparison', icon: 'compare' },
     { path: '/reports', label: 'Reports', icon: 'summarize' },
   ];

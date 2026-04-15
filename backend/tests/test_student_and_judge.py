@@ -19,7 +19,8 @@ from models import (
 )
 from services.scoring_service import (
     compute_ner_score, compute_nli_score,
-    compute_summary_score_from_rubric, compute_coref_score_from_rubric,
+    compute_summary_score_from_rubric,
+    compute_translation_score_from_rubric,
     compute_overall_score,
 )
 
@@ -63,10 +64,6 @@ def _seed_data(db):
             {"claim": "Claim 2", "label": "SUPPORTED"},
             {"claim": "Claim 3", "label": "REFUTED"},
             {"claim": "Claim 4", "label": "NOT_ENOUGH_INFO"},
-        ],
-        coref_input="Test article body.",
-        coref_reference=[
-            {"span": "test entity", "referent": "Test — entity ref", "paragraph": 1},
         ],
         translation_input="This is a test English sentence about events in the region.",
         translation_reference="هذه جملة اختبارية عن الأحداث في المنطقة.",
@@ -156,32 +153,32 @@ def test_full_scoring_pipeline():
     summary_score = compute_summary_score_from_rubric(rubric)
     assert 0 < summary_score < 10
 
-    # Coref rubric
-    coref_rubric = {
-        "factual_accuracy": 2,
-        "terminology_handling": 2,
-        "coverage": 1,
-        "no_added_inference": 1,
+    # Translation rubric
+    trans_rubric = {
+        "faithfulness": 2,
+        "fluency": 2,
+        "terminology": 1,
+        "register": 1,
     }
-    coref_score = compute_coref_score_from_rubric(coref_rubric)
-    assert 0 < coref_score < 10
+    trans_score = compute_translation_score_from_rubric(trans_rubric)
+    assert 0 < trans_score < 10
 
     # Overall
-    overall = compute_overall_score(7.5, 8.0, summary_score, coref_score, 6.0)
+    overall = compute_overall_score(7.5, 8.0, summary_score, trans_score)
     assert 0 < overall <= 10
 
 
 def test_overall_score_boundary():
-    """Verify boundary conditions for overall score."""
-    # Weights: ner=0.25, nli=0.20, summary=0.20, coref=0.15, translation=0.20
-    assert compute_overall_score(0, 0, 0, 0, 0) == 0.0
-    assert compute_overall_score(10, 10, 10, 10, 10) == 10.0
+    """Verify boundary conditions for overall score.
+    Weights: ner=0.30, nli=0.20, summary=0.25, translation=0.25
+    """
+    assert compute_overall_score(0, 0, 0, 0) == 0.0
+    assert compute_overall_score(10, 10, 10, 10) == 10.0
 
-    assert compute_overall_score(10, 0, 0, 0, 0) == 2.5   # NER weight = 0.25
-    assert compute_overall_score(0, 10, 0, 0, 0) == 2.0   # NLI weight = 0.20
-    assert compute_overall_score(0, 0, 10, 0, 0) == 2.0   # Summary weight = 0.20
-    assert compute_overall_score(0, 0, 0, 10, 0) == 1.5   # Coref weight = 0.15
-    assert compute_overall_score(0, 0, 0, 0, 10) == 2.0   # Translation weight = 0.20
+    assert compute_overall_score(10, 0, 0, 0) == 3.0   # NER weight = 0.30
+    assert compute_overall_score(0, 10, 0, 0) == 2.0   # NLI weight = 0.20
+    assert compute_overall_score(0, 0, 10, 0) == 2.5   # Summary weight = 0.25
+    assert compute_overall_score(0, 0, 0, 10) == 2.5   # Translation weight = 0.25
 
 
 def test_model_output_lifecycle():
@@ -210,15 +207,14 @@ def test_model_output_lifecycle():
     output.nli_output = []
     output.nli_score = 6.0
     output.summary_score = 7.0
-    output.coref_score = 8.0
     output.translation_score = 9.0
-    output.overall_score = compute_overall_score(5.0, 6.0, 7.0, 8.0, 9.0)
+    output.overall_score = compute_overall_score(5.0, 6.0, 7.0, 9.0)
     output.status = OutputStatus.SCORED
     db.commit()
 
     assert output.status == OutputStatus.SCORED
-    # ner*0.25 + nli*0.20 + summary*0.20 + coref*0.15 + translation*0.20
-    assert output.overall_score == round(5.0*0.25 + 6.0*0.20 + 7.0*0.20 + 8.0*0.15 + 9.0*0.20, 2)
+    # ner*0.30 + nli*0.20 + summary*0.25 + translation*0.25
+    assert output.overall_score == round(5.0*0.30 + 6.0*0.20 + 7.0*0.25 + 9.0*0.25, 2)
     db.close()
 
 
@@ -232,7 +228,6 @@ def test_evaluate_single_item_mocked(mock_llm):
         "A student summary.",                                                       # Summary
         '[{"claim": "c1", "label": "SUPPORTED"}, {"claim": "c2", "label": "SUPPORTED"}, '
         '{"claim": "c3", "label": "REFUTED"}, {"claim": "c4", "label": "NOT_ENOUGH_INFO"}]',  # NLI
-        '[{"span": "test entity", "referent": "Test — entity ref", "paragraph": 1}]',  # Coref
         "ترجمة تجريبية للنص الإنجليزي.",  # Translation
     ]
 
@@ -248,8 +243,7 @@ def test_evaluate_single_item_mocked(mock_llm):
     assert output.ner_output["PERSON"] == ["Ahmed"]
     assert output.summary_output == "A student summary."
     assert len(output.nli_output) == 4
-    assert isinstance(output.coref_output, list)
     assert output.translation_output is not None
     assert output.status == OutputStatus.PENDING  # pending scoring
-    assert mock_llm.call_count == 5
+    assert mock_llm.call_count == 4
     db.close()

@@ -72,41 +72,6 @@ Hard rules:
 Article:
 {article_body}"""
 
-COREF_SYSTEM = """You are an expert Arabic NLP annotator specializing in entity coreference resolution.
-Your output must be valid JSON only. No preamble. No markdown fences. No explanation."""
-
-COREF_USER = """Given the following Arabic news article, identify all referring expressions for
-key named entities mentioned multiple times. For each mention, identify:
-1. The exact text span as it appears in the article
-2. The referent — what real-world entity or concept it refers to, with disambiguation
-   (e.g. which side of a border crossing, which political faction, which specific person)
-3. The paragraph number (1-indexed) where the span appears
-
-Focus on entities that are referred to in multiple ways or that could be ambiguous.
-Include pronouns, definite descriptions, and partial names that refer to previously
-mentioned entities.
-
-Return a JSON array:
-[
-  {{
-    "span": "exact Arabic text span",
-    "referent": "clear English description of what this refers to",
-    "paragraph": integer
-  }},
-  ...
-]
-
-Rules:
-1. Only include spans that actually appear in the text.
-2. The referent must disambiguate — if two entities share a name or description,
-   clarify which one is meant.
-3. Include at least 3 referring expressions.
-4. Group related mentions — if the same entity is mentioned 3 times, list all 3.
-5. Return JSON only. No other text.
-
-Article:
-{article_body}"""
-
 TRANSLATION_SYSTEM = """You are an expert English-to-Arabic translator. Write only in formal Modern Standard Arabic (فصحى).
 No dialect. No code-switching. Output the translation only — no labels, no preamble."""
 
@@ -160,16 +125,7 @@ def generate_for_article(article: Article, db: Session) -> DatasetItem:
         )
         nli_claims = unwrap_json_list(parse_json_response(nli_raw))
 
-        # 4. Coreference Resolution
-        coref_raw = call_llm(
-            api_key=api_key, model=model, base_url=base_url,
-            system_prompt=COREF_SYSTEM,
-            user_prompt=COREF_USER.format(article_body=article.body),
-            json_mode=True, db=db, task_type="teacher_coref",
-        )
-        coref_reference = unwrap_json_list(parse_json_response(coref_raw))
-
-        # 5. Translation (Eng→Arabic)
+        # 4. Translation (Eng→Arabic)
         translation_raw = call_llm(
             api_key=api_key, model=model, base_url=base_url,
             system_prompt=TRANSLATION_SYSTEM,
@@ -190,8 +146,6 @@ def generate_for_article(article: Article, db: Session) -> DatasetItem:
         item.summary_reference = summary_reference.strip()
         item.nli_input = article.body
         item.nli_claims = nli_claims
-        item.coref_input = article.body
-        item.coref_reference = coref_reference
         item.translation_input = translation_data.get("english_source", "")
         item.translation_reference = translation_data.get("arabic_translation", "")
         item.generated_at = datetime.utcnow()
@@ -208,15 +162,28 @@ def generate_for_article(article: Article, db: Session) -> DatasetItem:
         raise e
 
 
-def generate_dataset_task(limit: int | None = None):
-    """Background task to generate dataset for all pending articles."""
+def generate_dataset_task(
+    limit: int | None = None,
+    article_ids: list[str] | None = None,
+):
+    """Background task to generate dataset for pending articles.
+
+    If article_ids is provided, only those specific articles are processed
+    (regardless of status). Otherwise, processes all PENDING articles up to limit.
+    """
     from database import SessionLocal
     db = SessionLocal()
     try:
-        query = db.query(Article).filter(Article.status == ArticleStatus.PENDING)
-        if limit:
-            query = query.limit(limit)
-        articles = query.all()
+        if article_ids:
+            articles = db.query(Article).filter(Article.id.in_(article_ids)).all()
+            # Preserve the order requested by caller
+            id_order = {aid: i for i, aid in enumerate(article_ids)}
+            articles.sort(key=lambda a: id_order.get(a.id, 9999))
+        else:
+            query = db.query(Article).filter(Article.status == ArticleStatus.PENDING)
+            if limit:
+                query = query.limit(limit)
+            articles = query.all()
 
         for article in articles:
             try:
@@ -224,5 +191,148 @@ def generate_dataset_task(limit: int | None = None):
                 print(f"[Teacher] Generated dataset for {article.id}")
             except Exception as e:
                 print(f"[Teacher] ERROR on {article.id}: {e}")
+    finally:
+        db.close()
+
+
+# --- BATCH GENERATION (Anthropic Messages Batches API) ---
+
+def _build_teacher_batch_items(articles: list[Article]) -> list[dict]:
+    """Build batch items for all 4 tasks × N articles.
+    Returns items in the format expected by build_anthropic_batch_requests.
+    custom_id format: '{article_id}:{task}' where task ∈ {ner, summary, nli, translation}
+    """
+    items = []
+    for art in articles:
+        body = art.body
+        items.append({
+            "custom_id": f"{art.id}__ner",
+            "system": NER_SYSTEM,
+            "user": NER_USER.format(article_body=body),
+        })
+        items.append({
+            "custom_id": f"{art.id}__summary",
+            "system": SUMMARY_SYSTEM,
+            "user": SUMMARY_USER.format(article_body=body),
+        })
+        items.append({
+            "custom_id": f"{art.id}__nli",
+            "system": NLI_SYSTEM,
+            "user": NLI_USER.format(article_body=body),
+        })
+        items.append({
+            "custom_id": f"{art.id}__translation",
+            "system": TRANSLATION_SYSTEM,
+            "user": TRANSLATION_USER.format(article_body=body),
+        })
+    return items
+
+
+def _apply_teacher_batch_results(
+    articles: list[Article],
+    results: dict[str, dict],
+    db: Session,
+    teacher_model: str,
+):
+    """Parse batch results and write DatasetItems to DB."""
+    from datetime import datetime as _dt
+    for art in articles:
+        try:
+            ner_text = (results.get(f"{art.id}__ner") or {}).get("text", "")
+            summary_text = (results.get(f"{art.id}__summary") or {}).get("text", "")
+            nli_text = (results.get(f"{art.id}__nli") or {}).get("text", "")
+            trans_text = (results.get(f"{art.id}__translation") or {}).get("text", "")
+
+            # Parse JSON-mode tasks
+            ner_ref = parse_json_response(ner_text) if ner_text else {}
+            nli_claims = unwrap_json_list(parse_json_response(nli_text)) if nli_text else []
+            try:
+                trans_data = parse_json_response(trans_text) if trans_text else {}
+            except Exception:
+                trans_data = {}
+
+            item = db.query(DatasetItem).filter(DatasetItem.article_id == art.id).first()
+            if not item:
+                item = DatasetItem(article_id=art.id)
+                db.add(item)
+
+            item.ner_input = art.body
+            item.ner_reference = ner_ref
+            item.summary_input = art.body
+            item.summary_reference = (summary_text or "").strip()
+            item.nli_input = art.body
+            item.nli_claims = nli_claims
+            item.translation_input = trans_data.get("english_source", "") if isinstance(trans_data, dict) else ""
+            item.translation_reference = trans_data.get("arabic_translation", "") if isinstance(trans_data, dict) else ""
+            item.generated_at = _dt.utcnow()
+            item.teacher_model = teacher_model
+
+            art.status = ArticleStatus.READY
+            db.commit()
+        except Exception as e:
+            print(f"[Teacher batch] ERROR applying {art.id}: {e}")
+            art.status = ArticleStatus.ERROR
+            db.commit()
+
+
+def generate_dataset_batch(article_ids: list[str], poll_interval: int = 30):
+    """Generate all 4 dataset tasks for a list of articles using Anthropic Batch API.
+
+    50% cost discount vs sync. Typical completion: 5-30 min for ~100 articles.
+    """
+    from database import SessionLocal
+    from services.batch_anthropic import (
+        build_anthropic_batch_requests,
+        submit_anthropic_batch,
+        wait_for_anthropic_batch,
+        download_anthropic_batch_results,
+    )
+
+    db = SessionLocal()
+    try:
+        api_key = settings.get_teacher_api_key()
+        model = settings.TEACHER_MODEL
+
+        articles = db.query(Article).filter(Article.id.in_(article_ids)).all()
+        id_order = {aid: i for i, aid in enumerate(article_ids)}
+        articles.sort(key=lambda a: id_order.get(a.id, 9999))
+
+        if not articles:
+            print("[Teacher batch] No articles to process")
+            return
+
+        # Mark all as GENERATING
+        for art in articles:
+            art.status = ArticleStatus.GENERATING
+        db.commit()
+
+        print(f"[Teacher batch] Building batch for {len(articles)} articles × 4 tasks = {len(articles)*4} requests")
+        items = _build_teacher_batch_items(articles)
+        requests = build_anthropic_batch_requests(model=model, items=items)
+
+        print(f"[Teacher batch] Submitting batch...")
+        batch_id = submit_anthropic_batch(api_key=api_key, requests=requests)
+        print(f"[Teacher batch] Submitted: {batch_id}")
+
+        def progress(status):
+            counts = status.get("request_counts", {})
+            print(f"[Teacher batch] {status['processing_status']}: "
+                  f"succeeded={counts.get('succeeded', 0)} "
+                  f"errored={counts.get('errored', 0)} "
+                  f"processing={counts.get('processing', 0)}")
+
+        wait_for_anthropic_batch(
+            api_key=api_key, batch_id=batch_id,
+            poll_interval=poll_interval, progress_callback=progress,
+        )
+
+        print(f"[Teacher batch] Downloading results...")
+        results = download_anthropic_batch_results(api_key=api_key, batch_id=batch_id)
+        print(f"[Teacher batch] Got {len(results)} results")
+
+        _apply_teacher_batch_results(articles, results, db, teacher_model=model)
+        ready = sum(1 for a in articles if a.status == ArticleStatus.READY)
+        print(f"[Teacher batch] {ready}/{len(articles)} articles READY")
+
     finally:
         db.close()
