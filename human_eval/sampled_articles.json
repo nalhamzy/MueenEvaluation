@@ -1,0 +1,78 @@
+{
+  "seed": 7,
+  "per_category": 6,
+  "article_ids": [
+    "CULTURE_017",
+    "CULTURE_087",
+    "CULTURE_033",
+    "CULTURE_055",
+    "CULTURE_039",
+    "CULTURE_030",
+    "FINANCE_007",
+    "FINANCE_046",
+    "FINANCE_067",
+    "FINANCE_076",
+    "FINANCE_058",
+    "FINANCE_001",
+    "POLITICS_070",
+    "POLITICS_031",
+    "POLITICS_006",
+    "POLITICS_092",
+    "POLITICS_013",
+    "POLITICS_083",
+    "SPORTS_049",
+    "SPORTS_031",
+    "SPORTS_021",
+    "SPORTS_063",
+    "SPORTS_009",
+    "SPORTS_062",
+    "TECH_032",
+    "TECH_045",
+    "TECH_069",
+    "TECH_038",
+    "TECH_016",
+    "TECH_021"
+  ],
+  "by_category": {
+    "culture": [
+      "CULTURE_017",
+      "CULTURE_087",
+      "CULTURE_033",
+      "CULTURE_055",
+      "CULTURE_039",
+      "CULTURE_030"
+    ],
+    "finance": [
+      "FINANCE_007",
+      "FINANCE_046",
+      "FINANCE_067",
+      "FINANCE_076",
+      "FINANCE_058",
+      "FINANCE_001"
+    ],
+    "politics": [
+      "POLITICS_070",
+      "POLITICS_031",
+      "POLITICS_006",
+      "POLITICS_092",
+      "POLITICS_013",
+      "POLITICS_083"
+    ],
+    "sports": [
+      "SPORTS_049",
+      "SPORTS_031",
+      "SPORTS_021",
+      "SPORTS_063",
+      "SPORTS_009",
+      "SPORTS_062"
+    ],
+    "tech": [
+      "TECH_032",
+      "TECH_045",
+      "TECH_069",
+      "TECH_038",
+      "TECH_016",
+      "TECH_021"
+    ]
+  }
+}

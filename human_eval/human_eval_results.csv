@@ -1,0 +1,241 @@
+﻿article_id,category,task,model,model_display,human_1_5,human_0_10,llm_judge_0_10
+CULTURE_017,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+CULTURE_017,culture,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+CULTURE_017,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,9.0
+CULTURE_017,culture,summary,Mueen AI,Mueen AI,3,5.0,9.0
+CULTURE_087,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+CULTURE_087,culture,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+CULTURE_087,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,8.0
+CULTURE_087,culture,summary,Mueen AI,Mueen AI,1,0.0,3.67
+CULTURE_033,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+CULTURE_033,culture,summary,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+CULTURE_033,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,8.0
+CULTURE_033,culture,summary,Mueen AI,Mueen AI,3,5.0,9.0
+CULTURE_055,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+CULTURE_055,culture,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+CULTURE_055,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,10.0
+CULTURE_055,culture,summary,Mueen AI,Mueen AI,3,5.0,10.0
+CULTURE_039,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+CULTURE_039,culture,summary,deepseek-chat,DeepSeek Chat,5,10.0,9.0
+CULTURE_039,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,9.0
+CULTURE_039,culture,summary,Mueen AI,Mueen AI,1,0.0,5.83
+CULTURE_030,culture,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,6.83
+CULTURE_030,culture,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+CULTURE_030,culture,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,9.0
+CULTURE_030,culture,summary,Mueen AI,Mueen AI,1,0.0,3.67
+FINANCE_007,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+FINANCE_007,finance,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+FINANCE_007,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,7.08
+FINANCE_007,finance,summary,Mueen AI,Mueen AI,4,7.5,8.0
+FINANCE_046,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,3,5.0,10.0
+FINANCE_046,finance,summary,deepseek-chat,DeepSeek Chat,5,10.0,9.0
+FINANCE_046,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,10.0
+FINANCE_046,finance,summary,Mueen AI,Mueen AI,2,2.5,6.83
+FINANCE_067,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,6.83
+FINANCE_067,finance,summary,deepseek-chat,DeepSeek Chat,3,5.0,6.83
+FINANCE_067,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.67
+FINANCE_067,finance,summary,Mueen AI,Mueen AI,2,2.5,9.0
+FINANCE_076,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+FINANCE_076,finance,summary,deepseek-chat,DeepSeek Chat,2,2.5,9.0
+FINANCE_076,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,6.83
+FINANCE_076,finance,summary,Mueen AI,Mueen AI,3,5.0,9.0
+FINANCE_058,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+FINANCE_058,finance,summary,deepseek-chat,DeepSeek Chat,4,7.5,6.83
+FINANCE_058,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,3.92
+FINANCE_058,finance,summary,Mueen AI,Mueen AI,2,2.5,8.0
+FINANCE_001,finance,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+FINANCE_001,finance,summary,deepseek-chat,DeepSeek Chat,3,5.0,3.67
+FINANCE_001,finance,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,8.0
+FINANCE_001,finance,summary,Mueen AI,Mueen AI,2,2.5,5.83
+POLITICS_070,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+POLITICS_070,politics,summary,deepseek-chat,DeepSeek Chat,2,2.5,9.0
+POLITICS_070,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,9.0
+POLITICS_070,politics,summary,Mueen AI,Mueen AI,2,2.5,9.0
+POLITICS_031,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+POLITICS_031,politics,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+POLITICS_031,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,9.0
+POLITICS_031,politics,summary,Mueen AI,Mueen AI,2,2.5,6.83
+POLITICS_006,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+POLITICS_006,politics,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+POLITICS_006,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,9.0
+POLITICS_006,politics,summary,Mueen AI,Mueen AI,2,2.5,3.67
+POLITICS_092,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,3,5.0,7.83
+POLITICS_092,politics,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+POLITICS_092,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,10.0
+POLITICS_092,politics,summary,Mueen AI,Mueen AI,3,5.0,9.0
+POLITICS_013,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,7.83
+POLITICS_013,politics,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+POLITICS_013,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,4,7.5,7.08
+POLITICS_013,politics,summary,Mueen AI,Mueen AI,3,5.0,9.0
+POLITICS_083,politics,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+POLITICS_083,politics,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+POLITICS_083,politics,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,10.0
+POLITICS_083,politics,summary,Mueen AI,Mueen AI,2,2.5,9.0
+SPORTS_049,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+SPORTS_049,sports,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+SPORTS_049,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,8.0
+SPORTS_049,sports,summary,Mueen AI,Mueen AI,2,2.5,5.83
+SPORTS_031,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+SPORTS_031,sports,summary,deepseek-chat,DeepSeek Chat,4,7.5,10.0
+SPORTS_031,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,7.08
+SPORTS_031,sports,summary,Mueen AI,Mueen AI,1,0.0,5.83
+SPORTS_021,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,7.83
+SPORTS_021,sports,summary,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+SPORTS_021,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,8.0
+SPORTS_021,sports,summary,Mueen AI,Mueen AI,3,5.0,9.0
+SPORTS_063,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,8.83
+SPORTS_063,sports,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+SPORTS_063,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,9.0
+SPORTS_063,sports,summary,Mueen AI,Mueen AI,1,0.0,7.0
+SPORTS_009,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+SPORTS_009,sports,summary,deepseek-chat,DeepSeek Chat,2,2.5,8.0
+SPORTS_009,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,8.0
+SPORTS_009,sports,summary,Mueen AI,Mueen AI,3,5.0,9.0
+SPORTS_062,sports,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+SPORTS_062,sports,summary,deepseek-chat,DeepSeek Chat,4,7.5,10.0
+SPORTS_062,sports,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,8.0
+SPORTS_062,sports,summary,Mueen AI,Mueen AI,2,2.5,6.0
+TECH_032,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+TECH_032,tech,summary,deepseek-chat,DeepSeek Chat,2,2.5,8.0
+TECH_032,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,8.0
+TECH_032,tech,summary,Mueen AI,Mueen AI,2,2.5,7.0
+TECH_045,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+TECH_045,tech,summary,deepseek-chat,DeepSeek Chat,3,5.0,10.0
+TECH_045,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,7.83
+TECH_045,tech,summary,Mueen AI,Mueen AI,2,2.5,8.0
+TECH_069,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,8.0
+TECH_069,tech,summary,deepseek-chat,DeepSeek Chat,4,7.5,8.0
+TECH_069,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,9.0
+TECH_069,tech,summary,Mueen AI,Mueen AI,1,0.0,5.83
+TECH_038,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,6.83
+TECH_038,tech,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+TECH_038,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,8.0
+TECH_038,tech,summary,Mueen AI,Mueen AI,1,0.0,4.67
+TECH_016,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,6.83
+TECH_016,tech,summary,deepseek-chat,DeepSeek Chat,5,10.0,9.0
+TECH_016,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,7.25
+TECH_016,tech,summary,Mueen AI,Mueen AI,1,0.0,4.83
+TECH_021,tech,summary,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+TECH_021,tech,summary,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+TECH_021,tech,summary,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,7.25
+TECH_021,tech,summary,Mueen AI,Mueen AI,3,5.0,10.0
+CULTURE_017,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,6.83
+CULTURE_017,culture,translation,deepseek-chat,DeepSeek Chat,5,10.0,6.83
+CULTURE_017,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+CULTURE_017,culture,translation,Mueen AI,Mueen AI,1,0.0,6.67
+CULTURE_087,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+CULTURE_087,culture,translation,deepseek-chat,DeepSeek Chat,4,7.5,8.0
+CULTURE_087,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,5.83
+CULTURE_087,culture,translation,Mueen AI,Mueen AI,1,0.0,4.5
+CULTURE_033,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,5.83
+CULTURE_033,culture,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+CULTURE_033,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+CULTURE_033,culture,translation,Mueen AI,Mueen AI,4,7.5,6.83
+CULTURE_055,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+CULTURE_055,culture,translation,deepseek-chat,DeepSeek Chat,3,5.0,10.0
+CULTURE_055,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,2.67
+CULTURE_055,culture,translation,Mueen AI,Mueen AI,3,5.0,7.83
+CULTURE_039,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,7.83
+CULTURE_039,culture,translation,deepseek-chat,DeepSeek Chat,4,7.5,6.83
+CULTURE_039,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,1.92
+CULTURE_039,culture,translation,Mueen AI,Mueen AI,1,0.0,5.5
+CULTURE_030,culture,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,8.83
+CULTURE_030,culture,translation,deepseek-chat,DeepSeek Chat,5,10.0,7.83
+CULTURE_030,culture,translation,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,5.83
+CULTURE_030,culture,translation,Mueen AI,Mueen AI,1,0.0,4.5
+FINANCE_007,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+FINANCE_007,finance,translation,deepseek-chat,DeepSeek Chat,3,5.0,9.0
+FINANCE_007,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,4.83
+FINANCE_007,finance,translation,Mueen AI,Mueen AI,1,0.0,7.67
+FINANCE_046,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+FINANCE_046,finance,translation,deepseek-chat,DeepSeek Chat,4,7.5,10.0
+FINANCE_046,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,5.83
+FINANCE_046,finance,translation,Mueen AI,Mueen AI,2,2.5,7.67
+FINANCE_067,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+FINANCE_067,finance,translation,deepseek-chat,DeepSeek Chat,3,5.0,7.83
+FINANCE_067,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,5.83
+FINANCE_067,finance,translation,Mueen AI,Mueen AI,1,0.0,6.67
+FINANCE_076,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+FINANCE_076,finance,translation,deepseek-chat,DeepSeek Chat,4,7.5,6.83
+FINANCE_076,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,5.83
+FINANCE_076,finance,translation,Mueen AI,Mueen AI,1,0.0,4.5
+FINANCE_058,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,9.0
+FINANCE_058,finance,translation,deepseek-chat,DeepSeek Chat,3,5.0,6.83
+FINANCE_058,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,5.83
+FINANCE_058,finance,translation,Mueen AI,Mueen AI,1,0.0,5.5
+FINANCE_001,finance,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+FINANCE_001,finance,translation,deepseek-chat,DeepSeek Chat,4,7.5,7.83
+FINANCE_001,finance,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,3.67
+FINANCE_001,finance,translation,Mueen AI,Mueen AI,1,0.0,0.0
+POLITICS_070,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+POLITICS_070,politics,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+POLITICS_070,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,5.83
+POLITICS_070,politics,translation,Mueen AI,Mueen AI,1,0.0,5.67
+POLITICS_031,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+POLITICS_031,politics,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+POLITICS_031,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+POLITICS_031,politics,translation,Mueen AI,Mueen AI,1,0.0,7.67
+POLITICS_006,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,7.83
+POLITICS_006,politics,translation,deepseek-chat,DeepSeek Chat,5,10.0,8.83
+POLITICS_006,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,4.83
+POLITICS_006,politics,translation,Mueen AI,Mueen AI,1,0.0,4.5
+POLITICS_092,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+POLITICS_092,politics,translation,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+POLITICS_092,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,4.08
+POLITICS_092,politics,translation,Mueen AI,Mueen AI,1,0.0,5.67
+POLITICS_013,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+POLITICS_013,politics,translation,deepseek-chat,DeepSeek Chat,4,7.5,6.67
+POLITICS_013,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+POLITICS_013,politics,translation,Mueen AI,Mueen AI,1,0.0,6.67
+POLITICS_083,politics,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+POLITICS_083,politics,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+POLITICS_083,politics,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+POLITICS_083,politics,translation,Mueen AI,Mueen AI,1,0.0,6.67
+SPORTS_049,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,7.83
+SPORTS_049,sports,translation,deepseek-chat,DeepSeek Chat,4,7.5,6.83
+SPORTS_049,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+SPORTS_049,sports,translation,Mueen AI,Mueen AI,2,2.5,7.67
+SPORTS_031,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+SPORTS_031,sports,translation,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+SPORTS_031,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+SPORTS_031,sports,translation,Mueen AI,Mueen AI,1,0.0,0.0
+SPORTS_021,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+SPORTS_021,sports,translation,deepseek-chat,DeepSeek Chat,5,10.0,7.83
+SPORTS_021,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,1.92
+SPORTS_021,sports,translation,Mueen AI,Mueen AI,1,0.0,7.67
+SPORTS_063,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,6.83
+SPORTS_063,sports,translation,deepseek-chat,DeepSeek Chat,4,7.5,7.83
+SPORTS_063,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,3.67
+SPORTS_063,sports,translation,Mueen AI,Mueen AI,1,0.0,4.5
+SPORTS_009,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+SPORTS_009,sports,translation,deepseek-chat,DeepSeek Chat,4,7.5,10.0
+SPORTS_009,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,3.67
+SPORTS_009,sports,translation,Mueen AI,Mueen AI,1,0.0,4.5
+SPORTS_062,sports,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,5.67
+SPORTS_062,sports,translation,deepseek-chat,DeepSeek Chat,5,10.0,9.0
+SPORTS_062,sports,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,3.67
+SPORTS_062,sports,translation,Mueen AI,Mueen AI,1,0.0,7.67
+TECH_032,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,4,7.5,10.0
+TECH_032,tech,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+TECH_032,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,3.67
+TECH_032,tech,translation,Mueen AI,Mueen AI,1,0.0,0.0
+TECH_045,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+TECH_045,tech,translation,deepseek-chat,DeepSeek Chat,5,10.0,10.0
+TECH_045,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,3,5.0,5.83
+TECH_045,tech,translation,Mueen AI,Mueen AI,1,0.0,0.0
+TECH_069,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+TECH_069,tech,translation,deepseek-chat,DeepSeek Chat,4,7.5,6.83
+TECH_069,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+TECH_069,tech,translation,Mueen AI,Mueen AI,1,0.0,0.0
+TECH_038,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+TECH_038,tech,translation,deepseek-chat,DeepSeek Chat,4,7.5,9.0
+TECH_038,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+TECH_038,tech,translation,Mueen AI,Mueen AI,1,0.0,0.0
+TECH_016,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,10.0
+TECH_016,tech,translation,deepseek-chat,DeepSeek Chat,4,7.5,10.0
+TECH_016,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,2,2.5,5.83
+TECH_016,tech,translation,Mueen AI,Mueen AI,1,0.0,0.0
+TECH_021,tech,translation,qwen3.5-397b-a17b,Qwen 3.5 397B,5,10.0,9.0
+TECH_021,tech,translation,deepseek-chat,DeepSeek Chat,5,10.0,9.0
+TECH_021,tech,translation,mistral.mistral-large-2402-v1:0,Mistral Large,1,0.0,3.67
+TECH_021,tech,translation,Mueen AI,Mueen AI,2,2.5,5.67

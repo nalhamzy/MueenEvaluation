@@ -1,0 +1,18 @@
+{
+  "seed": 7,
+  "per_category": 6,
+  "total_articles": 30,
+  "model_to_letter": {
+    "qwen3.5-397b-a17b": "A",
+    "deepseek-chat": "C",
+    "mistral.mistral-large-2402-v1:0": "D",
+    "Mueen AI": "B"
+  },
+  "letter_to_model": {
+    "A": "qwen3.5-397b-a17b",
+    "C": "deepseek-chat",
+    "D": "mistral.mistral-large-2402-v1:0",
+    "B": "Mueen AI"
+  },
+  "warning": "PRIVATE — do not share with the evaluator until scoring is complete."
+}

@@ -1,0 +1,793 @@
+﻿model_name,article_id,category,ner_score,nli_score,summary_score,translation_score,overall_score
+qwen3.5-397b-a17b,CULTURE_004,culture,9.86,10.0,9.0,10.0,9.71
+qwen3.5-397b-a17b,CULTURE_005,culture,6.65,10.0,10.0,7.83,8.45
+qwen3.5-397b-a17b,CULTURE_012,culture,9.17,10.0,10.0,10.0,9.75
+qwen3.5-397b-a17b,CULTURE_014,culture,5.17,10.0,10.0,10.0,8.55
+qwen3.5-397b-a17b,CULTURE_015,culture,8.19,10.0,10.0,10.0,8.82
+qwen3.5-397b-a17b,CULTURE_017,culture,7.9,10.0,10.0,6.83,8.58
+qwen3.5-397b-a17b,CULTURE_018,culture,8.1,10.0,10.0,10.0,9.43
+qwen3.5-397b-a17b,CULTURE_024,culture,10.0,10.0,10.0,9.0,9.75
+qwen3.5-397b-a17b,CULTURE_028,culture,7.99,10.0,10.0,6.83,8.6
+qwen3.5-397b-a17b,CULTURE_029,culture,9.31,10.0,8.0,10.0,9.29
+qwen3.5-397b-a17b,CULTURE_030,culture,9.22,10.0,6.83,8.83,8.68
+qwen3.5-397b-a17b,CULTURE_032,culture,8.14,10.0,10.0,10.0,9.44
+qwen3.5-397b-a17b,CULTURE_033,culture,7.25,10.0,10.0,5.83,8.13
+qwen3.5-397b-a17b,CULTURE_036,culture,8.87,10.0,10.0,9.0,9.41
+qwen3.5-397b-a17b,CULTURE_037,culture,7.59,10.0,10.0,6.83,8.48
+qwen3.5-397b-a17b,CULTURE_039,culture,7.64,10.0,9.0,7.83,8.5
+qwen3.5-397b-a17b,CULTURE_041,culture,6.26,10.0,10.0,10.0,8.88
+qwen3.5-397b-a17b,CULTURE_043,culture,6.05,10.0,10.0,7.83,8.27
+qwen3.5-397b-a17b,CULTURE_044,culture,9.54,10.0,6.83,10.0,9.07
+qwen3.5-397b-a17b,CULTURE_055,culture,10.0,10.0,10.0,9.0,9.75
+qwen3.5-397b-a17b,CULTURE_061,culture,8.5,10.0,10.0,6.83,8.76
+qwen3.5-397b-a17b,CULTURE_062,culture,8.12,10.0,9.0,9.0,8.94
+qwen3.5-397b-a17b,CULTURE_063,culture,8.86,10.0,10.0,10.0,9.66
+qwen3.5-397b-a17b,CULTURE_064,culture,8.25,10.0,9.0,10.0,9.22
+qwen3.5-397b-a17b,CULTURE_065,culture,5.17,10.0,10.0,8.83,8.26
+qwen3.5-397b-a17b,CULTURE_067,culture,8.61,10.0,8.0,10.0,9.08
+qwen3.5-397b-a17b,CULTURE_070,culture,6.54,10.0,10.0,9.0,8.71
+qwen3.5-397b-a17b,CULTURE_072,culture,7.17,10.0,10.0,5.83,8.11
+qwen3.5-397b-a17b,CULTURE_073,culture,9.27,10.0,10.0,6.83,8.99
+qwen3.5-397b-a17b,CULTURE_076,culture,10.0,10.0,10.0,8.0,9.5
+qwen3.5-397b-a17b,CULTURE_078,culture,6.64,10.0,10.0,10.0,8.99
+qwen3.5-397b-a17b,CULTURE_080,culture,5.17,10.0,10.0,9.0,8.3
+qwen3.5-397b-a17b,CULTURE_082,culture,4.25,10.0,8.0,10.0,6.76
+qwen3.5-397b-a17b,CULTURE_085,culture,10.0,10.0,9.0,10.0,9.75
+qwen3.5-397b-a17b,CULTURE_086,culture,5.0,10.0,9.0,7.83,7.71
+qwen3.5-397b-a17b,CULTURE_087,culture,3.72,10.0,9.0,9.0,7.62
+qwen3.5-397b-a17b,CULTURE_091,culture,6.67,10.0,7.83,10.0,8.46
+qwen3.5-397b-a17b,CULTURE_095,culture,4.33,10.0,10.0,10.0,8.3
+qwen3.5-397b-a17b,CULTURE_097,culture,8.08,10.0,9.0,10.0,9.17
+qwen3.5-397b-a17b,CULTURE_098,culture,6.01,4.26,7.83,6.83,6.32
+qwen3.5-397b-a17b,FINANCE_001,finance,9.77,10.0,10.0,10.0,9.93
+qwen3.5-397b-a17b,FINANCE_006,finance,9.64,10.0,7.83,9.0,9.1
+qwen3.5-397b-a17b,FINANCE_007,finance,5.8,10.0,10.0,10.0,8.74
+qwen3.5-397b-a17b,FINANCE_009,finance,8.14,10.0,10.0,10.0,9.44
+qwen3.5-397b-a17b,FINANCE_011,finance,8.31,7.87,9.0,10.0,8.82
+qwen3.5-397b-a17b,FINANCE_013,finance,7.67,10.0,7.83,6.83,7.97
+qwen3.5-397b-a17b,FINANCE_015,finance,8.5,10.0,9.0,10.0,9.3
+qwen3.5-397b-a17b,FINANCE_016,finance,9.31,10.0,5.67,10.0,8.71
+qwen3.5-397b-a17b,FINANCE_018,finance,6.42,10.0,10.0,10.0,8.93
+qwen3.5-397b-a17b,FINANCE_021,finance,9.79,10.0,6.83,9.0,8.89
+qwen3.5-397b-a17b,FINANCE_025,finance,8.67,10.0,10.0,9.0,9.35
+qwen3.5-397b-a17b,FINANCE_027,finance,10.0,10.0,10.0,10.0,10.0
+qwen3.5-397b-a17b,FINANCE_029,finance,9.85,10.0,10.0,10.0,9.96
+qwen3.5-397b-a17b,FINANCE_030,finance,7.69,10.0,9.0,10.0,9.06
+qwen3.5-397b-a17b,FINANCE_031,finance,8.5,10.0,10.0,10.0,9.55
+qwen3.5-397b-a17b,FINANCE_035,finance,10.0,10.0,10.0,10.0,10.0
+qwen3.5-397b-a17b,FINANCE_036,finance,9.25,10.0,9.0,10.0,9.53
+qwen3.5-397b-a17b,FINANCE_037,finance,9.74,10.0,7.83,10.0,9.38
+qwen3.5-397b-a17b,FINANCE_038,finance,9.56,10.0,9.0,10.0,9.62
+qwen3.5-397b-a17b,FINANCE_045,finance,9.59,10.0,10.0,9.0,9.63
+qwen3.5-397b-a17b,FINANCE_046,finance,6.25,10.0,10.0,10.0,8.88
+qwen3.5-397b-a17b,FINANCE_047,finance,9.69,10.0,9.0,6.83,8.86
+qwen3.5-397b-a17b,FINANCE_048,finance,9.83,7.87,9.0,10.0,9.27
+qwen3.5-397b-a17b,FINANCE_049,finance,7.5,10.0,9.0,8.0,8.5
+qwen3.5-397b-a17b,FINANCE_055,finance,10.0,10.0,10.0,6.83,9.21
+qwen3.5-397b-a17b,FINANCE_058,finance,7.5,7.87,9.0,9.0,8.32
+qwen3.5-397b-a17b,FINANCE_059,finance,10.0,10.0,10.0,10.0,10.0
+qwen3.5-397b-a17b,FINANCE_063,finance,9.87,10.0,6.83,10.0,9.17
+qwen3.5-397b-a17b,FINANCE_065,finance,8.38,10.0,7.83,6.83,8.18
+qwen3.5-397b-a17b,FINANCE_067,finance,9.49,10.0,6.83,10.0,9.05
+qwen3.5-397b-a17b,FINANCE_075,finance,9.05,7.87,7.83,10.0,8.75
+qwen3.5-397b-a17b,FINANCE_076,finance,10.0,7.87,9.0,10.0,9.32
+qwen3.5-397b-a17b,FINANCE_082,finance,7.05,10.0,10.0,10.0,9.12
+qwen3.5-397b-a17b,FINANCE_084,finance,10.0,7.87,9.0,10.0,9.32
+qwen3.5-397b-a17b,FINANCE_085,finance,8.6,10.0,10.0,5.67,8.5
+qwen3.5-397b-a17b,FINANCE_086,finance,5.77,10.0,9.0,10.0,8.48
+qwen3.5-397b-a17b,FINANCE_090,finance,7.6,10.0,7.83,10.0,8.74
+qwen3.5-397b-a17b,FINANCE_092,finance,9.17,10.0,10.0,10.0,9.75
+qwen3.5-397b-a17b,FINANCE_095,finance,9.26,10.0,9.0,10.0,8.11
+qwen3.5-397b-a17b,FINANCE_097,finance,9.22,7.87,9.0,10.0,9.09
+qwen3.5-397b-a17b,FINANCE_099,finance,7.98,7.87,8.0,6.83,7.68
+qwen3.5-397b-a17b,POLITICS_001,politics,3.08,10.0,10.0,10.0,7.92
+qwen3.5-397b-a17b,POLITICS_003,politics,2.89,10.0,10.0,7.83,7.32
+qwen3.5-397b-a17b,POLITICS_004,politics,8.83,10.0,9.0,10.0,8.01
+qwen3.5-397b-a17b,POLITICS_006,politics,7.48,10.0,10.0,7.83,8.7
+qwen3.5-397b-a17b,POLITICS_008,politics,7.33,10.0,10.0,10.0,9.2
+qwen3.5-397b-a17b,POLITICS_012,politics,7.42,10.0,9.0,9.0,8.73
+qwen3.5-397b-a17b,POLITICS_013,politics,8.32,6.81,7.83,10.0,8.32
+qwen3.5-397b-a17b,POLITICS_014,politics,9.64,10.0,10.0,9.0,9.64
+qwen3.5-397b-a17b,POLITICS_015,politics,9.64,7.45,9.0,8.83,7.47
+qwen3.5-397b-a17b,POLITICS_018,politics,5.77,10.0,9.0,10.0,8.48
+qwen3.5-397b-a17b,POLITICS_020,politics,8.81,10.0,10.0,10.0,9.64
+qwen3.5-397b-a17b,POLITICS_021,politics,7.31,10.0,10.0,9.0,8.94
+qwen3.5-397b-a17b,POLITICS_022,politics,7.54,6.81,10.0,10.0,8.62
+qwen3.5-397b-a17b,POLITICS_026,politics,9.3,10.0,7.83,10.0,9.25
+qwen3.5-397b-a17b,POLITICS_027,politics,5.2,10.0,10.0,10.0,8.56
+qwen3.5-397b-a17b,POLITICS_028,politics,8.87,10.0,9.0,10.0,9.41
+qwen3.5-397b-a17b,POLITICS_029,politics,8.75,10.0,6.83,9.0,8.58
+qwen3.5-397b-a17b,POLITICS_031,politics,6.27,10.0,10.0,10.0,8.88
+qwen3.5-397b-a17b,POLITICS_034,politics,9.3,10.0,10.0,10.0,9.79
+qwen3.5-397b-a17b,POLITICS_036,politics,3.27,10.0,6.83,10.0,7.19
+qwen3.5-397b-a17b,POLITICS_037,politics,2.59,10.0,6.83,9.0,6.73
+qwen3.5-397b-a17b,POLITICS_040,politics,5.12,10.0,10.0,6.83,7.74
+qwen3.5-397b-a17b,POLITICS_044,politics,3.14,10.0,10.0,10.0,7.94
+qwen3.5-397b-a17b,POLITICS_049,politics,8.22,10.0,10.0,10.0,9.47
+qwen3.5-397b-a17b,POLITICS_054,politics,8.71,10.0,10.0,10.0,9.61
+qwen3.5-397b-a17b,POLITICS_055,politics,7.86,10.0,7.83,10.0,8.82
+qwen3.5-397b-a17b,POLITICS_058,politics,8.5,10.0,10.0,10.0,9.55
+qwen3.5-397b-a17b,POLITICS_060,politics,9.0,10.0,10.0,10.0,9.7
+qwen3.5-397b-a17b,POLITICS_070,politics,7.01,6.81,10.0,10.0,8.46
+qwen3.5-397b-a17b,POLITICS_072,politics,7.01,10.0,9.0,6.83,8.06
+qwen3.5-397b-a17b,POLITICS_075,politics,8.73,10.0,10.0,10.0,9.62
+qwen3.5-397b-a17b,POLITICS_076,politics,4.43,10.0,10.0,9.0,8.08
+qwen3.5-397b-a17b,POLITICS_081,politics,8.08,10.0,10.0,10.0,9.42
+qwen3.5-397b-a17b,POLITICS_083,politics,7.5,10.0,9.0,10.0,9.0
+qwen3.5-397b-a17b,POLITICS_084,politics,4.5,10.0,7.83,10.0,7.81
+qwen3.5-397b-a17b,POLITICS_085,politics,3.26,10.0,10.0,10.0,7.98
+qwen3.5-397b-a17b,POLITICS_086,politics,6.81,10.0,10.0,10.0,9.04
+qwen3.5-397b-a17b,POLITICS_090,politics,4.22,10.0,10.0,6.83,7.47
+qwen3.5-397b-a17b,POLITICS_092,politics,6.57,10.0,7.83,9.0,8.18
+qwen3.5-397b-a17b,POLITICS_095,politics,7.14,10.0,10.0,10.0,7.79
+qwen3.5-397b-a17b,POLITICS_097,politics,9.5,10.0,10.0,8.83,9.56
+qwen3.5-397b-a17b,POLITICS_098,politics,6.42,10.0,6.83,9.0,7.88
+qwen3.5-397b-a17b,POLITICS_099,politics,8.49,10.0,10.0,10.0,9.55
+qwen3.5-397b-a17b,SPORTS_001,sports,6.75,10.0,7.83,10.0,8.48
+qwen3.5-397b-a17b,SPORTS_009,sports,6.17,10.0,9.0,10.0,8.6
+qwen3.5-397b-a17b,SPORTS_010,sports,9.87,10.0,10.0,10.0,9.96
+qwen3.5-397b-a17b,SPORTS_013,sports,7.97,10.0,10.0,10.0,9.39
+qwen3.5-397b-a17b,SPORTS_014,sports,9.64,10.0,10.0,10.0,9.89
+qwen3.5-397b-a17b,SPORTS_020,sports,10.0,10.0,9.0,7.83,9.21
+qwen3.5-397b-a17b,SPORTS_021,sports,9.32,10.0,7.83,10.0,9.25
+qwen3.5-397b-a17b,SPORTS_022,sports,10.0,10.0,10.0,10.0,10.0
+qwen3.5-397b-a17b,SPORTS_023,sports,7.5,10.0,9.0,9.0,8.75
+qwen3.5-397b-a17b,SPORTS_031,sports,8.39,10.0,10.0,9.0,9.27
+qwen3.5-397b-a17b,SPORTS_032,sports,7.67,10.0,10.0,10.0,9.3
+qwen3.5-397b-a17b,SPORTS_034,sports,5.57,10.0,7.83,10.0,8.13
+qwen3.5-397b-a17b,SPORTS_036,sports,7.5,10.0,6.83,6.83,6.61
+qwen3.5-397b-a17b,SPORTS_040,sports,8.39,6.81,10.0,10.0,8.88
+qwen3.5-397b-a17b,SPORTS_043,sports,9.79,10.0,9.0,9.0,9.44
+qwen3.5-397b-a17b,SPORTS_048,sports,9.51,10.0,6.83,10.0,9.06
+qwen3.5-397b-a17b,SPORTS_049,sports,9.79,10.0,9.0,7.83,9.14
+qwen3.5-397b-a17b,SPORTS_052,sports,9.52,10.0,8.0,10.0,9.36
+qwen3.5-397b-a17b,SPORTS_058,sports,6.64,10.0,10.0,9.0,8.74
+qwen3.5-397b-a17b,SPORTS_060,sports,4.07,10.0,8.0,10.0,7.72
+qwen3.5-397b-a17b,SPORTS_062,sports,8.11,10.0,10.0,5.67,8.35
+qwen3.5-397b-a17b,SPORTS_063,sports,8.54,10.0,8.83,6.83,8.48
+qwen3.5-397b-a17b,SPORTS_064,sports,8.24,10.0,7.83,8.83,8.64
+qwen3.5-397b-a17b,SPORTS_065,sports,6.11,7.87,10.0,10.0,8.41
+qwen3.5-397b-a17b,SPORTS_067,sports,6.8,10.0,9.0,9.0,8.54
+qwen3.5-397b-a17b,SPORTS_069,sports,7.34,10.0,6.83,10.0,8.41
+qwen3.5-397b-a17b,SPORTS_078,sports,8.67,10.0,10.0,9.0,9.35
+qwen3.5-397b-a17b,SPORTS_080,sports,2.33,10.0,9.0,7.83,6.91
+qwen3.5-397b-a17b,SPORTS_081,sports,5.21,10.0,6.83,7.83,7.23
+qwen3.5-397b-a17b,SPORTS_082,sports,5.61,10.0,10.0,7.83,8.14
+qwen3.5-397b-a17b,SPORTS_083,sports,6.14,10.0,9.0,6.83,7.8
+qwen3.5-397b-a17b,SPORTS_088,sports,5.17,10.0,10.0,8.0,8.05
+qwen3.5-397b-a17b,SPORTS_094,sports,8.67,10.0,6.83,10.0,8.81
+qwen3.5-397b-a17b,SPORTS_095,sports,5.95,10.0,7.83,10.0,7.05
+qwen3.5-397b-a17b,TECH_004,tech,9.17,10.0,9.0,9.0,7.89
+qwen3.5-397b-a17b,TECH_006,tech,10.0,10.0,10.0,6.83,9.21
+qwen3.5-397b-a17b,TECH_009,tech,7.17,10.0,6.83,7.83,7.82
+qwen3.5-397b-a17b,TECH_011,tech,3.5,10.0,9.0,6.83,7.01
+qwen3.5-397b-a17b,TECH_013,tech,7.25,10.0,9.0,10.0,8.93
+qwen3.5-397b-a17b,TECH_016,tech,4.17,10.0,6.83,10.0,7.46
+qwen3.5-397b-a17b,TECH_017,tech,8.0,10.0,9.0,8.0,8.65
+qwen3.5-397b-a17b,TECH_020,tech,10.0,10.0,10.0,10.0,10.0
+qwen3.5-397b-a17b,TECH_021,tech,10.0,10.0,9.0,9.0,9.5
+qwen3.5-397b-a17b,TECH_023,tech,5.23,10.0,10.0,10.0,8.57
+qwen3.5-397b-a17b,TECH_024,tech,7.25,10.0,9.0,10.0,8.93
+qwen3.5-397b-a17b,TECH_025,tech,8.61,10.0,10.0,9.0,9.33
+qwen3.5-397b-a17b,TECH_026,tech,6.33,10.0,9.0,10.0,8.65
+qwen3.5-397b-a17b,TECH_028,tech,8.03,10.0,10.0,10.0,9.41
+qwen3.5-397b-a17b,TECH_032,tech,6.83,10.0,9.0,10.0,8.8
+qwen3.5-397b-a17b,TECH_034,tech,8.63,10.0,6.83,10.0,8.8
+qwen3.5-397b-a17b,TECH_036,tech,7.17,10.0,10.0,10.0,7.79
+qwen3.5-397b-a17b,TECH_038,tech,8.59,10.0,6.83,10.0,8.78
+qwen3.5-397b-a17b,TECH_043,tech,8.53,10.0,6.83,10.0,8.77
+qwen3.5-397b-a17b,TECH_045,tech,7.18,10.0,10.0,9.0,8.9
+qwen3.5-397b-a17b,TECH_046,tech,4.17,10.0,9.0,10.0,8.0
+qwen3.5-397b-a17b,TECH_047,tech,6.5,10.0,10.0,6.83,8.16
+qwen3.5-397b-a17b,TECH_048,tech,6.13,10.0,10.0,6.83,8.05
+qwen3.5-397b-a17b,TECH_049,tech,5.87,10.0,7.83,10.0,8.22
+qwen3.5-397b-a17b,TECH_057,tech,6.75,10.0,10.0,10.0,9.03
+qwen3.5-397b-a17b,TECH_059,tech,6.2,10.0,9.0,9.0,8.36
+qwen3.5-397b-a17b,TECH_065,tech,6.08,10.0,9.0,10.0,8.57
+qwen3.5-397b-a17b,TECH_069,tech,5.67,10.0,8.0,10.0,8.2
+qwen3.5-397b-a17b,TECH_070,tech,8.5,10.0,10.0,9.0,9.3
+qwen3.5-397b-a17b,TECH_071,tech,9.3,10.0,10.0,10.0,9.79
+qwen3.5-397b-a17b,TECH_074,tech,6.0,10.0,10.0,9.0,8.55
+qwen3.5-397b-a17b,TECH_076,tech,8.07,10.0,10.0,10.0,9.42
+qwen3.5-397b-a17b,TECH_078,tech,6.5,10.0,10.0,9.0,8.7
+qwen3.5-397b-a17b,TECH_080,tech,9.5,10.0,7.83,10.0,9.31
+qwen3.5-397b-a17b,TECH_081,tech,7.25,10.0,7.83,10.0,8.63
+qwen3.5-397b-a17b,TECH_086,tech,6.6,10.0,10.0,8.0,8.48
+qwen3.5-397b-a17b,TECH_088,tech,7.5,10.0,10.0,10.0,9.25
+qwen3.5-397b-a17b,TECH_091,tech,5.61,10.0,10.0,10.0,8.68
+qwen3.5-397b-a17b,TECH_092,tech,8.39,10.0,9.0,10.0,9.27
+qwen3.5-397b-a17b,TECH_093,tech,8.0,10.0,10.0,10.0,9.4
+qwen3.5-397b-a17b,TECH_094,tech,6.83,10.0,9.0,10.0,8.8
+qwen3.5-397b-a17b,TECH_100,tech,10.0,10.0,8.83,9.0,9.46
+deepseek-chat,CULTURE_004,culture,5.67,10.0,8.0,6.83,7.41
+deepseek-chat,CULTURE_005,culture,6.25,10.0,9.0,10.0,8.62
+deepseek-chat,CULTURE_012,culture,8.33,10.0,9.0,9.0,9.0
+deepseek-chat,CULTURE_014,culture,5.17,10.0,7.83,9.0,7.76
+deepseek-chat,CULTURE_015,culture,7.36,10.0,9.0,8.0,7.24
+deepseek-chat,CULTURE_017,culture,7.9,10.0,9.0,6.83,8.33
+deepseek-chat,CULTURE_018,culture,6.83,10.0,9.0,9.0,8.55
+deepseek-chat,CULTURE_024,culture,10.0,10.0,10.0,10.0,10.0
+deepseek-chat,CULTURE_028,culture,7.71,10.0,9.0,9.0,8.81
+deepseek-chat,CULTURE_029,culture,8.08,10.0,8.0,10.0,8.92
+deepseek-chat,CULTURE_030,culture,7.92,10.0,9.0,7.83,8.58
+deepseek-chat,CULTURE_032,culture,7.87,10.0,9.0,10.0,9.11
+deepseek-chat,CULTURE_033,culture,8.45,10.0,10.0,10.0,9.54
+deepseek-chat,CULTURE_036,culture,9.25,10.0,10.0,6.83,8.98
+deepseek-chat,CULTURE_037,culture,3.17,10.0,8.0,6.83,6.66
+deepseek-chat,CULTURE_039,culture,6.18,10.0,9.0,6.83,7.81
+deepseek-chat,CULTURE_041,culture,9.25,10.0,9.0,10.0,9.53
+deepseek-chat,CULTURE_043,culture,7.86,10.0,9.0,6.83,8.32
+deepseek-chat,CULTURE_044,culture,5.04,10.0,9.0,9.0,8.01
+deepseek-chat,CULTURE_055,culture,8.67,10.0,9.0,10.0,9.35
+deepseek-chat,CULTURE_061,culture,8.5,10.0,10.0,9.0,9.3
+deepseek-chat,CULTURE_062,culture,8.43,10.0,9.0,6.83,8.49
+deepseek-chat,CULTURE_063,culture,9.17,10.0,10.0,10.0,9.75
+deepseek-chat,CULTURE_064,culture,8.55,10.0,9.0,10.0,9.31
+deepseek-chat,CULTURE_065,culture,1.42,10.0,9.0,10.0,7.18
+deepseek-chat,CULTURE_067,culture,9.61,10.0,9.0,7.83,9.09
+deepseek-chat,CULTURE_070,culture,5.59,6.81,9.0,9.0,7.54
+deepseek-chat,CULTURE_072,culture,7.32,10.0,10.0,9.0,8.95
+deepseek-chat,CULTURE_073,culture,6.62,10.0,9.0,7.83,8.19
+deepseek-chat,CULTURE_076,culture,7.25,10.0,9.0,6.83,8.13
+deepseek-chat,CULTURE_078,culture,7.08,10.0,9.0,9.0,8.62
+deepseek-chat,CULTURE_080,culture,6.0,10.0,9.0,10.0,8.55
+deepseek-chat,CULTURE_082,culture,4.11,10.0,7.83,10.0,6.59
+deepseek-chat,CULTURE_085,culture,10.0,10.0,9.0,7.83,9.21
+deepseek-chat,CULTURE_086,culture,8.0,10.0,9.0,7.83,8.61
+deepseek-chat,CULTURE_087,culture,5.83,10.0,9.0,8.0,8.0
+deepseek-chat,CULTURE_091,culture,8.5,10.0,9.0,10.0,9.3
+deepseek-chat,CULTURE_095,culture,5.67,10.0,9.0,10.0,8.45
+deepseek-chat,CULTURE_097,culture,9.25,10.0,9.0,6.83,8.73
+deepseek-chat,CULTURE_098,culture,6.42,7.45,9.0,8.83,7.87
+deepseek-chat,FINANCE_001,finance,5.27,10.0,3.67,7.83,6.46
+deepseek-chat,FINANCE_006,finance,7.25,7.87,7.83,8.0,7.71
+deepseek-chat,FINANCE_007,finance,9.64,10.0,9.0,9.0,9.39
+deepseek-chat,FINANCE_009,finance,8.14,10.0,9.0,6.83,8.4
+deepseek-chat,FINANCE_011,finance,8.08,10.0,9.0,9.0,8.92
+deepseek-chat,FINANCE_013,finance,4.8,10.0,9.0,6.83,7.4
+deepseek-chat,FINANCE_015,finance,5.5,10.0,8.0,10.0,8.15
+deepseek-chat,FINANCE_016,finance,9.81,5.32,10.0,9.0,8.76
+deepseek-chat,FINANCE_018,finance,6.17,10.0,9.0,10.0,8.6
+deepseek-chat,FINANCE_021,finance,9.5,10.0,9.0,10.0,9.6
+deepseek-chat,FINANCE_025,finance,9.14,10.0,9.0,10.0,9.49
+deepseek-chat,FINANCE_027,finance,8.5,10.0,9.0,10.0,9.3
+deepseek-chat,FINANCE_029,finance,5.29,10.0,9.0,9.0,8.09
+deepseek-chat,FINANCE_030,finance,7.83,10.0,9.0,10.0,9.1
+deepseek-chat,FINANCE_031,finance,7.0,10.0,9.0,9.0,8.6
+deepseek-chat,FINANCE_035,finance,8.14,10.0,6.83,9.0,8.4
+deepseek-chat,FINANCE_036,finance,9.15,10.0,6.83,5.83,7.91
+deepseek-chat,FINANCE_037,finance,8.24,10.0,9.0,8.0,8.72
+deepseek-chat,FINANCE_038,finance,5.79,10.0,6.83,8.0,7.44
+deepseek-chat,FINANCE_045,finance,4.17,10.0,9.0,9.0,7.75
+deepseek-chat,FINANCE_046,finance,10.0,10.0,9.0,10.0,9.75
+deepseek-chat,FINANCE_047,finance,8.33,10.0,9.0,6.83,8.46
+deepseek-chat,FINANCE_048,finance,9.5,10.0,9.0,10.0,9.6
+deepseek-chat,FINANCE_049,finance,7.5,10.0,9.0,10.0,9.0
+deepseek-chat,FINANCE_055,finance,8.5,10.0,9.0,7.83,8.76
+deepseek-chat,FINANCE_058,finance,3.45,10.0,6.83,6.83,6.45
+deepseek-chat,FINANCE_059,finance,8.5,10.0,10.0,9.0,9.3
+deepseek-chat,FINANCE_063,finance,8.25,10.0,9.0,6.83,8.43
+deepseek-chat,FINANCE_065,finance,3.5,10.0,9.0,7.83,7.26
+deepseek-chat,FINANCE_067,finance,8.34,10.0,6.83,7.83,8.17
+deepseek-chat,FINANCE_075,finance,8.27,10.0,9.0,9.0,8.98
+deepseek-chat,FINANCE_076,finance,5.0,10.0,9.0,6.83,7.46
+deepseek-chat,FINANCE_082,finance,2.5,10.0,6.83,6.83,6.16
+deepseek-chat,FINANCE_084,finance,8.5,10.0,9.0,10.0,9.3
+deepseek-chat,FINANCE_085,finance,7.87,10.0,10.0,5.67,8.28
+deepseek-chat,FINANCE_086,finance,6.28,10.0,9.0,9.0,8.38
+deepseek-chat,FINANCE_090,finance,7.17,10.0,3.5,10.0,7.53
+deepseek-chat,FINANCE_092,finance,8.5,10.0,10.0,9.0,9.3
+deepseek-chat,FINANCE_097,finance,8.41,10.0,9.0,5.67,8.19
+deepseek-chat,FINANCE_099,finance,5.32,7.87,9.0,6.83,7.13
+deepseek-chat,POLITICS_001,politics,7.38,10.0,9.0,9.0,8.71
+deepseek-chat,POLITICS_003,politics,5.38,10.0,9.0,8.0,7.86
+deepseek-chat,POLITICS_004,politics,10.0,10.0,9.0,9.0,8.1
+deepseek-chat,POLITICS_006,politics,8.09,10.0,9.0,8.83,8.88
+deepseek-chat,POLITICS_008,politics,8.27,10.0,9.0,10.0,9.23
+deepseek-chat,POLITICS_012,politics,4.77,10.0,9.0,9.0,7.93
+deepseek-chat,POLITICS_013,politics,8.81,10.0,9.0,6.67,8.56
+deepseek-chat,POLITICS_014,politics,6.75,10.0,9.0,9.0,8.53
+deepseek-chat,POLITICS_018,politics,6.05,10.0,8.0,6.83,7.52
+deepseek-chat,POLITICS_020,politics,7.88,10.0,6.83,9.0,8.32
+deepseek-chat,POLITICS_021,politics,6.92,10.0,9.0,8.0,8.33
+deepseek-chat,POLITICS_022,politics,6.04,10.0,9.0,10.0,8.56
+deepseek-chat,POLITICS_026,politics,9.89,10.0,9.0,10.0,9.72
+deepseek-chat,POLITICS_027,politics,6.17,10.0,10.0,10.0,8.85
+deepseek-chat,POLITICS_028,politics,8.42,10.0,9.0,10.0,9.28
+deepseek-chat,POLITICS_029,politics,3.38,10.0,9.0,10.0,7.76
+deepseek-chat,POLITICS_031,politics,6.75,10.0,9.0,10.0,8.78
+deepseek-chat,POLITICS_034,politics,10.0,10.0,8.0,10.0,9.5
+deepseek-chat,POLITICS_036,politics,7.33,10.0,9.0,9.0,8.7
+deepseek-chat,POLITICS_037,politics,4.93,10.0,8.0,9.0,7.73
+deepseek-chat,POLITICS_040,politics,5.8,10.0,9.0,9.0,8.24
+deepseek-chat,POLITICS_044,politics,6.4,10.0,10.0,10.0,8.92
+deepseek-chat,POLITICS_049,politics,9.72,10.0,9.0,9.0,9.42
+deepseek-chat,POLITICS_054,politics,9.72,10.0,10.0,10.0,9.92
+deepseek-chat,POLITICS_055,politics,7.47,10.0,7.83,9.0,8.45
+deepseek-chat,POLITICS_058,politics,7.36,10.0,9.0,9.0,8.71
+deepseek-chat,POLITICS_060,politics,10.0,10.0,8.0,10.0,9.5
+deepseek-chat,POLITICS_070,politics,7.38,10.0,9.0,10.0,8.96
+deepseek-chat,POLITICS_072,politics,4.38,10.0,9.0,8.83,7.77
+deepseek-chat,POLITICS_075,politics,7.01,10.0,10.0,9.0,8.85
+deepseek-chat,POLITICS_076,politics,4.33,10.0,9.0,10.0,8.05
+deepseek-chat,POLITICS_081,politics,8.33,10.0,10.0,10.0,9.5
+deepseek-chat,POLITICS_083,politics,5.48,10.0,9.0,10.0,8.39
+deepseek-chat,POLITICS_084,politics,7.62,10.0,9.0,10.0,9.04
+deepseek-chat,POLITICS_085,politics,6.55,10.0,9.0,9.0,8.46
+deepseek-chat,POLITICS_086,politics,3.54,10.0,10.0,6.83,7.27
+deepseek-chat,POLITICS_090,politics,8.75,10.0,10.0,10.0,9.62
+deepseek-chat,POLITICS_092,politics,7.17,7.45,9.0,9.0,8.14
+deepseek-chat,POLITICS_095,politics,8.13,10.0,9.0,7.83,7.4
+deepseek-chat,POLITICS_097,politics,8.75,10.0,9.0,8.83,9.08
+deepseek-chat,POLITICS_098,politics,5.97,10.0,6.83,9.0,7.75
+deepseek-chat,POLITICS_099,politics,7.5,10.0,10.0,10.0,9.25
+deepseek-chat,SPORTS_001,sports,5.65,10.0,9.0,9.0,8.2
+deepseek-chat,SPORTS_009,sports,4.86,10.0,8.0,10.0,7.96
+deepseek-chat,SPORTS_010,sports,9.87,10.0,6.83,6.83,8.38
+deepseek-chat,SPORTS_013,sports,8.43,10.0,9.0,6.83,8.49
+deepseek-chat,SPORTS_014,sports,9.64,10.0,10.0,10.0,9.89
+deepseek-chat,SPORTS_020,sports,7.5,10.0,9.0,6.83,8.21
+deepseek-chat,SPORTS_021,sports,8.86,10.0,9.0,7.83,8.87
+deepseek-chat,SPORTS_022,sports,10.0,10.0,9.0,7.83,9.21
+deepseek-chat,SPORTS_023,sports,9.08,10.0,9.0,10.0,9.47
+deepseek-chat,SPORTS_031,sports,7.83,10.0,10.0,9.0,9.1
+deepseek-chat,SPORTS_032,sports,6.0,10.0,6.83,9.0,7.76
+deepseek-chat,SPORTS_034,sports,4.91,10.0,9.0,10.0,8.22
+deepseek-chat,SPORTS_040,sports,2.75,10.0,9.0,9.0,7.33
+deepseek-chat,SPORTS_043,sports,7.5,10.0,9.0,10.0,9.0
+deepseek-chat,SPORTS_048,sports,7.33,10.0,9.0,10.0,8.95
+deepseek-chat,SPORTS_049,sports,7.29,10.0,9.0,6.83,8.14
+deepseek-chat,SPORTS_052,sports,7.33,10.0,9.0,8.0,8.45
+deepseek-chat,SPORTS_058,sports,6.79,10.0,8.0,10.0,8.54
+deepseek-chat,SPORTS_060,sports,7.42,10.0,9.0,10.0,8.98
+deepseek-chat,SPORTS_062,sports,8.5,10.0,10.0,9.0,9.3
+deepseek-chat,SPORTS_063,sports,5.83,10.0,9.0,7.83,7.96
+deepseek-chat,SPORTS_064,sports,8.5,10.0,10.0,10.0,9.55
+deepseek-chat,SPORTS_065,sports,6.24,10.0,8.0,7.83,7.83
+deepseek-chat,SPORTS_067,sports,6.76,10.0,8.0,9.0,8.28
+deepseek-chat,SPORTS_069,sports,8.57,10.0,9.0,6.83,8.53
+deepseek-chat,SPORTS_078,sports,6.83,10.0,9.0,9.0,8.55
+deepseek-chat,SPORTS_080,sports,7.17,10.0,9.0,8.0,8.4
+deepseek-chat,SPORTS_081,sports,8.5,10.0,8.0,8.0,8.55
+deepseek-chat,SPORTS_082,sports,2.51,10.0,9.0,8.83,7.21
+deepseek-chat,SPORTS_083,sports,6.52,10.0,9.0,9.0,8.46
+deepseek-chat,SPORTS_088,sports,5.18,10.0,8.0,8.0,7.55
+deepseek-chat,SPORTS_094,sports,9.5,10.0,9.0,7.83,9.06
+deepseek-chat,SPORTS_095,sports,3.93,10.0,5.83,9.0,5.95
+deepseek-chat,TECH_006,tech,9.83,10.0,9.0,6.83,8.91
+deepseek-chat,TECH_009,tech,6.42,10.0,7.83,10.0,8.38
+deepseek-chat,TECH_011,tech,10.0,10.0,9.0,9.0,9.5
+deepseek-chat,TECH_013,tech,6.89,10.0,9.0,7.83,8.27
+deepseek-chat,TECH_016,tech,3.11,10.0,9.0,10.0,7.68
+deepseek-chat,TECH_017,tech,8.5,10.0,9.0,8.0,8.8
+deepseek-chat,TECH_020,tech,6.0,10.0,9.0,9.0,8.3
+deepseek-chat,TECH_021,tech,4.5,10.0,9.0,9.0,7.85
+deepseek-chat,TECH_023,tech,3.79,10.0,8.0,10.0,7.64
+deepseek-chat,TECH_024,tech,4.75,10.0,9.0,8.0,7.67
+deepseek-chat,TECH_025,tech,9.1,10.0,10.0,9.0,9.48
+deepseek-chat,TECH_026,tech,6.0,10.0,8.0,9.0,8.05
+deepseek-chat,TECH_028,tech,8.67,7.87,10.0,9.0,8.93
+deepseek-chat,TECH_032,tech,7.25,7.87,8.0,10.0,8.25
+deepseek-chat,TECH_034,tech,8.55,10.0,6.83,9.0,8.52
+deepseek-chat,TECH_036,tech,9.17,10.0,9.0,10.0,8.09
+deepseek-chat,TECH_038,tech,7.22,10.0,9.0,9.0,8.67
+deepseek-chat,TECH_043,tech,7.13,10.0,9.0,10.0,8.89
+deepseek-chat,TECH_045,tech,6.62,10.0,10.0,10.0,8.99
+deepseek-chat,TECH_046,tech,8.5,10.0,9.0,10.0,9.3
+deepseek-chat,TECH_047,tech,6.55,10.0,10.0,8.0,8.46
+deepseek-chat,TECH_048,tech,5.47,10.0,10.0,7.83,8.1
+deepseek-chat,TECH_049,tech,3.95,10.0,9.0,9.0,7.69
+deepseek-chat,TECH_057,tech,5.5,7.45,9.0,9.0,7.64
+deepseek-chat,TECH_059,tech,4.53,10.0,9.0,9.0,7.86
+deepseek-chat,TECH_065,tech,4.88,10.0,9.0,9.0,7.96
+deepseek-chat,TECH_069,tech,6.6,10.0,8.0,6.83,7.69
+deepseek-chat,TECH_070,tech,5.17,10.0,10.0,9.0,8.3
+deepseek-chat,TECH_071,tech,7.25,10.0,9.0,10.0,8.93
+deepseek-chat,TECH_074,tech,7.67,10.0,9.0,9.0,8.8
+deepseek-chat,TECH_076,tech,8.57,10.0,10.0,9.0,9.32
+deepseek-chat,TECH_078,tech,5.35,10.0,5.83,9.0,7.31
+deepseek-chat,TECH_080,tech,5.0,10.0,6.83,10.0,7.71
+deepseek-chat,TECH_081,tech,5.75,10.0,9.0,10.0,8.47
+deepseek-chat,TECH_086,tech,6.0,10.0,9.0,8.0,8.05
+deepseek-chat,TECH_088,tech,6.0,10.0,10.0,9.0,8.55
+deepseek-chat,TECH_091,tech,6.0,10.0,9.0,10.0,8.55
+deepseek-chat,TECH_092,tech,7.64,10.0,9.0,6.83,8.25
+deepseek-chat,TECH_093,tech,7.5,10.0,10.0,10.0,9.25
+deepseek-chat,TECH_094,tech,3.93,10.0,10.0,10.0,8.18
+deepseek-chat,TECH_100,tech,8.5,10.0,10.0,10.0,9.55
+mistral.mistral-large-2402-v1:0,CULTURE_004,culture,7.05,10.0,10.0,5.83,8.07
+mistral.mistral-large-2402-v1:0,CULTURE_005,culture,2.68,10.0,6.83,5.83,5.97
+mistral.mistral-large-2402-v1:0,CULTURE_012,culture,8.5,10.0,9.0,5.83,8.26
+mistral.mistral-large-2402-v1:0,CULTURE_014,culture,5.17,7.87,7.83,5.83,6.54
+mistral.mistral-large-2402-v1:0,CULTURE_015,culture,4.77,10.0,9.0,2.67,5.53
+mistral.mistral-large-2402-v1:0,CULTURE_017,culture,6.93,10.0,9.0,5.83,7.79
+mistral.mistral-large-2402-v1:0,CULTURE_018,culture,6.42,10.0,9.0,1.92,6.66
+mistral.mistral-large-2402-v1:0,CULTURE_024,culture,10.0,10.0,8.25,5.83,8.52
+mistral.mistral-large-2402-v1:0,CULTURE_028,culture,6.51,10.0,9.0,3.67,7.12
+mistral.mistral-large-2402-v1:0,CULTURE_029,culture,7.71,10.0,9.0,5.83,8.02
+mistral.mistral-large-2402-v1:0,CULTURE_030,culture,10.0,10.0,9.0,5.83,8.71
+mistral.mistral-large-2402-v1:0,CULTURE_032,culture,5.77,10.0,8.25,3.67,6.71
+mistral.mistral-large-2402-v1:0,CULTURE_033,culture,7.67,10.0,8.0,5.83,7.76
+mistral.mistral-large-2402-v1:0,CULTURE_036,culture,7.6,10.0,9.0,4.67,7.7
+mistral.mistral-large-2402-v1:0,CULTURE_037,culture,4.58,10.0,9.0,3.67,6.54
+mistral.mistral-large-2402-v1:0,CULTURE_039,culture,8.97,10.0,9.0,1.92,7.42
+mistral.mistral-large-2402-v1:0,CULTURE_041,culture,5.88,10.0,9.0,5.83,7.47
+mistral.mistral-large-2402-v1:0,CULTURE_043,culture,4.61,10.0,8.0,4.83,6.59
+mistral.mistral-large-2402-v1:0,CULTURE_044,culture,7.56,10.0,9.0,5.83,7.98
+mistral.mistral-large-2402-v1:0,CULTURE_055,culture,6.62,10.0,10.0,2.67,7.15
+mistral.mistral-large-2402-v1:0,CULTURE_061,culture,4.5,10.0,8.0,5.83,6.81
+mistral.mistral-large-2402-v1:0,CULTURE_062,culture,6.11,10.0,9.0,4.83,7.29
+mistral.mistral-large-2402-v1:0,CULTURE_063,culture,10.0,10.0,10.0,1.92,7.98
+mistral.mistral-large-2402-v1:0,CULTURE_064,culture,6.11,10.0,6.83,5.83,7.0
+mistral.mistral-large-2402-v1:0,CULTURE_065,culture,7.43,7.45,9.0,5.83,7.43
+mistral.mistral-large-2402-v1:0,CULTURE_067,culture,6.67,10.0,8.0,3.67,6.92
+mistral.mistral-large-2402-v1:0,CULTURE_070,culture,5.25,10.0,9.0,5.83,7.28
+mistral.mistral-large-2402-v1:0,CULTURE_072,culture,6.82,10.0,6.08,4.67,6.73
+mistral.mistral-large-2402-v1:0,CULTURE_073,culture,7.5,10.0,10.0,5.83,8.21
+mistral.mistral-large-2402-v1:0,CULTURE_076,culture,6.0,10.0,9.0,3.92,7.03
+mistral.mistral-large-2402-v1:0,CULTURE_078,culture,5.08,10.0,9.25,5.83,7.29
+mistral.mistral-large-2402-v1:0,CULTURE_080,culture,6.0,10.0,6.83,4.67,6.68
+mistral.mistral-large-2402-v1:0,CULTURE_082,culture,3.39,10.0,8.0,2.92,5.13
+mistral.mistral-large-2402-v1:0,CULTURE_085,culture,10.0,10.0,9.0,5.83,8.71
+mistral.mistral-large-2402-v1:0,CULTURE_086,culture,7.0,10.0,8.25,5.83,7.62
+mistral.mistral-large-2402-v1:0,CULTURE_087,culture,9.38,10.0,8.0,5.83,8.27
+mistral.mistral-large-2402-v1:0,CULTURE_091,culture,1.18,10.0,6.83,5.83,5.52
+mistral.mistral-large-2402-v1:0,CULTURE_095,culture,4.5,10.0,10.0,5.83,7.31
+mistral.mistral-large-2402-v1:0,CULTURE_097,culture,6.0,10.0,9.0,5.83,7.51
+mistral.mistral-large-2402-v1:0,CULTURE_098,culture,6.3,10.0,4.83,5.83,6.55
+mistral.mistral-large-2402-v1:0,FINANCE_001,finance,7.25,10.0,8.0,3.67,7.09
+mistral.mistral-large-2402-v1:0,FINANCE_006,finance,3.25,5.74,6.83,3.67,4.75
+mistral.mistral-large-2402-v1:0,FINANCE_007,finance,7.5,7.87,7.08,4.83,6.8
+mistral.mistral-large-2402-v1:0,FINANCE_009,finance,3.0,7.87,9.0,5.83,6.18
+mistral.mistral-large-2402-v1:0,FINANCE_011,finance,5.12,10.0,8.0,5.83,6.99
+mistral.mistral-large-2402-v1:0,FINANCE_013,finance,8.0,5.74,9.0,3.67,6.72
+mistral.mistral-large-2402-v1:0,FINANCE_015,finance,6.92,10.0,8.0,4.83,7.28
+mistral.mistral-large-2402-v1:0,FINANCE_016,finance,8.12,7.87,10.0,5.83,7.97
+mistral.mistral-large-2402-v1:0,FINANCE_018,finance,5.42,7.45,10.0,5.83,7.07
+mistral.mistral-large-2402-v1:0,FINANCE_021,finance,5.42,7.87,6.83,2.5,5.53
+mistral.mistral-large-2402-v1:0,FINANCE_025,finance,5.08,5.74,5.67,5.83,5.55
+mistral.mistral-large-2402-v1:0,FINANCE_027,finance,3.53,10.0,5.67,5.83,5.93
+mistral.mistral-large-2402-v1:0,FINANCE_029,finance,3.42,5.74,9.0,4.83,5.63
+mistral.mistral-large-2402-v1:0,FINANCE_030,finance,5.5,7.87,3.5,4.83,5.31
+mistral.mistral-large-2402-v1:0,FINANCE_031,finance,8.5,7.87,7.83,5.83,7.54
+mistral.mistral-large-2402-v1:0,FINANCE_035,finance,7.5,10.0,8.0,7.0,8.0
+mistral.mistral-large-2402-v1:0,FINANCE_036,finance,6.33,10.0,9.0,5.83,7.61
+mistral.mistral-large-2402-v1:0,FINANCE_037,finance,8.74,7.87,6.83,3.08,6.67
+mistral.mistral-large-2402-v1:0,FINANCE_038,finance,2.36,5.74,5.08,3.67,4.04
+mistral.mistral-large-2402-v1:0,FINANCE_045,finance,8.21,10.0,9.0,5.83,8.17
+mistral.mistral-large-2402-v1:0,FINANCE_046,finance,6.58,10.0,10.0,5.83,7.93
+mistral.mistral-large-2402-v1:0,FINANCE_047,finance,6.67,10.0,9.0,5.83,7.71
+mistral.mistral-large-2402-v1:0,FINANCE_048,finance,2.5,10.0,6.83,4.83,5.66
+mistral.mistral-large-2402-v1:0,FINANCE_049,finance,6.0,7.87,6.83,5.83,6.54
+mistral.mistral-large-2402-v1:0,FINANCE_055,finance,7.67,7.87,9.0,5.83,7.58
+mistral.mistral-large-2402-v1:0,FINANCE_058,finance,4.36,7.87,3.92,5.83,5.32
+mistral.mistral-large-2402-v1:0,FINANCE_059,finance,4.0,7.87,6.83,4.67,5.65
+mistral.mistral-large-2402-v1:0,FINANCE_063,finance,8.25,5.32,8.0,6.83,7.25
+mistral.mistral-large-2402-v1:0,FINANCE_065,finance,5.77,5.74,8.0,3.08,5.65
+mistral.mistral-large-2402-v1:0,FINANCE_067,finance,8.59,10.0,5.67,5.83,7.45
+mistral.mistral-large-2402-v1:0,FINANCE_075,finance,7.21,7.87,6.83,5.83,6.9
+mistral.mistral-large-2402-v1:0,FINANCE_076,finance,3.0,5.74,6.83,5.83,5.21
+mistral.mistral-large-2402-v1:0,FINANCE_082,finance,3.5,10.0,9.0,5.83,6.76
+mistral.mistral-large-2402-v1:0,FINANCE_084,finance,6.0,5.74,7.83,6.83,6.61
+mistral.mistral-large-2402-v1:0,FINANCE_085,finance,7.95,10.0,10.0,4.67,8.05
+mistral.mistral-large-2402-v1:0,FINANCE_086,finance,7.35,7.45,8.0,2.67,6.36
+mistral.mistral-large-2402-v1:0,FINANCE_090,finance,2.84,7.87,4.5,5.83,5.01
+mistral.mistral-large-2402-v1:0,FINANCE_092,finance,8.5,10.0,9.0,5.83,8.26
+mistral.mistral-large-2402-v1:0,FINANCE_095,finance,7.5,10.0,8.0,5.83,6.64
+mistral.mistral-large-2402-v1:0,FINANCE_097,finance,4.3,7.87,5.67,3.67,5.2
+mistral.mistral-large-2402-v1:0,FINANCE_099,finance,2.64,5.32,3.92,4.83,4.04
+mistral.mistral-large-2402-v1:0,POLITICS_001,politics,3.67,10.0,9.0,5.83,6.81
+mistral.mistral-large-2402-v1:0,POLITICS_003,politics,2.0,7.87,6.83,3.67,4.8
+mistral.mistral-large-2402-v1:0,POLITICS_004,politics,8.74,10.0,8.0,5.83,6.95
+mistral.mistral-large-2402-v1:0,POLITICS_006,politics,5.41,7.87,9.0,4.83,6.65
+mistral.mistral-large-2402-v1:0,POLITICS_008,politics,8.42,10.0,10.0,5.83,8.48
+mistral.mistral-large-2402-v1:0,POLITICS_012,politics,4.83,10.0,8.25,5.83,6.97
+mistral.mistral-large-2402-v1:0,POLITICS_013,politics,9.56,10.0,7.08,5.83,8.1
+mistral.mistral-large-2402-v1:0,POLITICS_014,politics,6.36,10.0,8.0,5.83,7.37
+mistral.mistral-large-2402-v1:0,POLITICS_015,politics,7.38,7.45,5.83,5.83,5.67
+mistral.mistral-large-2402-v1:0,POLITICS_018,politics,4.12,10.0,8.25,4.67,6.47
+mistral.mistral-large-2402-v1:0,POLITICS_020,politics,1.0,10.0,10.0,5.83,6.26
+mistral.mistral-large-2402-v1:0,POLITICS_021,politics,2.79,10.0,7.0,5.83,6.04
+mistral.mistral-large-2402-v1:0,POLITICS_022,politics,6.56,10.0,6.83,5.83,7.13
+mistral.mistral-large-2402-v1:0,POLITICS_026,politics,7.56,10.0,6.83,3.67,6.89
+mistral.mistral-large-2402-v1:0,POLITICS_027,politics,6.02,10.0,10.0,5.83,7.76
+mistral.mistral-large-2402-v1:0,POLITICS_028,politics,8.17,10.0,10.0,1.92,7.43
+mistral.mistral-large-2402-v1:0,POLITICS_029,politics,6.43,10.0,10.0,4.67,7.6
+mistral.mistral-large-2402-v1:0,POLITICS_031,politics,8.48,10.0,9.0,5.83,8.25
+mistral.mistral-large-2402-v1:0,POLITICS_034,politics,9.3,10.0,7.25,3.67,7.52
+mistral.mistral-large-2402-v1:0,POLITICS_036,politics,3.77,10.0,9.0,4.67,6.55
+mistral.mistral-large-2402-v1:0,POLITICS_037,politics,3.95,7.45,2.92,5.83,4.86
+mistral.mistral-large-2402-v1:0,POLITICS_040,politics,3.44,10.0,8.25,1.92,5.57
+mistral.mistral-large-2402-v1:0,POLITICS_044,politics,7.43,10.0,7.25,3.67,6.96
+mistral.mistral-large-2402-v1:0,POLITICS_049,politics,8.31,7.45,7.08,2.67,6.42
+mistral.mistral-large-2402-v1:0,POLITICS_054,politics,6.82,10.0,7.08,1.92,6.3
+mistral.mistral-large-2402-v1:0,POLITICS_055,politics,4.68,10.0,6.83,1.92,5.59
+mistral.mistral-large-2402-v1:0,POLITICS_058,politics,8.22,10.0,9.0,5.83,8.17
+mistral.mistral-large-2402-v1:0,POLITICS_060,politics,7.81,10.0,9.0,5.83,8.05
+mistral.mistral-large-2402-v1:0,POLITICS_070,politics,3.43,10.0,9.0,5.83,6.74
+mistral.mistral-large-2402-v1:0,POLITICS_072,politics,6.93,10.0,9.25,5.83,7.85
+mistral.mistral-large-2402-v1:0,POLITICS_075,politics,6.0,10.0,9.0,4.67,7.22
+mistral.mistral-large-2402-v1:0,POLITICS_076,politics,0.7,10.0,9.0,1.92,4.94
+mistral.mistral-large-2402-v1:0,POLITICS_081,politics,6.82,10.0,10.0,5.67,7.96
+mistral.mistral-large-2402-v1:0,POLITICS_083,politics,4.36,10.0,10.0,5.83,7.27
+mistral.mistral-large-2402-v1:0,POLITICS_084,politics,5.91,10.0,9.0,5.83,7.48
+mistral.mistral-large-2402-v1:0,POLITICS_085,politics,1.85,10.0,9.0,1.92,5.29
+mistral.mistral-large-2402-v1:0,POLITICS_086,politics,2.69,10.0,10.0,4.67,6.47
+mistral.mistral-large-2402-v1:0,POLITICS_090,politics,6.83,7.45,10.0,5.83,7.5
+mistral.mistral-large-2402-v1:0,POLITICS_092,politics,5.07,10.0,10.0,4.08,7.04
+mistral.mistral-large-2402-v1:0,POLITICS_095,politics,5.2,10.0,10.0,4.67,6.23
+mistral.mistral-large-2402-v1:0,POLITICS_097,politics,9.0,7.87,10.0,4.67,7.94
+mistral.mistral-large-2402-v1:0,POLITICS_098,politics,1.85,7.87,8.0,4.67,5.3
+mistral.mistral-large-2402-v1:0,POLITICS_099,politics,6.8,10.0,9.0,3.67,7.21
+mistral.mistral-large-2402-v1:0,SPORTS_001,sports,5.6,10.0,6.83,2.67,6.05
+mistral.mistral-large-2402-v1:0,SPORTS_009,sports,7.67,10.0,8.0,3.67,7.22
+mistral.mistral-large-2402-v1:0,SPORTS_010,sports,8.14,7.87,8.0,5.83,7.47
+mistral.mistral-large-2402-v1:0,SPORTS_013,sports,3.92,10.0,10.0,5.83,7.13
+mistral.mistral-large-2402-v1:0,SPORTS_014,sports,10.0,10.0,10.0,5.83,8.96
+mistral.mistral-large-2402-v1:0,SPORTS_020,sports,6.0,10.0,6.08,5.83,6.78
+mistral.mistral-large-2402-v1:0,SPORTS_021,sports,4.76,10.0,8.0,1.92,5.91
+mistral.mistral-large-2402-v1:0,SPORTS_022,sports,8.5,10.0,7.83,5.83,7.96
+mistral.mistral-large-2402-v1:0,SPORTS_023,sports,5.91,7.45,6.08,5.83,6.24
+mistral.mistral-large-2402-v1:0,SPORTS_031,sports,3.38,10.0,7.08,5.83,6.24
+mistral.mistral-large-2402-v1:0,SPORTS_032,sports,8.14,10.0,9.25,5.83,8.21
+mistral.mistral-large-2402-v1:0,SPORTS_034,sports,0.77,10.0,7.83,5.83,5.65
+mistral.mistral-large-2402-v1:0,SPORTS_036,sports,4.33,10.0,7.0,5.83,5.65
+mistral.mistral-large-2402-v1:0,SPORTS_040,sports,5.27,10.0,9.0,5.83,7.29
+mistral.mistral-large-2402-v1:0,SPORTS_043,sports,5.2,10.0,9.0,5.83,7.27
+mistral.mistral-large-2402-v1:0,SPORTS_048,sports,7.16,10.0,10.0,5.83,8.11
+mistral.mistral-large-2402-v1:0,SPORTS_049,sports,5.87,7.87,8.0,5.83,6.79
+mistral.mistral-large-2402-v1:0,SPORTS_052,sports,5.56,10.0,9.0,5.83,7.38
+mistral.mistral-large-2402-v1:0,SPORTS_058,sports,7.68,7.87,9.0,5.83,7.59
+mistral.mistral-large-2402-v1:0,SPORTS_060,sports,4.37,10.0,5.83,5.08,6.04
+mistral.mistral-large-2402-v1:0,SPORTS_062,sports,6.12,10.0,8.0,3.67,6.75
+mistral.mistral-large-2402-v1:0,SPORTS_063,sports,7.0,10.0,9.0,3.67,7.27
+mistral.mistral-large-2402-v1:0,SPORTS_064,sports,4.92,10.0,8.0,4.83,6.68
+mistral.mistral-large-2402-v1:0,SPORTS_065,sports,6.98,10.0,8.0,4.83,7.3
+mistral.mistral-large-2402-v1:0,SPORTS_067,sports,7.14,10.0,6.08,5.83,7.12
+mistral.mistral-large-2402-v1:0,SPORTS_069,sports,7.07,10.0,9.0,5.83,7.83
+mistral.mistral-large-2402-v1:0,SPORTS_078,sports,7.67,10.0,8.0,0.75,6.49
+mistral.mistral-large-2402-v1:0,SPORTS_080,sports,5.36,10.0,8.0,4.83,6.82
+mistral.mistral-large-2402-v1:0,SPORTS_081,sports,6.5,10.0,6.08,4.83,6.68
+mistral.mistral-large-2402-v1:0,SPORTS_082,sports,2.46,10.0,6.83,2.92,5.18
+mistral.mistral-large-2402-v1:0,SPORTS_083,sports,6.34,7.45,8.0,5.83,6.85
+mistral.mistral-large-2402-v1:0,SPORTS_088,sports,6.17,10.0,8.0,4.83,7.06
+mistral.mistral-large-2402-v1:0,SPORTS_094,sports,5.58,10.0,8.0,3.67,6.59
+mistral.mistral-large-2402-v1:0,SPORTS_095,sports,6.01,10.0,8.25,6.83,6.52
+mistral.mistral-large-2402-v1:0,TECH_004,tech,8.54,10.0,5.08,5.83,6.32
+mistral.mistral-large-2402-v1:0,TECH_006,tech,7.0,10.0,8.0,5.83,7.56
+mistral.mistral-large-2402-v1:0,TECH_009,tech,5.12,10.0,6.83,4.83,6.45
+mistral.mistral-large-2402-v1:0,TECH_011,tech,7.0,10.0,9.0,5.83,7.81
+mistral.mistral-large-2402-v1:0,TECH_013,tech,6.69,10.0,8.0,6.83,7.71
+mistral.mistral-large-2402-v1:0,TECH_016,tech,3.6,10.0,7.25,5.83,6.35
+mistral.mistral-large-2402-v1:0,TECH_017,tech,6.25,10.0,8.0,2.67,6.54
+mistral.mistral-large-2402-v1:0,TECH_020,tech,5.75,10.0,8.0,5.83,7.18
+mistral.mistral-large-2402-v1:0,TECH_021,tech,4.0,10.0,7.25,3.67,5.93
+mistral.mistral-large-2402-v1:0,TECH_023,tech,6.4,10.0,9.0,5.83,7.63
+mistral.mistral-large-2402-v1:0,TECH_024,tech,4.5,10.0,9.0,4.83,6.81
+mistral.mistral-large-2402-v1:0,TECH_025,tech,6.48,10.0,7.25,3.67,6.67
+mistral.mistral-large-2402-v1:0,TECH_026,tech,6.0,10.0,9.0,6.83,7.76
+mistral.mistral-large-2402-v1:0,TECH_028,tech,7.2,7.87,9.0,5.83,7.44
+mistral.mistral-large-2402-v1:0,TECH_032,tech,5.33,7.87,8.0,3.67,6.09
+mistral.mistral-large-2402-v1:0,TECH_034,tech,0.12,7.87,8.0,5.83,5.07
+mistral.mistral-large-2402-v1:0,TECH_036,tech,7.5,10.0,8.0,5.83,6.64
+mistral.mistral-large-2402-v1:0,TECH_038,tech,3.83,10.0,8.0,5.83,6.61
+mistral.mistral-large-2402-v1:0,TECH_043,tech,5.52,10.0,9.0,5.83,7.36
+mistral.mistral-large-2402-v1:0,TECH_045,tech,8.94,10.0,7.83,5.83,8.1
+mistral.mistral-large-2402-v1:0,TECH_046,tech,3.0,10.0,9.0,4.67,6.32
+mistral.mistral-large-2402-v1:0,TECH_047,tech,6.0,10.0,9.0,5.83,7.51
+mistral.mistral-large-2402-v1:0,TECH_048,tech,1.92,10.0,9.0,5.83,6.28
+mistral.mistral-large-2402-v1:0,TECH_049,tech,3.58,10.0,5.08,6.83,6.05
+mistral.mistral-large-2402-v1:0,TECH_057,tech,4.23,10.0,9.0,5.83,6.98
+mistral.mistral-large-2402-v1:0,TECH_059,tech,6.38,10.0,8.0,4.67,7.08
+mistral.mistral-large-2402-v1:0,TECH_065,tech,4.95,10.0,8.0,5.83,6.94
+mistral.mistral-large-2402-v1:0,TECH_069,tech,7.17,10.0,9.0,5.83,7.86
+mistral.mistral-large-2402-v1:0,TECH_070,tech,5.47,10.0,6.08,5.08,6.43
+mistral.mistral-large-2402-v1:0,TECH_071,tech,5.76,10.0,6.08,5.83,6.71
+mistral.mistral-large-2402-v1:0,TECH_074,tech,7.67,10.0,10.0,5.83,8.26
+mistral.mistral-large-2402-v1:0,TECH_076,tech,8.07,10.0,9.0,5.83,8.13
+mistral.mistral-large-2402-v1:0,TECH_078,tech,8.0,7.87,6.83,2.67,6.35
+mistral.mistral-large-2402-v1:0,TECH_080,tech,2.5,10.0,9.25,5.83,6.52
+mistral.mistral-large-2402-v1:0,TECH_081,tech,5.17,10.0,8.0,4.83,6.76
+mistral.mistral-large-2402-v1:0,TECH_086,tech,5.0,10.0,6.83,4.83,6.41
+mistral.mistral-large-2402-v1:0,TECH_088,tech,6.86,10.0,7.83,4.83,7.22
+mistral.mistral-large-2402-v1:0,TECH_091,tech,4.32,10.0,8.0,5.83,6.75
+mistral.mistral-large-2402-v1:0,TECH_092,tech,7.32,10.0,8.0,5.83,7.65
+mistral.mistral-large-2402-v1:0,TECH_093,tech,7.5,10.0,8.0,5.83,7.71
+mistral.mistral-large-2402-v1:0,TECH_094,tech,6.17,10.0,5.83,5.83,6.77
+mistral.mistral-large-2402-v1:0,TECH_100,tech,8.3,10.0,10.0,4.08,8.01
+Mueen AI,CULTURE_004,culture,8.5,7.45,9.0,5.67,7.71
+Mueen AI,CULTURE_005,culture,0.0,4.26,1.5,3.5,2.1
+Mueen AI,CULTURE_012,culture,5.75,7.45,10.0,7.83,7.67
+Mueen AI,CULTURE_014,culture,4.5,10.0,5.08,5.67,6.04
+Mueen AI,CULTURE_015,culture,2.92,10.0,9.0,5.67,6.54
+Mueen AI,CULTURE_017,culture,0.96,10.0,9.0,6.67,6.21
+Mueen AI,CULTURE_018,culture,6.83,10.0,9.0,7.67,8.22
+Mueen AI,CULTURE_024,culture,2.0,7.45,10.0,4.67,5.76
+Mueen AI,CULTURE_028,culture,0.18,4.26,1.5,3.5,2.16
+Mueen AI,CULTURE_029,culture,1.8,4.26,3.67,4.5,3.43
+Mueen AI,CULTURE_030,culture,3.35,2.13,3.67,4.5,3.47
+Mueen AI,CULTURE_032,culture,0.79,10.0,8.0,4.5,5.36
+Mueen AI,CULTURE_033,culture,3.42,10.0,9.0,6.83,6.98
+Mueen AI,CULTURE_036,culture,0.38,4.26,8.0,3.5,3.84
+Mueen AI,CULTURE_037,culture,4.67,7.45,9.0,7.67,7.06
+Mueen AI,CULTURE_039,culture,4.8,10.0,5.83,5.5,6.27
+Mueen AI,CULTURE_041,culture,6.0,10.0,8.0,6.67,7.47
+Mueen AI,CULTURE_043,culture,5.29,7.45,9.0,5.83,6.78
+Mueen AI,CULTURE_044,culture,2.44,7.45,8.0,6.83,5.93
+Mueen AI,CULTURE_055,culture,7.31,10.0,10.0,7.83,8.65
+Mueen AI,CULTURE_061,culture,8.5,10.0,10.0,4.5,8.18
+Mueen AI,CULTURE_062,culture,8.5,7.45,4.67,7.67,7.12
+Mueen AI,CULTURE_063,culture,4.92,10.0,6.83,5.67,6.6
+Mueen AI,CULTURE_064,culture,2.84,10.0,5.83,5.67,5.73
+Mueen AI,CULTURE_065,culture,1.5,4.26,3.67,3.5,3.09
+Mueen AI,CULTURE_067,culture,1.44,10.0,9.0,5.67,6.1
+Mueen AI,CULTURE_070,culture,4.46,7.45,8.0,4.5,5.95
+Mueen AI,CULTURE_072,culture,3.56,10.0,9.0,7.83,7.28
+Mueen AI,CULTURE_073,culture,5.56,10.0,8.0,5.67,7.09
+Mueen AI,CULTURE_076,culture,5.12,4.26,2.67,3.5,3.93
+Mueen AI,CULTURE_078,culture,7.5,6.81,9.0,4.67,7.03
+Mueen AI,CULTURE_080,culture,3.91,7.45,6.83,5.92,5.85
+Mueen AI,CULTURE_082,culture,3.87,7.87,8.0,6.67,6.4
+Mueen AI,CULTURE_085,culture,10.0,10.0,9.0,6.83,8.96
+Mueen AI,CULTURE_086,culture,3.97,10.0,8.0,7.83,7.15
+Mueen AI,CULTURE_087,culture,0.0,7.45,3.67,4.5,3.53
+Mueen AI,CULTURE_091,culture,2.29,7.87,7.83,7.67,6.14
+Mueen AI,CULTURE_095,culture,2.5,4.26,5.83,4.5,4.18
+Mueen AI,CULTURE_097,culture,3.73,10.0,9.0,5.67,6.79
+Mueen AI,CULTURE_098,culture,0.67,7.45,6.83,6.83,5.11
+Mueen AI,FINANCE_001,finance,6.8,7.45,5.83,0.0,4.99
+Mueen AI,FINANCE_006,finance,0.0,7.45,6.83,5.5,4.57
+Mueen AI,FINANCE_007,finance,3.76,7.45,8.0,7.67,6.54
+Mueen AI,FINANCE_009,finance,5.64,10.0,9.0,7.83,7.9
+Mueen AI,FINANCE_011,finance,6.17,6.81,9.0,7.83,7.42
+Mueen AI,FINANCE_013,finance,3.75,6.81,5.83,6.83,5.65
+Mueen AI,FINANCE_015,finance,4.88,10.0,9.0,7.67,7.63
+Mueen AI,FINANCE_016,finance,4.31,7.45,9.0,6.67,6.7
+Mueen AI,FINANCE_018,finance,0.38,7.45,10.0,7.83,6.06
+Mueen AI,FINANCE_021,finance,8.25,6.81,5.83,8.83,7.5
+Mueen AI,FINANCE_025,finance,6.79,7.87,7.83,6.67,7.24
+Mueen AI,FINANCE_027,finance,9.83,10.0,8.0,5.67,8.37
+Mueen AI,FINANCE_029,finance,7.88,7.45,5.83,4.5,6.44
+Mueen AI,FINANCE_030,finance,6.89,10.0,7.0,7.67,7.73
+Mueen AI,FINANCE_031,finance,8.4,6.81,4.83,4.5,6.21
+Mueen AI,FINANCE_035,finance,8.5,10.0,7.25,6.67,8.03
+Mueen AI,FINANCE_036,finance,2.5,10.0,8.0,4.5,5.88
+Mueen AI,FINANCE_037,finance,0.0,7.45,1.5,4.5,2.99
+Mueen AI,FINANCE_038,finance,3.26,7.45,6.83,5.67,5.59
+Mueen AI,FINANCE_045,finance,4.75,4.26,8.0,1.75,4.71
+Mueen AI,FINANCE_046,finance,5.77,10.0,6.83,7.67,7.36
+Mueen AI,FINANCE_047,finance,4.11,10.0,8.0,5.67,6.65
+Mueen AI,FINANCE_048,finance,5.83,7.45,3.67,9.0,6.41
+Mueen AI,FINANCE_049,finance,2.0,4.68,5.83,8.83,5.2
+Mueen AI,FINANCE_055,finance,2.46,7.45,3.67,6.67,4.81
+Mueen AI,FINANCE_058,finance,10.0,10.0,8.0,5.5,8.38
+Mueen AI,FINANCE_059,finance,8.0,7.45,4.67,5.67,6.47
+Mueen AI,FINANCE_063,finance,1.52,7.45,6.83,6.67,5.32
+Mueen AI,FINANCE_065,finance,4.5,7.45,8.0,4.5,5.96
+Mueen AI,FINANCE_067,finance,0.0,7.45,9.0,6.67,5.41
+Mueen AI,FINANCE_075,finance,0.28,4.26,8.0,4.67,4.1
+Mueen AI,FINANCE_076,finance,6.0,10.0,9.0,4.5,7.17
+Mueen AI,FINANCE_082,finance,0.0,7.45,9.0,5.67,5.16
+Mueen AI,FINANCE_084,finance,3.67,5.32,8.0,4.5,5.29
+Mueen AI,FINANCE_085,finance,7.52,10.0,9.0,9.0,8.76
+Mueen AI,FINANCE_086,finance,3.5,3.19,1.5,3.5,2.94
+Mueen AI,FINANCE_090,finance,3.36,5.32,9.0,9.0,6.57
+Mueen AI,FINANCE_092,finance,10.0,10.0,5.83,6.67,8.12
+Mueen AI,FINANCE_097,finance,3.75,7.45,9.0,7.83,6.82
+Mueen AI,FINANCE_099,finance,5.41,7.45,7.83,4.5,6.2
+Mueen AI,POLITICS_001,politics,7.5,4.26,3.67,4.5,5.14
+Mueen AI,POLITICS_003,politics,1.55,7.45,9.0,7.83,6.16
+Mueen AI,POLITICS_004,politics,6.64,10.0,9.0,6.83,7.95
+Mueen AI,POLITICS_006,politics,3.17,7.45,3.67,4.5,4.48
+Mueen AI,POLITICS_008,politics,4.25,4.26,9.0,6.83,6.08
+Mueen AI,POLITICS_012,politics,2.5,7.45,8.0,4.5,5.37
+Mueen AI,POLITICS_013,politics,2.93,7.45,9.0,6.67,6.29
+Mueen AI,POLITICS_014,politics,1.25,4.26,3.67,4.5,3.27
+Mueen AI,POLITICS_018,politics,3.24,10.0,9.0,4.5,6.35
+Mueen AI,POLITICS_020,politics,6.6,10.0,9.0,7.83,8.19
+Mueen AI,POLITICS_021,politics,4.1,5.32,7.0,5.67,5.46
+Mueen AI,POLITICS_022,politics,9.77,10.0,3.67,5.92,7.33
+Mueen AI,POLITICS_026,politics,3.63,4.26,8.0,4.5,5.07
+Mueen AI,POLITICS_027,politics,0.07,10.0,6.83,8.83,5.94
+Mueen AI,POLITICS_028,politics,4.25,10.0,9.0,8.83,7.73
+Mueen AI,POLITICS_029,politics,1.0,4.26,5.83,4.5,3.73
+Mueen AI,POLITICS_031,politics,1.59,6.81,6.83,7.67,5.46
+Mueen AI,POLITICS_034,politics,1.83,10.0,9.0,7.83,6.76
+Mueen AI,POLITICS_036,politics,2.32,7.45,7.0,4.5,5.06
+Mueen AI,POLITICS_037,politics,1.58,4.26,5.83,7.67,4.7
+Mueen AI,POLITICS_040,politics,0.95,7.45,9.0,5.67,5.44
+Mueen AI,POLITICS_044,politics,0.0,10.0,10.0,5.67,5.92
+Mueen AI,POLITICS_049,politics,3.33,2.13,4.67,4.5,3.72
+Mueen AI,POLITICS_054,politics,4.28,4.26,2.5,4.5,3.89
+Mueen AI,POLITICS_055,politics,0.0,3.19,1.5,0.0,1.01
+Mueen AI,POLITICS_058,politics,5.67,7.45,8.0,5.67,6.61
+Mueen AI,POLITICS_060,politics,3.74,10.0,9.0,4.5,6.5
+Mueen AI,POLITICS_070,politics,2.17,10.0,9.0,5.67,6.32
+Mueen AI,POLITICS_072,politics,5.1,10.0,4.67,7.67,6.62
+Mueen AI,POLITICS_075,politics,7.46,7.45,9.0,7.67,7.9
+Mueen AI,POLITICS_076,politics,1.33,4.26,3.67,4.5,3.29
+Mueen AI,POLITICS_081,politics,5.48,7.45,9.0,7.67,7.3
+Mueen AI,POLITICS_083,politics,2.02,10.0,9.0,6.67,6.52
+Mueen AI,POLITICS_084,politics,0.0,2.13,4.83,4.5,2.76
+Mueen AI,POLITICS_085,politics,0.0,4.68,7.83,0.0,2.89
+Mueen AI,POLITICS_086,politics,1.75,10.0,7.0,5.67,5.69
+Mueen AI,POLITICS_090,politics,3.42,4.26,6.83,0.0,3.59
+Mueen AI,POLITICS_092,politics,0.0,7.45,9.0,5.67,5.16
+Mueen AI,POLITICS_095,politics,7.0,7.45,10.0,0.0,6.09
+Mueen AI,POLITICS_097,politics,3.33,10.0,9.0,5.67,6.67
+Mueen AI,POLITICS_098,politics,0.38,7.45,5.83,6.67,4.73
+Mueen AI,POLITICS_099,politics,2.0,10.0,9.0,8.83,7.06
+Mueen AI,SPORTS_001,sports,3.17,10.0,6.83,5.5,6.03
+Mueen AI,SPORTS_009,sports,0.87,4.26,9.0,4.5,4.49
+Mueen AI,SPORTS_010,sports,0.94,7.45,9.0,6.67,5.69
+Mueen AI,SPORTS_013,sports,4.76,5.32,2.5,4.5,4.24
+Mueen AI,SPORTS_014,sports,5.06,7.45,8.0,0.0,5.01
+Mueen AI,SPORTS_020,sports,7.5,5.32,3.67,5.5,5.61
+Mueen AI,SPORTS_021,sports,6.17,10.0,9.0,7.67,8.02
+Mueen AI,SPORTS_022,sports,7.5,7.45,6.83,5.67,6.87
+Mueen AI,SPORTS_023,sports,5.59,3.19,7.0,0.75,4.25
+Mueen AI,SPORTS_031,sports,5.17,3.19,5.83,0.0,3.65
+Mueen AI,SPORTS_032,sports,4.21,7.45,8.0,7.83,6.71
+Mueen AI,SPORTS_034,sports,1.5,10.0,6.83,5.67,5.58
+Mueen AI,SPORTS_040,sports,1.71,2.13,3.67,4.5,2.98
+Mueen AI,SPORTS_043,sports,1.67,5.32,3.67,6.5,4.11
+Mueen AI,SPORTS_048,sports,4.56,0.0,7.0,1.0,3.37
+Mueen AI,SPORTS_049,sports,1.08,7.45,5.83,7.67,5.19
+Mueen AI,SPORTS_052,sports,4.73,2.13,4.83,5.5,4.43
+Mueen AI,SPORTS_058,sports,0.0,7.45,5.83,0.0,2.95
+Mueen AI,SPORTS_060,sports,0.13,4.26,8.0,4.5,4.02
+Mueen AI,SPORTS_062,sports,7.17,5.32,6.0,7.67,6.63
+Mueen AI,SPORTS_063,sports,3.86,3.19,7.0,4.5,4.67
+Mueen AI,SPORTS_064,sports,3.42,5.32,9.0,0.0,4.34
+Mueen AI,SPORTS_065,sports,2.87,10.0,9.0,7.83,7.07
+Mueen AI,SPORTS_067,sports,0.81,7.45,9.0,5.67,5.4
+Mueen AI,SPORTS_069,sports,2.29,10.0,9.0,4.92,6.17
+Mueen AI,SPORTS_078,sports,6.5,7.45,9.0,6.67,7.36
+Mueen AI,SPORTS_080,sports,1.25,5.32,7.25,0.0,3.25
+Mueen AI,SPORTS_081,sports,5.12,3.19,4.67,3.5,4.22
+Mueen AI,SPORTS_082,sports,1.84,10.0,6.83,4.5,5.38
+Mueen AI,SPORTS_083,sports,2.85,7.45,5.83,3.5,4.68
+Mueen AI,SPORTS_088,sports,1.61,10.0,9.0,7.83,6.69
+Mueen AI,SPORTS_094,sports,2.25,10.0,7.0,7.67,6.34
+Mueen AI,SPORTS_095,sports,2.63,10.0,8.0,4.5,5.91
+Mueen AI,TECH_006,tech,4.17,10.0,8.0,5.67,6.67
+Mueen AI,TECH_009,tech,6.17,7.45,5.83,1.75,5.24
+Mueen AI,TECH_011,tech,10.0,7.45,7.83,6.67,8.12
+Mueen AI,TECH_013,tech,7.67,7.45,9.0,4.5,7.17
+Mueen AI,TECH_016,tech,1.88,3.19,4.83,0.0,2.41
+Mueen AI,TECH_017,tech,4.17,7.45,8.0,5.67,6.16
+Mueen AI,TECH_020,tech,4.1,10.0,9.0,4.5,6.6
+Mueen AI,TECH_021,tech,6.89,10.0,10.0,5.67,7.98
+Mueen AI,TECH_023,tech,4.76,10.0,8.0,5.67,6.85
+Mueen AI,TECH_024,tech,7.25,10.0,10.0,9.0,8.93
+Mueen AI,TECH_025,tech,7.67,7.45,9.0,4.5,7.17
+Mueen AI,TECH_026,tech,7.67,10.0,9.0,5.67,7.97
+Mueen AI,TECH_028,tech,1.6,10.0,4.67,6.83,5.36
+Mueen AI,TECH_032,tech,5.25,10.0,7.0,0.0,5.33
+Mueen AI,TECH_034,tech,0.79,3.19,4.83,0.0,2.08
+Mueen AI,TECH_036,tech,8.5,10.0,10.0,7.67,8.97
+Mueen AI,TECH_038,tech,3.07,5.32,4.67,0.0,3.15
+Mueen AI,TECH_043,tech,6.18,7.45,9.0,5.67,7.01
+Mueen AI,TECH_045,tech,6.26,4.26,8.0,0.0,4.73
+Mueen AI,TECH_046,tech,2.09,10.0,9.0,6.67,6.54
+Mueen AI,TECH_047,tech,4.36,10.0,9.0,6.83,7.27
+Mueen AI,TECH_048,tech,0.36,10.0,9.0,7.67,6.28
+Mueen AI,TECH_049,tech,4.5,10.0,9.0,9.0,7.85
+Mueen AI,TECH_057,tech,3.92,7.45,9.0,4.5,6.04
+Mueen AI,TECH_059,tech,0.0,2.13,3.67,0.0,1.34
+Mueen AI,TECH_065,tech,5.17,10.0,9.0,4.5,6.93
+Mueen AI,TECH_069,tech,2.92,5.32,5.83,0.0,3.4
+Mueen AI,TECH_070,tech,7.67,10.0,9.0,7.83,8.51
+Mueen AI,TECH_071,tech,4.67,6.81,9.0,7.83,6.97
+Mueen AI,TECH_074,tech,7.67,10.0,8.25,6.83,8.07
+Mueen AI,TECH_076,tech,4.32,10.0,8.0,6.67,6.96
+Mueen AI,TECH_078,tech,8.0,10.0,9.0,5.67,8.07
+Mueen AI,TECH_080,tech,1.17,10.0,9.0,6.83,6.31
+Mueen AI,TECH_081,tech,4.68,10.0,9.0,5.67,7.07
+Mueen AI,TECH_086,tech,2.58,7.45,10.0,5.67,6.18
+Mueen AI,TECH_088,tech,6.17,4.26,8.0,6.67,6.37
+Mueen AI,TECH_091,tech,1.93,7.45,9.0,5.67,5.74
+Mueen AI,TECH_092,tech,9.14,7.45,9.0,7.83,8.44
+Mueen AI,TECH_093,tech,7.25,7.45,6.83,6.83,7.08
+Mueen AI,TECH_094,tech,0.0,10.0,8.0,4.5,5.12
+Mueen AI,TECH_100,tech,10.0,10.0,9.0,5.67,8.67

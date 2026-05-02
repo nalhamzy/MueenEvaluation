@@ -1,0 +1,551 @@
+{
+  "evaluator": {
+    "Evaluator name": "Ahmed Al Saidi",
+    "Date started": "2026-04-28",
+    "Date completed": "2026-05-02",
+    "Total hours spent": null,
+    "Arabic proficiency (native / fluent / advanced / intermediate)": "native",
+    "Confidence in your scoring (1-5)": null,
+    "General observations / feedback": "الاخبار الاقتصادية وخصوصا التي تحمل ارقام تشكل اكبر فارق في نتائج النماذج-\nويجب اعتمادها في قياس اداء النماذج المستقبلية\n\n- المواضيع المرتبط بالرياضة كانت الاسهل واظهرت نتائج متقاربة بين النماذج-\n\n- اكبر الفروق تكمن في فصاحة اللغة والشمولية حيث اظهر النموذج A تفوقا كبيرا في المصطلحات المستخدمة وجودة المخرجات\n\n- النموذج C اداءه متقارب من النموذج A وتفوق عليه في موضيع الترجمة في بعض المقالات وينقصه الفصاحة فقط.\n\n- اظهر النموذج B العديد من حالات الهلوسة في مهمة التلخصيص وكذلك الترجمة من خلال اختلاق معلومات جديدة او حذف معلومات مهمة\n\n- اكبر التحديات التي يواجهها النموذج D هي تركيب الجمل العربية واختيار المصطلاحات المناسبة."
+  },
+  "n_articles": 30,
+  "article_ids": [
+    "CULTURE_017",
+    "CULTURE_087",
+    "CULTURE_033",
+    "CULTURE_055",
+    "CULTURE_039",
+    "CULTURE_030",
+    "FINANCE_007",
+    "FINANCE_046",
+    "FINANCE_067",
+    "FINANCE_076",
+    "FINANCE_058",
+    "FINANCE_001",
+    "POLITICS_070",
+    "POLITICS_031",
+    "POLITICS_006",
+    "POLITICS_092",
+    "POLITICS_013",
+    "POLITICS_083",
+    "SPORTS_049",
+    "SPORTS_031",
+    "SPORTS_021",
+    "SPORTS_063",
+    "SPORTS_009",
+    "SPORTS_062",
+    "TECH_032",
+    "TECH_045",
+    "TECH_069",
+    "TECH_038",
+    "TECH_016",
+    "TECH_021"
+  ],
+  "per_model": {
+    "qwen3.5-397b-a17b": {
+      "summary": {
+        "mean_1_5": 4.5,
+        "stdev": 0.63,
+        "mean_0_10": 8.75,
+        "scores_1_5": [
+          5,
+          4,
+          5,
+          5,
+          4,
+          4,
+          5,
+          3,
+          5,
+          4,
+          5,
+          4,
+          4,
+          5,
+          5,
+          3,
+          5,
+          4,
+          5,
+          4,
+          5,
+          5,
+          5,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          4
+        ]
+      },
+      "translation": {
+        "mean_1_5": 4.67,
+        "stdev": 0.48,
+        "mean_0_10": 9.17,
+        "scores_1_5": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4,
+          5,
+          4,
+          5,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "combined": {
+        "mean_1_5": 4.58,
+        "stdev": 0.56,
+        "mean_0_10": 8.96
+      }
+    },
+    "deepseek-chat": {
+      "summary": {
+        "mean_1_5": 3.47,
+        "stdev": 0.9,
+        "mean_0_10": 6.17,
+        "scores_1_5": [
+          3,
+          3,
+          5,
+          3,
+          5,
+          4,
+          3,
+          5,
+          3,
+          2,
+          4,
+          3,
+          2,
+          4,
+          4,
+          3,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          2,
+          4,
+          2,
+          3,
+          4,
+          3,
+          5,
+          3
+        ]
+      },
+      "translation": {
+        "mean_1_5": 4.27,
+        "stdev": 0.69,
+        "mean_0_10": 8.17,
+        "scores_1_5": [
+          5,
+          4,
+          5,
+          3,
+          4,
+          5,
+          3,
+          4,
+          3,
+          4,
+          3,
+          4,
+          5,
+          5,
+          5,
+          4,
+          4,
+          5,
+          4,
+          4,
+          5,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4,
+          4,
+          4,
+          5
+        ]
+      },
+      "combined": {
+        "mean_1_5": 3.87,
+        "stdev": 0.89,
+        "mean_0_10": 7.17
+      }
+    },
+    "mistral.mistral-large-2402-v1:0": {
+      "summary": {
+        "mean_1_5": 2.7,
+        "stdev": 0.95,
+        "mean_0_10": 4.25,
+        "scores_1_5": [
+          4,
+          2,
+          1,
+          4,
+          3,
+          3,
+          1,
+          4,
+          2,
+          1,
+          1,
+          3,
+          4,
+          3,
+          2,
+          4,
+          4,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          2,
+          2,
+          3
+        ]
+      },
+      "translation": {
+        "mean_1_5": 1.9,
+        "stdev": 0.66,
+        "mean_0_10": 2.25,
+        "scores_1_5": [
+          2,
+          1,
+          2,
+          1,
+          1,
+          3,
+          2,
+          3,
+          3,
+          1,
+          3,
+          2,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "combined": {
+        "mean_1_5": 2.3,
+        "stdev": 0.91,
+        "mean_0_10": 3.25
+      }
+    },
+    "Mueen AI": {
+      "summary": {
+        "mean_1_5": 2.1,
+        "stdev": 0.84,
+        "mean_0_10": 2.75,
+        "scores_1_5": [
+          3,
+          1,
+          3,
+          3,
+          1,
+          1,
+          4,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          1,
+          3,
+          1,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      "translation": {
+        "mean_1_5": 1.27,
+        "stdev": 0.69,
+        "mean_0_10": 0.67,
+        "scores_1_5": [
+          1,
+          1,
+          4,
+          3,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      "combined": {
+        "mean_1_5": 1.68,
+        "stdev": 0.87,
+        "mean_0_10": 1.71
+      }
+    }
+  },
+  "per_category": {
+    "culture": {
+      "n": 6,
+      "models": {
+        "qwen3.5-397b-a17b": {
+          "summary_1_5": 4.5,
+          "translation_1_5": 4.33,
+          "combined_1_5": 4.42
+        },
+        "deepseek-chat": {
+          "summary_1_5": 3.83,
+          "translation_1_5": 4.33,
+          "combined_1_5": 4.08
+        },
+        "mistral.mistral-large-2402-v1:0": {
+          "summary_1_5": 2.83,
+          "translation_1_5": 1.67,
+          "combined_1_5": 2.25
+        },
+        "Mueen AI": {
+          "summary_1_5": 2.0,
+          "translation_1_5": 1.83,
+          "combined_1_5": 1.92
+        }
+      }
+    },
+    "finance": {
+      "n": 6,
+      "models": {
+        "qwen3.5-397b-a17b": {
+          "summary_1_5": 4.33,
+          "translation_1_5": 4.67,
+          "combined_1_5": 4.5
+        },
+        "deepseek-chat": {
+          "summary_1_5": 3.33,
+          "translation_1_5": 3.5,
+          "combined_1_5": 3.42
+        },
+        "mistral.mistral-large-2402-v1:0": {
+          "summary_1_5": 2.0,
+          "translation_1_5": 2.33,
+          "combined_1_5": 2.17
+        },
+        "Mueen AI": {
+          "summary_1_5": 2.5,
+          "translation_1_5": 1.17,
+          "combined_1_5": 1.83
+        }
+      }
+    },
+    "politics": {
+      "n": 6,
+      "models": {
+        "qwen3.5-397b-a17b": {
+          "summary_1_5": 4.33,
+          "translation_1_5": 4.67,
+          "combined_1_5": 4.5
+        },
+        "deepseek-chat": {
+          "summary_1_5": 3.33,
+          "translation_1_5": 4.67,
+          "combined_1_5": 4.0
+        },
+        "mistral.mistral-large-2402-v1:0": {
+          "summary_1_5": 3.33,
+          "translation_1_5": 1.67,
+          "combined_1_5": 2.5
+        },
+        "Mueen AI": {
+          "summary_1_5": 2.33,
+          "translation_1_5": 1.0,
+          "combined_1_5": 1.67
+        }
+      }
+    },
+    "sports": {
+      "n": 6,
+      "models": {
+        "qwen3.5-397b-a17b": {
+          "summary_1_5": 4.67,
+          "translation_1_5": 4.83,
+          "combined_1_5": 4.75
+        },
+        "deepseek-chat": {
+          "summary_1_5": 3.5,
+          "translation_1_5": 4.33,
+          "combined_1_5": 3.92
+        },
+        "mistral.mistral-large-2402-v1:0": {
+          "summary_1_5": 3.0,
+          "translation_1_5": 1.83,
+          "combined_1_5": 2.42
+        },
+        "Mueen AI": {
+          "summary_1_5": 2.0,
+          "translation_1_5": 1.17,
+          "combined_1_5": 1.58
+        }
+      }
+    },
+    "tech": {
+      "n": 6,
+      "models": {
+        "qwen3.5-397b-a17b": {
+          "summary_1_5": 4.67,
+          "translation_1_5": 4.83,
+          "combined_1_5": 4.75
+        },
+        "deepseek-chat": {
+          "summary_1_5": 3.33,
+          "translation_1_5": 4.5,
+          "combined_1_5": 3.92
+        },
+        "mistral.mistral-large-2402-v1:0": {
+          "summary_1_5": 2.33,
+          "translation_1_5": 2.0,
+          "combined_1_5": 2.17
+        },
+        "Mueen AI": {
+          "summary_1_5": 1.67,
+          "translation_1_5": 1.17,
+          "combined_1_5": 1.42
+        }
+      }
+    }
+  },
+  "correlations": {
+    "summary": {
+      "n": 120,
+      "spearman": 0.526,
+      "pearson": 0.568,
+      "human_mean_0_10": 5.48,
+      "llm_mean_0_10": 8.26
+    },
+    "translation": {
+      "n": 120,
+      "spearman": 0.808,
+      "pearson": 0.767,
+      "human_mean_0_10": 5.06,
+      "llm_mean_0_10": 6.81
+    },
+    "combined": {
+      "n": 240,
+      "spearman": 0.688,
+      "pearson": 0.682
+    },
+    "model_level": {
+      "human_means_0_10": [
+        8.96,
+        7.17,
+        3.25,
+        1.71
+      ],
+      "llm_means_0_10_same_30": [
+        8.99,
+        8.65,
+        6.52,
+        5.99
+      ],
+      "spearman": 1.0,
+      "models": [
+        "Qwen 3.5 397B",
+        "DeepSeek Chat",
+        "Mistral Large",
+        "Mueen AI"
+      ]
+    },
+    "ranking_human": {
+      "qwen3.5-397b-a17b": 1,
+      "deepseek-chat": 2,
+      "mistral.mistral-large-2402-v1:0": 3,
+      "Mueen AI": 4
+    },
+    "ranking_llm_same_30": {
+      "qwen3.5-397b-a17b": 1,
+      "deepseek-chat": 2,
+      "mistral.mistral-large-2402-v1:0": 3,
+      "Mueen AI": 4
+    }
+  }
+}
